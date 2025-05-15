@@ -1,3 +1,4 @@
+...
 ### 🛠 **Ideas para tu perfil de GitHub**:
 
 1. **✨ README.md Personalizado** (¡Esto es clave!):  
@@ -35,4 +36,6 @@
 1. Edita tu `README.md` directamente en GitHub (ve a tu repositorio y pulsa el lápiz ✏️).  
 2. Usa [esta plantilla](https://github.com/abhisheknaiidu/awesome-github-profile-readme) para inspirarte.  
 3. ¡Haz commits y ve cómo tu perfil cobra vida!
+4. ...
+5. 
    https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical
