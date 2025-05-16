@@ -1,6 +1,3 @@
-¡Vamos a construir ese **STRUCTURE.md** como un verdadero ingeniero de sistemas! 🚀 Aquí tienes la arquitectura completa para tu perfil **MechMind-dwv**, con integración directa en GitHub (¡sin necesidad de clonar primero!):
-
-```markdown
 # 🏗️ **STRUCTURE.md** - Arquitectura del Perfil MechMind-dwv
 
 ## 📂 **Estructura del Repositorio**
