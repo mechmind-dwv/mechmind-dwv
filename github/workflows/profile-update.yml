@@ -1,0 +1,24 @@
+name: Update Profile README
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Ejecución diaria a medianoche
+  workflow_dispatch:       # También manualmente
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Update Stats
+        uses: anuraghazra/github-readme-stats@latest
+        with:
+          username: mechmind-dwv
+          theme: radical
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "MechMind Bot"
+          git add README.md
+          git commit -m "📊 Auto-update README stats"
+          git push
