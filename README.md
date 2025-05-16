@@ -58,3 +58,11 @@ while True:
 4. ¡Commitea con un mensaje épico! (`git commit -m "Perfil 2.0: MechMode Activated 🚀"`)
 
 ¿Quieres añadir algo más? ¿Quizás un **ASCII art de tu robot** o un **tablero de Snake interactivo**? ¡Dímelo y lo hackeamos! 🐍💻
+- name: 📊 GitHub Readme Stats
+        uses: anuraghazra/github-readme-stats@latest
+        with:
+          username: mechmind-dwv
+          show_icons: true
+          theme: radical
+          cache_seconds: 86400 # 24h cache
+          exclude_repo: mechmind-dwv  # Excluye este repo
