@@ -1,0 +1,21 @@
+name: Security Audit
+on: [push, pull_request]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Rust Security Check
+        uses: actions-rs/audit-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python Dependency Check
+        uses: py-actions/dependency-review@main
+
+      - name: Alert Critical Issues
+        if: ${{ failure() }}
+        run: |
+          echo "🚨 SE NECESITA REVISIÓN URGENTE" >> $GITHUB_STEP_SUMMARY
