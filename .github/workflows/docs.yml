@@ -1,0 +1,38 @@
+## 🔄 **Automatización con GitHub Actions**
+Añade esto en `.github/workflows/docs.yml`:
+```yaml
+name: Build Robotics Docs
+on: [push]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate RustDoc
+        run: |
+          cd docs/robotics/firmware
+          cargo doc --no-deps
+          mv target/doc ./api/rustdoc
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: mechbot-docs
+          path: docs/robotics/api/
+```
+
+---
+
+## 🌐 **Cómo Acceder**
+1. **Localmente**:
+   ```bash
+   cd docs/robotics/firmware
+   cargo doc --open  # Abre documentación Rust
+   ```
+2. **En GitHub Pages**:
+   - Activa GitHub Pages en settings → `/docs` folder
+   - URL: `https://mechmind-dwv.github.io/robotics/api/rustdoc`
+
+---
