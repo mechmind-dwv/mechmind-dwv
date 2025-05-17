@@ -1,0 +1,56 @@
+{
+  "documentation": {
+    "name": "mechbot-docs",
+    "path": "docs/robotics/api/",
+    "structure": {
+      "index": "README.md",
+      "rust_api": {
+        "path": "rustdoc/",
+        "files": [
+          "core_module/index.html",
+          "movement_module/index.html",
+          "sensors_module/index.html"
+        ],
+        "auto_generate": true,
+        "command": "cargo doc --no-deps --open"
+      },
+      "rest_api": {
+        "path": "rest/",
+        "spec": "openapi.yaml",
+        "examples": {
+          "curl": "examples/http_requests.sh",
+          "python": "examples/python_client.py"
+        }
+      },
+      "diagrams": {
+        "path": "schematics/",
+        "formats": ["drawio", "pdf", "png"],
+        "files": [
+          "mechbot-architecture.drawio",
+          "communication-protocol.pdf"
+        ]
+      }
+    },
+    "automation": {
+      "ci": ".github/workflows/docs.yml",
+      "schedule": "weekly",
+      "dependencies": {
+        "rust": ">=1.70.0",
+        "python": ">=3.10",
+        "plantuml": "latest"
+      }
+    },
+    "badges": [
+      {
+        "name": "Documentation Status",
+        "url": "https://img.shields.io/badge/docs-robotics%20api-blueviolet",
+        "image": "https://img.shields.io/badge/docs-robotics%20api-blueviolet"
+      },
+      {
+        "name": "RustDoc Coverage",
+        "url": "https://docs.rs/mechbot",
+        "image": "https://img.shields.io/badge/rustdoc-98%25-success"
+      }
+    ]
+  }
+}
