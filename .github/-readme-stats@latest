@@ -1,0 +1,8 @@
+- name: 📊 GitHub Readme Stats
+        uses: anuraghazra/github-readme-stats@latest
+        with:
+          username: mechmind-dwv
+          show_icons: true
+          theme: radical
+          cache_seconds: 86400 # 24h cache
+          exclude_repo: mechmind-dwv  # Excluye este repo
