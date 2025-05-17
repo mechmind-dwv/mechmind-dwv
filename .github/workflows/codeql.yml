@@ -6,3 +6,27 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '41 21 * * 0'  # Domingo a las 21:41 (¡Hora de debuggear!)
+
+jobs:
+  analyze:
+    name: "🦀 Análisis Profundo (${{ matrix.language }})"
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: c-cpp
+            build-mode: none
+            extra: "🛡️ Análisis para C/Rust (FFI)"
+          - language: python
+            build-mode: none
+            extra: "🐍 Scans para IA/ML"
+          - language: javascript-typescript
+            build-mode: none
+            extra: "🌐 Web del MechBot"
