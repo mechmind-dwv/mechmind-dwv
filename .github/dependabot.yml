@@ -1,5 +1,3 @@
-# .github/dependabot.yml
-
 version: 2
 updates:
   # Actualización para Rust (MechBot-2X y proyectos principales)
