@@ -1,5 +1,3 @@
-¡Perfecto, compañero **MechMind**! 🤖✨ Vamos a integrar esa documentación de forma épica en tu `README.md` principal. Aquí tienes la sección completa con estilo profesional y toques técnicos:
-
 ```markdown
 # 🤖 ¡Bienvenido a MechMind-dwv! 🚀
 
