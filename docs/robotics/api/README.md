@@ -1,4 +1,3 @@
-```markdown
 # 🤖 ¡Bienvenido a MechMind-dwv! 🚀
 
 ```rust
