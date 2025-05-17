@@ -1,0 +1,19 @@
+### 1. **Diagrama de Arquitectura** (`mechbot-architecture.drawio`)
+[![Arquitectura](https://img.shields.io/badge/Diagrama-Architecture-blue)](docs/robotics/api/schematics/mechbot-architecture.drawio)
+
+```xml
+<!-- Ejemplo de contenido .drawio -->
+<mxfile>
+  <diagram name="Page-1">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="MechBot 2.0 Core" style="shape=hexagon" parent="1" vertex="1">
+          <mxGeometry x="240" y="120" width="80" height="80"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+```
