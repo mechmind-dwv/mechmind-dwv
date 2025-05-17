@@ -1,6 +1,3 @@
-## 🔄 **Automatización con GitHub Actions**
-Añade esto en `.github/workflows/docs.yml`:
-```yaml
 name: Build Robotics Docs
 on: [push]
 
