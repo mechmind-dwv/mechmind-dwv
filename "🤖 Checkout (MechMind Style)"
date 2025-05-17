@@ -1,0 +1,6 @@
+steps:
+      - name: "🤖 Checkout (MechMind Style)"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true  # Para modelos de IA
