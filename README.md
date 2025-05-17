@@ -15,7 +15,7 @@
 fn main() {
     println!("¡Transformando código en movimientos robóticos!");
 }
-``
+```
 
 ## 📊 **Mis Stats de GitHub**
 [![Tus estadísticas](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=dark&hide_border=true)](https://github.com/mechmind-dwv)
