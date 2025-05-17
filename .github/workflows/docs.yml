@@ -1,5 +1,7 @@
 name: Build Robotics Docs
 on: [push]
+permissions:
+  contents: write
 
 jobs:
   docs:
