@@ -1,0 +1,21 @@
+name: Update Stats
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # Cada 6 horas
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anuraghazra/github-readme-stats@latest
+        with:
+          USERNAME: mechmind-dwv
+          THEME: radical
+          CARD_WIDTH: 500
+      - run: |
+          git config --global user.name "MechMind Stats Bot"
+          git add README.md
+          git commit -m "📈 Auto-update stats"
+          git push
