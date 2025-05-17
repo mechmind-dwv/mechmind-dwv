@@ -1,8 +1,8 @@
 name: Build Robotics Docs
 on: [push]
 permissions:
-  contents: write
-
+  contents: while parsing a block collection 
+  
 jobs:
   docs:
     runs-on: ubuntu-latest
