@@ -18,18 +18,3 @@ jobs:
         with:
           name: mechbot-docs
           path: docs/robotics/api/
-```
-
----
-
-## 🌐 **Cómo Acceder**
-1. **Localmente**:
-   ```bash
-   cd docs/robotics/firmware
-   cargo doc --open  # Abre documentación Rust
-   ```
-2. **En GitHub Pages**:
-   - Activa GitHub Pages en settings → `/docs` folder
-   - URL: `https://mechmind-dwv.github.io/robotics/api/rustdoc`
-
----
