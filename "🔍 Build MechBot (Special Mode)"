@@ -1,7 +1,0 @@
-      - name: "🔍 Build MechBot (Special Mode)"
-        if: matrix.language == 'c-cpp'
-        run: |
-          cd projects/mechbot-2x
-          cargo build --release --features ffi,secure
-          echo "Binary hashes:" >> $GITHUB_STEP_SUMMARY
-          sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
