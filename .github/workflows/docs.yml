@@ -1,4 +1,4 @@
-name: 🛠️ MechMind Docs CI
+name: MechMind Docs CI
 on:
   push:
     branches: [ main ]
