@@ -1,22 +1,47 @@
-name: Build Robotics Docs
+name: MechMind Docs CI
 on: [push]
+ branches: [ main ]
+    paths:
+      - 'docs/robotics/api/**'
+      - 'projects/mechbot-2x/src/**'
+  wo rkflow_dispatch:
 
-jobs: writing and others
-  docs:
+jobs: write 
+  generate-docs:
+    name: 📚 Generar Documentación
     runs-on: ubuntu-latest
+    container: rustlang/rust:nightly
+    env:
+      CARGO_TERM_COLOR: always
+      RUSTDOCFLAGS: "--html-in-header docs/assets/style.html"
+    
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Generate RustDoc
-        run: |
-          cd docs/robotics/firmware
-          cargo doc --no-deps
-          mv target/doc ./api/rustdoc
+      - name: 🛒 Checkout del código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+      - name: 🦀 Generar RustDoc
+        working-directory: docs/robotics/api
+        run: |
+          cargo doc --no-deps --document-private-items \
+            --target-dir ./target-docs
+          mv target-docs/doc ./rustdoc
+          echo "DOCS_VERSION=$(git describe --tags)" >> $GITHUB_ENV
+
+      - name: 📤 Subir Artifact
+        uses: actions/upload-pages-artifact@v2
         with:
           name: mechbot-docs
-          path: docs/robotics/api/
-          
-[![.github/workflows/docs.yml](https://github.com/mechmind-dwv/mechmind-dwv/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/mechmind-dwv/mechmind-dwv/actions/workflows/docs.yml)
+          path: docs/robotics/api/rustdoc
+          retention-days: 5
+
+      - name: 🚀 Desplegar en GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/deploy-pages@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: gh-pages
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          publish-dir: docs/robotics/api/rustdoc

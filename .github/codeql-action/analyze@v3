@@ -1,0 +1,13 @@
+- nombre : " 📊 Analizar (Con Amor) "
+        usos : github/codeql-action/analyze@v3
+        con :
+          categoría : " /idioma:${{matrix.language}}/mechmind "
+          subir : verdadero
+          salida : codeql_results.sarif
+
+      - nombre : " 💌 Avísanos "
+        si : siempre()
+        correr : |
+          echo "¡Análisis completado para ${{ Matrix.language }}!" \
+          "Ver informe: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
+          | tee -a $RESUMEN_DE_PASOS_DE_GITHUB

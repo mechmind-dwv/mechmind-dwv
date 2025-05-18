@@ -1,0 +1,21 @@
+name: "MechMind Security Protocol"
+disable-default-queries: false
+paths:
+  include:
+    - "projects/mechbot-2x/src/**"
+    - "docs/ai-research/**"
+  exclude:
+    - "**/tests/**"
+    - "**/experimental/**"
+query-filters:
+  - id: rust-unsafe-guard
+    pattern: |
+      import rust
+      from UnsafeBlock ub
+      select ub, "¡Código unsafe detectado!"
+  - id: python-injection-check
+    pattern: |
+      import python
+      from CallNode cn
+      where cn.getTarget().toString().matches("%input%")
+      select cn, "¡Posible inyección de código!"

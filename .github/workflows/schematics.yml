@@ -1,0 +1,21 @@
+### 🔄 **Integración Automatizada**:
+name: Update Diagrams
+on:
+  push:
+    paths:
+      - 'docs/robotics/api/schematics/*.drawio'
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Convert to PDF
+        uses: docker://jgraph/drawio
+        with:
+          args: --export --format pdf --output schematics/communication-protocol.pdf schematics/mechbot-architecture.drawio
+      - name: Commit changes
+        run: |
+          git config --global user.name "MechBot Diagrams Bot"
+          git add schematics/
+          git commit -m "🔄 Auto-update diagrams"
+          git push

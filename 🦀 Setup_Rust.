@@ -1,0 +1,7 @@
+- name: "🦀 Setup Rust"
+        if: matrix.language == 'c-cpp'
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ env.RUST_VERSION }}
+          override: true
