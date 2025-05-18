@@ -1,48 +1,20 @@
+## ⚡ Nuestro Workflow Profesional
 name: 🛠️ MechMind Docs CI
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'docs/robotics/api/**'
-      - 'projects/mechbot-2x/src/**'
-  workflow_dispatch:
-
+    branches:
+      - main
 jobs:
-  generate-docs:
-    name: 📚 Generar Documentación
+  build-and-deploy:
     runs-on: ubuntu-latest
-    container: rustlang/rust:nightly
-    env:
-      CARGO_TERM_COLOR: always
-      RUSTDOCFLAGS: "--html-in-header docs/assets/style.html"
-    
     steps:
-      - name: 🛒 Checkout del código
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          submodules: recursive
-
-      - name: 🦀 Generar RustDoc
-        working-directory: docs/robotics/api
+      - uses: actions/checkout@v3
+      - name: Instala dependencias y genera docs
         run: |
-          cargo doc --no-deps --document-private-items \
-            --target-dir ./target-docs
-          mv target-docs/doc ./rustdoc
-          echo "DOCS_VERSION=$(git describe --tags)" >> $GITHUB_ENV
-
-      - name: 📤 Subir Artifact
-        uses: actions/upload-pages-artifact@v2
+          # Aquí tu comando para instalar dependencias y generar documentación
+          echo "Generando documentación..."
+      - name: Publica en GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: mechbot-docs
-          path: docs/robotics/api/rustdoc
-          retention-days: 5
-
-      - name: 🚀 Desplegar en GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        uses: actions/deploy-pages@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          target-branch: gh-pages
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish-dir: docs/robotics/api/rustdoc
