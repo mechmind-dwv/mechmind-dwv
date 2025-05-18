@@ -1,6 +1,7 @@
+name: Build Robotics Docs
 on: [push]
 
-jobs:
+jobs: writing and others
   docs:
     runs-on: ubuntu-latest
     steps:
@@ -17,19 +18,5 @@ jobs:
         with:
           name: mechbot-docs
           path: docs/robotics/api/
-
----
-
-## 🌐 **Cómo Acceder**
-1. **Localmente**:
-   ```bash
-   cd docs/robotics/firmware
-   cargo doc --open  # Abre documentación Rust
-   ```
-2. **En GitHub Pages**:
-   - Activa GitHub Pages en settings → `/docs` folder
-   - URL: `https://mechmind-dwv.github.io/robotics/api/rustdoc`
-
----
+          
 [![.github/workflows/docs.yml](https://github.com/mechmind-dwv/mechmind-dwv/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/mechmind-dwv/mechmind-dwv/actions/workflows/docs.yml)
-name: Build Robotics Docs
