@@ -1,23 +1,32 @@
-name: "🛡️ MechMind Security Scan (Testing)"
+name: "🛡️ MechMind CodeQL Sentinel"
 
 on:
   push:
-    branches: [codeql-fix]
-  pull_request:
-    branches: [codeql-fix]
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   analyze:
+    name: Analyze
     runs-on: ubuntu-latest
     permissions:
       security-events: write
       actions: read
+      contents: read
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: rust,python
           config-file: .github/codeql/mechmind-config.yml
-      - name: Analyze
+          tools: latest
+
+      - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+        with:
+          upload: true
