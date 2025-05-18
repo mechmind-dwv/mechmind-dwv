@@ -1,0 +1,7 @@
+name: "MechMind Security Protocol"
+paths:
+  - "projects/mechbot-2x/src"
+  - "docs/ai-research"
+paths-ignore:
+  - "**/tests/**"
+  - "**/tmp/**"

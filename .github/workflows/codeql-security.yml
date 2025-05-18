@@ -1,0 +1,23 @@
+name: "🛡️ MechMind Security Scan (Testing)"
+
+on:
+  push:
+    branches: [codeql-fix]
+  pull_request:
+    branches: [codeql-fix]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: rust,python
+          config-file: .github/codeql/mechmind-config.yml
+      - name: Analyze
+        uses: github/codeql-action/analyze@v3

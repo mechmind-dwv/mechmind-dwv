@@ -1,6 +1,0 @@
-- name: "💌 Notify Us"
-        if: always()
-        run: |
-          echo "¡Análisis completado para ${{ matrix.language }}!" \
-          "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
-          | tee -a $GITHUB_STEP_SUMMARY
