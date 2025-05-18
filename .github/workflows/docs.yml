@@ -1,3 +1,5 @@
+###Analizando los errores en tu workflow de GitHub Actions, aquí está la solución profesional para corregir el archivo `docs.yml`:
+```yaml
 name: 🛠️ MechMind Docs CI
 on:
   push:
@@ -46,3 +48,4 @@ jobs:
           target-branch: gh-pages
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish-dir: docs/robotics/api/rustdoc
+```
