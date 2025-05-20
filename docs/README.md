@@ -43,6 +43,7 @@ while True:
   <img src="https://komarev.com/ghpvc/?username=mechmind-dwv&label=Visitas%20a%20mi%20perfil&color=blueviolet" alt="Contador de visitas">
 </p>
 ```
+
 ```rust
 // Café break verification
 fn main() {
