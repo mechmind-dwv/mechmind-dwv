@@ -32,9 +32,14 @@ while True:
     min.codear()
     min.tomar_café()
     if "bug" in min.código:
-        min.debuggear(con_frustración=True)
-```
+        min.debuggear(con_frustración=True
 
+// Café break verification
+    fn main() {
+    println!("☕ Stats actualizados mientras tomabas café!");
+    println!("⏱️ Próxima actualización: 6 horas");
+}
+```
 ## 🌐 **Conécta conmigo**
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/tu_usuario)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tu_usuario)
@@ -42,13 +47,6 @@ while True:
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=mechmind-dwv&label=Visitas%20a%20mi%20perfil&color=blueviolet" alt="Contador de visitas">
 </p>
-```
-```rust
-// Café break verification
-fn main() {
-    println!("☕ Stats actualizados mientras tomabas café!");
-    println!("⏱️ Próxima actualización: 6 horas");
-}
 ```
 ### 🔥 **Características destacadas**:
 1. **GIF de robot** (¡Dinámico!).
