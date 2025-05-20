@@ -1,6 +1,6 @@
   # 🦀 ECOSISTEMA RUST (Cargo.toml)
   - package-ecosystem: "cargo"
-    directory: "/projects/mechbot-2x"  # Ubicación de tu proyecto estrella
+    directory: "https://github.com/mechmind-dwv/mechbot-2x"  # Ubicación de tu proyecto estrella
     schedule:
       interval: "weekly"  # Cada lunes a medianoche UTC
       day: "monday"
