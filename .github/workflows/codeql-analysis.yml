@@ -1,9 +1,7 @@
 name: "🛡️ MechMind CodeQL Fortress"
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
+push:
     branches: [ "main" ]
   schedule:
     - cron: '30 21 * * 0'  # Cada domingo a las 21:30 UTC
