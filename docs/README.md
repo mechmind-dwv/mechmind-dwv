@@ -33,12 +33,6 @@ while True:
     min.tomar_café()
     if "bug" in min.código:
         min.debuggear(con_frustración=True
-
-// Café break verification
-    fn main() {
-    println!("☕ Stats actualizados mientras tomabas café!");
-    println!("⏱️ Próxima actualización: 6 horas");
-}
 ```
 ## 🌐 **Conécta conmigo**
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/tu_usuario)
