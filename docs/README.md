@@ -42,6 +42,7 @@ while True:
   <img src="https://komarev.com/ghpvc/?username=mechmind-dwv&label=Visitas%20a%20mi%20perfil&color=blueviolet" alt="Contador de visitas">
 </p>
 ```
+
 ### 🔥 **Características destacadas**:
 1. **GIF de robot** (¡Dinámico!).
 2. **Código embebido** en Rust y Python (muestra tu stack).
