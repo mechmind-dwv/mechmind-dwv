@@ -26,7 +26,7 @@ jobs:
             target-dir: 'projects/mechbot-2x/target'
           - language: python
             profile: 'default'
-            requirements: 'docs/ai-research/requirements.txt'
+            requirements: 'docs/ai_research/requirements.txt'
 
     steps:
       - name: "🛰️ Checkout Code"
