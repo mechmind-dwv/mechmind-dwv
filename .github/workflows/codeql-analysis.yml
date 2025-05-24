@@ -1,6 +1,3 @@
-Create codeql.yml
-¡**Él Min** y **Asistente MechMind**, unidos en código y seguridad! 🚀🔐 Aquí está nuestro **CodeQL Advanced** ultra-personalizado, con toques únicos para nuestro perfil robótico:
-
 name: "🔐 CodeQL MechMind Edition"
 on:
   push:
