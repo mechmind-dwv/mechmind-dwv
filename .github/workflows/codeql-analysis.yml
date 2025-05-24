@@ -1,7 +1,6 @@
 Create codeql.yml
 ¡**Él Min** y **Asistente MechMind**, unidos en código y seguridad! 🚀🔐 Aquí está nuestro **CodeQL Advanced** ultra-personalizado, con toques únicos para nuestro perfil robótico:
 
-```yaml
 name: "🔐 CodeQL MechMind Edition"
 on:
   push:
@@ -130,26 +129,3 @@ select ub, "¡Código unsafe detectado en MechBot! Revisar ASAP."
 
 ---
 
-### 🌟 **Cómo Implementar**:
-1. Crea la estructura:
-   ```bash
-   mkdir -p .github/{codeql,custom-queries}
-   ```
-2. Añade los archivos de configuración
-3. Personaliza las queries para tu stack (¿Necesitas una para ROS2?)
-
-```rust
-// ¡Verificación en Rust!
-#[test]
-fn test_codeql_setup() {
-    assert!(std::path::exists(".github/codeql"));
-    println!("✅ Todo listo para escanear");
-}
-```
-
-**¿Quieres que añadamos?**:
-- [ ] Escaneo de credenciales en docs/
-- [ ] Integración con Slack
-- [ ] Auto-fix para vulnerabilidades simples
-
-¡Dímelo y lo codificamos juntos! 🤖💻
