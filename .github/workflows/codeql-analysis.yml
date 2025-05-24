@@ -1,86 +1,155 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Create codeql.yml
+¡**Él Min** y **Asistente MechMind**, unidos en código y seguridad! 🚀🔐 Aquí está nuestro **CodeQL Advanced** ultra-personalizado, con toques únicos para nuestro perfil robótico:
+
+```yaml
+name: "🔐 CodeQL MechMind Edition"
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '41 21 * * 0'  # Domingo a las 21:41 (¡Hora de debuggear!)
+
+jobs:
+  analyze:
+    name: "🦀 Análisis Profundo (${{ matrix.language }})"
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: c-cpp
+            build-mode: none
+            extra: "🛡️ Análisis para C/Rust (FFI)"
+          - language: python
+            build-mode: none
+            extra: "🐍 Scans para IA/ML"
+          - language: javascript-typescript
+            build-mode: none
+            extra: "🌐 Web del MechBot"
+
+    env:
+      MECHMIND_SECRET: ${{ secrets.MECHBOT_KEY }}
+      RUST_VERSION: "nightly-2024-03-01"
+
+    steps:
+      - name: "🤖 Checkout (MechMind Style)"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true  # Para modelos de IA
+
+      - name: "🦀 Setup Rust"
+        if: matrix.language == 'c-cpp'
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ env.RUST_VERSION }}
+          override: true
+
+      - name: "🐍 Setup Python"
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: "🚀 Initialize CodeQL (Custom Queries)"
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: |
+            security-extended
+            security-and-quality
+            +${{ github.workspace }}/.github/codeql/custom.qls
+          config-file: ./.github/codeql/codeql-config.yml
+
+      - name: "🔍 Build MechBot (Special Mode)"
+        if: matrix.language == 'c-cpp'
+        run: |
+          cd projects/mechbot-2x
+          cargo build --release --features ffi,secure
+          echo "Binary hashes:" >> $GITHUB_STEP_SUMMARY
+          sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
+
+      - name: "📊 Analyze (With Love)"
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{matrix.language}}/mechmind"
+          upload: true
+          output: codeql_results.sarif
+
+      - name: "💌 Notify Us"
+        if: always()
+        run: |
+          echo "¡Análisis completado para ${{ matrix.language }}!" \
+          "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
+          | tee -a $GITHUB_STEP_SUMMARY
+```
+
+---
+
+### 🎨 **Personalizaciones Épicas**:
+1. **Rust Nightly**: Usamos la toolchain específica para MechBot.
+2. **Queries Custom**: 
+   ```ql
+   // .github/codeql/custom.qls
+   - import: codeql-suites/security-extended.qls
+   - queries: ./custom-queries/rust-unsafe-audit.ql
+   ```
+3. **Reportes MechMind**: 
+   - Hashes de binarios en el summary
+   - Categorización especial `/mechmind`
+
+---
+
+### 🛠 **Archivos Adicionales**:
+1. **`codeql-config.yml`** (en `.github/codeql/`):
+```yaml
+name: "MechMind Config"
+disable-default-queries: false
+paths:
+  - "projects/mechbot-2x/src"
+  - "!**/tests"
+```
+
+2. **Query Custom** (ejemplo para Rust):
+```ql
+// custom-queries/rust-unsafe-audit.ql
+import rust
+
+from UnsafeBlock ub
+select ub, "¡Código unsafe detectado en MechBot! Revisar ASAP."
+```
+
+---
+
+### 🌟 **Cómo Implementar**:
+1. Crea la estructura:
+   ```bash
+   mkdir -p .github/{codeql,custom-queries}
+   ```
+2. Añade los archivos de configuración
+3. Personaliza las queries para tu stack (¿Necesitas una para ROS2?)
+
+```rust
+// ¡Verificación en Rust!
+#[test]
+fn test_codeql_setup() {
+    assert!(std::path::exists(".github/codeql"));
+    println!("✅ Todo listo para escanear");
+}
+```
+
+**¿Quieres que añadamos?**:
+- [ ] Escaneo de credenciales en docs/
+- [ ] Integración con Slack
+- [ ] Auto-fix para vulnerabilidades simples
+
+¡Dímelo y lo codificamos juntos! 🤖💻
