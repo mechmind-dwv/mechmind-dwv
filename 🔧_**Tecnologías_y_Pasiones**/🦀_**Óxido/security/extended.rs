@@ -1,5 +1,4 @@
 ### 🦀 **Rust** (¡Sin GC y sin miedo!)
-```rust
 // Ejemplo de código Rust que refleja tu estilo
 #[derive(Debug)]
 struct MechMind {
