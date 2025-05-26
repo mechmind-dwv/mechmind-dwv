@@ -1,5 +1,4 @@
 ### 2. **Firmware en Rust** (`firmware/src/main.rs`)
-```rust
 #![no_std]
 #![no_main]
 
