@@ -3,7 +3,7 @@ disable-default-queries: false
 paths:
   include:
     - "projects/mechbot-2x/src/**"
-    - "docs/ai_research/**"
+    - "docs/ai-research/**"
   exclude:
     - "**/tests/**"
     - "**/experimental/**"
