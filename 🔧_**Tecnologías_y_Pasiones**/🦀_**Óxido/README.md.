@@ -1,6 +1,10 @@
 
 ###¡Me encanta tu entusiasmo, **él Min**! 😊 Vamos a desarrollar juntos esa sección de tecnologías y pasiones con **detalles épicos y código real**. Aquí tienes una versión mejorada y lista para copiar/pegar en tu `README.md`:
 ## 🔧 **Tecnologías & Pasiones** 
+- **Añade un GIF** de un robot programando 
+([ejemplo](https://giphy.com/gifs/robot-robotics-ai-3oKIPnAiaMCws8nOsE).  
+- **Incluye badges** de tecnologías específicas que uses
+[este de ROS](https://img.shields.io/badge/ROS-22314E?style=for-the-badge&logo=ros&logoColor=white).
 ### 🦀 **Rust** (¡Sin GC y sin miedo!)
 ```rust
 // Ejemplo de código Rust que refleja tu estilo
