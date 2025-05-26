@@ -1,8 +1,7 @@
-### 🔄 **Integración Automatizada**:
 name: Update Diagrams
 on:
   push:
-    paths:
+     paths:
       - 'docs/robotics/api/schematics/*.drawio'
 jobs:
   convert:

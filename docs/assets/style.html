@@ -1,14 +1,13 @@
-<!-- docs/assets/style.html -->
-<style>
-:root {
-  --mechmind-primary: #FF00FF;
-  --mechmind-bg: #0D1117;
-}
-body {
-  background: var(--mechmind-bg) !important;
-  font-family: 'Courier New', monospace;
-}
-pre, code {
-  border: 1px solid var(--mechmind-primary);
-}
-</style>
+- name: "🤖 Checkout (MechMind Style)"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true  # Para modelos de IA
+
+      - name: "🦀 Setup Rust"
+        if: matrix.language == 'c-cpp'
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ env.RUST_VERSION }}
+          override: true

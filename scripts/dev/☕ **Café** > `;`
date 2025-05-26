@@ -1,0 +1,9 @@
+### ☕ **Café** > `;`  
+// Función vital para cualquier dev
+const sobrevivir = (café, bugs) => {
+    while (café > 0) {
+        debug(bugs);
+        café--;
+    }
+    return "🚀 Código ejecutado";
+};

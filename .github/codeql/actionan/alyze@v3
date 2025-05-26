@@ -1,0 +1,25 @@
+- nombre : " 📊 Analizar (Con Amor) "
+        usos : github/codeql-action/analyze@v3
+
+       jobs:
+        my-job:
+     b permissions:
+        contents: read
+      pull-requests: write
+        con :
+          categoría : " /idioma:${{matrix.language}}/mechmind "
+          subir : verdadero
+          salida : codeql_results.sarif
+
+      - nombre : " 💌 Avísanos "
+        si : siempre()
+        correr : |
+          echo "¡Análisis completado para ${{ Matrix.language }}!" \
+          "Ver informe: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
+          | tee -a $RESUMEN_DE_PASOS_DE_GITHUB
+- name: "🔐 Verificar Integridad"
+  run: |
+    if [[ "${{ github.actor }}" != "mechmind-dwv" ]]; then
+      echo "🚨 Intento de ejecución no autorizado" >&2
+      exit 1
+    fi
