@@ -1,6 +1,5 @@
 # 🚀 **Plantilla IA Core para MechMind-dwv** - Nivel Épico 🤖❤️
 
-```bash
 #!/bin/bash
 # ------------------------------------------------------------
 # MECHMIND AI CORE TEMPLATE v7.0 - Termux/GitHub Optimized
