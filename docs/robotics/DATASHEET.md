@@ -1,6 +1,5 @@
 
 ### 1. **DATASHEET.md** (Ficha Técnica)
-```markdown
 # 📋 MechBot-2X Datasheet
 
 ## Especificaciones
