@@ -1,10 +1,13 @@
 name: "🛡️ MechMind CodeQL Fortress"
 
 on:
-push:
+  push:
+    branches: [ "main" ]
+  pull_request:
     branches: [ "main" ]
   schedule:
     - cron: '30 21 * * 0'  # Cada domingo a las 21:30 UTC
+
 jobs:
   analyze:
     name: "🔍 Deep Analysis"
@@ -25,7 +28,7 @@ jobs:
             target-dir: 'projects/mechbot-2x/target'
           - language: python
             profile: 'default'
-            requirements: 'docs/ai_research/requirements.txt'
+            requirements: 'docs/ai-research/requirements.txt'
 
     steps:
       - name: "🛰️ Checkout Code"
@@ -50,11 +53,13 @@ jobs:
           cd projects/mechbot-2x
           cargo build --release --target-dir=${{ matrix.target-dir }}
           echo "CARGO_AUDIT_OUTPUT=$(cargo audit --json)" >> $GITHUB_ENV
+
       - name: "🐍 Install Dependencies (Python)"
         if: matrix.language == 'python'
         run: |
           pip install -r ${{ matrix.requirements }}
           pip-audit --format json --output pip-audit.json
+
       - name: "⚡ Perform Analysis"
         uses: github/codeql-action/analyze@v3
         with:
