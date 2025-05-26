@@ -1,5 +1,3 @@
 4torch>=1.0.0
-last week
-🏗️ Actualización profesional de estructura y dependencias
 numpy==1.24.0
 roslibpy>=1.4.0
