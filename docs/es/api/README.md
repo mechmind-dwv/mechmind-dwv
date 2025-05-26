@@ -1,13 +1,4 @@
 # 🤖 ¡Bienvenido a MechMind-dwv! 🚀
-## 🛠️ **Tecnologías & Estadísticas**
-
-<div align="center">
-  ![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
-  ![ROS](https://img.shields.io/badge/ROS-22314E?style=for-the-badge&logo=ros&logoColor=white)
-  ![Crates.io](https://img.shields.io/crates/v/serde?style=for-the-badge&logo=rust)
-  ![Build Status](https://img.shields.io/github/actions/workflow/status/tu_usuario/tu_repo/rust.yml?style=for-the-badge)
-  ![Code Coverage](https://img.shields.io/codecov/c/github/tu_usuario/tu_repo?style=for-the-badge)
-</div>
 
 ```rust
 // Código de bienvenida en Rust
