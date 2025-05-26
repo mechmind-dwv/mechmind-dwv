@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '41 21 * * 0'  # Domingo a las 21:41 (¡Hora de debuggear!)
+    - cron: '41 21 * * 0'
 
 jobs:
 analyze:
