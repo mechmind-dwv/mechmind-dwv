@@ -1,6 +1,5 @@
 # 🎉 **STRUCTURE.md - Arquitectura Épica de MechMind-dwv** 🚀😂
 
-```rust
 // ¡Representación en código con estilo y humor!
 struct MechMindRepo {
     docs: DocuMagic,
