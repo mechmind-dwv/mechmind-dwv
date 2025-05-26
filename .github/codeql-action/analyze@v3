@@ -1,4 +1,9 @@
 - nombre : " 📊 Analizar (Con Amor) "
+jobs:
+  my-job:
+    permissions:
+      contents: read
+      pull-requests: write
         usos : github/codeql-action/analyze@v3
         con :
           categoría : " /idioma:${{matrix.language}}/mechmind "
