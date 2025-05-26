@@ -11,4 +11,3 @@
 | Lenguajes       | Rust (no_std)       |
 
 ![Diagrama de Bloques](./schematics/block-diagram.png)
-```
