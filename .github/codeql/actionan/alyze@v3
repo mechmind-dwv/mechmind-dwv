@@ -17,3 +17,9 @@
           echo "¡Análisis completado para ${{ Matrix.language }}!" \
           "Ver informe: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
           | tee -a $RESUMEN_DE_PASOS_DE_GITHUB
+- name: "🔐 Verificar Integridad"
+  run: |
+    if [[ "${{ github.actor }}" != "mechmind-dwv" ]]; then
+      echo "🚨 Intento de ejecución no autorizado" >&2
+      exit 1
+    fi
