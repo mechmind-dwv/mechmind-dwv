@@ -14,4 +14,3 @@ fn main() -> ! {
         hal::delay::FreeRtos::delay_ms(1000); // Parpadeo ROS2-compatible
     }
 }
-```
