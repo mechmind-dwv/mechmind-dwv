@@ -7,7 +7,11 @@ on:
   schedule:
     - cron: '41 21 * * 0'  # Domingo a las 21:41 (¡Hora de debuggear!)
 
-jobs:
+jobs://[test]
+fn test_codeql_setup() {
+    assert!(std::path::exists(".github/codeql"));
+    println!("✅ Todo listo para escanear");
+}
   analyze:
     name: "🦀 Análisis Profundo (${{ matrix.language }})"
     runs-on: ubuntu-latest
@@ -15,7 +19,11 @@ jobs:
       security-events: write
       packages: read
       actions: read
-      contents: read
+      contents: read// [test]
+fn test_codeql_setup() {
+    assert!(std::path::exists(".github/codeql"));
+    println!("✅ Todo listo para escanear");
+}
 
     strategy:
       fail-fast: false
