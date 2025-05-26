@@ -1,6 +1,5 @@
 # 🤖 ¡Bienvenido a MechMind-dwv! 🚀
 
-```rust
 // Código de bienvenida en Rust
 fn main() {
     println!("🎯 Objetivo: Innovación en Robótica con Rust");
