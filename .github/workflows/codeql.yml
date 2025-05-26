@@ -7,8 +7,8 @@ on:
   schedule:
     - cron: '41 21 * * 0'
 
-jobs:
-analyze:
+jobs: write 
+analywrite ze:
     name: "🦀 Análisis Profundo (${{ matrix.language }})"
     runs-on: ubuntu-latest
     permissions:
