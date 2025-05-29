@@ -39,7 +39,7 @@ jobs:
 
       - name: "💾 Commit Changes"
         run: |
-          git config --global user.name "MechMind Bot"
+          git config --global user.name "MechMind-dwv"
           git config --global user.email "ia.mechmind@gmail.com"
           git add README.md
           git commit -m "📈 Auto-update stats [skip ci]" || echo "No changes to commit"
