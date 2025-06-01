@@ -69,7 +69,7 @@ jobs:
 disable-default-queries: true
 paths:
   - "projects/mechbot-2x/src"
-  - "!**/tests""
+  - "!**/tests"
       
           - name: "📊 Analyze (With Love)"
         uses: github/codeql-action/analyze@v3
