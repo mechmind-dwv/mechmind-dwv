@@ -82,12 +82,6 @@ jobs:
           upload: true
           output: codeql_results.sarif
           
-      - name: "MechMind Config"
-disable-default-queries: true
-paths:
-  - "projects/mechbot-2x/src"
-  - "!**/tests"  
-  
      - name: "💌 Notify Us"
    if: always()
   run: |
