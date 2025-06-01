@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "mechbot-2x",
+    "atomic-rs", 
+    "oxide-security"
+]
+resolver = "2"
