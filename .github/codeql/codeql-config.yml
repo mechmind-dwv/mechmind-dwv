@@ -63,10 +63,10 @@ jobs:
           sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
           
           - name: "MechMind Config"
-      disable-default-queries: false
-      paths:
-      - "projects/mechbot-2x/src
-      - "!**/tests"
+disable-default-queries: true
+paths:
+  - "projects/mechbot-2x/src"
+  - "!**/tests""
       
           - name: "📊 Analyze (With Love)"
         uses: github/codeql-action/analyze@v3
