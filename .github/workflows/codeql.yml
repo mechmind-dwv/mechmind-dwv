@@ -75,7 +75,7 @@ jobs:
           output: codeql_results.sarif
           
       - name: "💌 Notify Us"
-         if: always()
+        if: always()
         run: |
           echo "¡Análisis completado para ${{ matrix.language }}!" \
           "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
