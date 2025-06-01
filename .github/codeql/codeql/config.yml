@@ -1,5 +1,5 @@
 name: "MechMind Config"
-disable-default-queries: false
+disable-default-queries: true
 paths:
   - "projects/mechbot-2x/src"
   - "!**/tests"
