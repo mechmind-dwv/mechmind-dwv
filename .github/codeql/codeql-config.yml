@@ -53,6 +53,9 @@ jobs:
             security-and-quality
             +${{ github.workspace }}/.github/codeql/custom.qls
           config-file: ./.github/codeql/codeql-config.yml
+          libraries:
+          - "**/requirements.txt"
+          - "**/setup.py"
 
       - name: "🔍 Build MechBot (Special Mode)"
         if: matrix.language == 'c-cpp'
