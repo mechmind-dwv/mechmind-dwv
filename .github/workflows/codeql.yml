@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '41 21 * * 0'  # Domingo a las 21:41 (¡Hora de debuggear!)
+    - cron: '41 21 * * 0'
 
 jobs:
   analyze:
@@ -81,6 +81,13 @@ jobs:
           category: "/language:${{matrix.language}}/mechmind"
           upload: true
           output: codeql_results.sarif
+          
+          name: "MechMind Config"
+disable-default-queries: false
+paths:
+  - "projects/mechbot-2x/src"
+  - "!**/tests"
+  
 
       - name: "💌 Notify Us"
         if: always()
