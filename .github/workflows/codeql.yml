@@ -82,16 +82,15 @@ jobs:
           upload: true
           output: codeql_results.sarif
           
-          name: "MechMind Config"
-disable-default-queries: false
+      - name: "MechMind Config"
+disable-default-queries: true
 paths:
   - "projects/mechbot-2x/src"
-  - "!**/tests"
+  - "!**/tests"  
   
-
-      - name: "💌 Notify Us"
-        if: always()
-        run: |
-          echo "¡Análisis completado para ${{ matrix.language }}!" \
-          "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
-          | tee -a $GITHUB_STEP_SUMMARY
+     - name: "💌 Notify Us"
+   if: always()
+  run: |
+  echo "¡Análisis completado para ${{ matrix.language }}!" \
+  "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
+  | tee -a $GITHUB_STEP_SUMMARY
