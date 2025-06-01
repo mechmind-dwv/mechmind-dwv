@@ -1,6 +1,3 @@
-Aquí tienes la versión corregida y optimizada, manteniendo toda la funcionalidad pero con mejor estructura y claridad:
-
-```markdown
 # 🚀 Tecnologías & Arquitectura
 
 ## 🔍 Stack Principal
@@ -94,4 +91,3 @@ Se mantuvieron:
 - Métricas de análisis
 
 ¿Necesitas algún ajuste adicional en la presentación o contenido técnico?
-```
