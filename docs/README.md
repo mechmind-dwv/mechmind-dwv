@@ -1,4 +1,15 @@
 # ¡Hola Mundo! 👋 Soy **él Min** 🤖⚡
+## 📊 **Mis Estadísticas de Código** 
+
+### 🔥 **Rendimiento General**
+[![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
+
+### 🦀 **Lenguajes Top** (¡Rust siempre primero!)
+[![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=mechmind-dwv&layout=compact&theme=dark&hide_border=true&langs_count=6&hide=html,css&card_width=450)](https://github.com/mechmind-dwv)
+
+### 🏆 **Trofeos de GitHub**
+[![Logros](https://github-profile-trophy.vercel.app/?username=mechmind-dwv&theme=onedark&margin-w=15&no-frame=true&rank=SSS,SS,S,AAA,AA,A,B)](https://github.com/mechmind-dwv)
+```
 
 <p align="center">
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="300" alt="Robot saludando">
