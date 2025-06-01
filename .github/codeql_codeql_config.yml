@@ -81,9 +81,3 @@ paths:
           echo "¡Análisis completado para ${{ matrix.language }}!" \
           "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
           | tee -a $GITHUB_STEP_SUMMARY
-          
-      - name: "MechMind Config"
-        disable-default-queries: false
-                 paths:
-         - "projects/mechbot-2x/src"
-              - "!**/tests"
