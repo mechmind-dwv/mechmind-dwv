@@ -1,5 +1,3 @@
-.github/codeql
-/analysis.yml
 name: "🛡️ MechMind CodeQL Fortress"
 
 on:
