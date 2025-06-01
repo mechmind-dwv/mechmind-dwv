@@ -1,4 +1,4 @@
-- name: 📊 GitHub Readme Stats
+        name: 📊 GitHub Readme Stats
         uses: anuraghazra/github-readme-stats@latest
         with:
           username: mechmind-dwv
