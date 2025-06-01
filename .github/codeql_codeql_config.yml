@@ -1,4 +1,4 @@
-Update codeql.yml
+name: codeql_codeql_config.yml
 jobs:
   analyze:
     name: "🦀 Análisis Profundo (${{ matrix.language }})"
