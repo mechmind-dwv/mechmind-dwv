@@ -37,7 +37,7 @@ jobs:
           profile: minimal
           toolchain: ${{ env.RUST_VERSION }}
           override: true
-
+          
       - name: "🐍 Setup Python"
         if: matrix.language == 'python'
         uses: actions/setup-python@v4
@@ -62,6 +62,12 @@ jobs:
           echo "Binary hashes:" >> $GITHUB_STEP_SUMMARY
           sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
           
+          - name: "MechMind Config"
+      disable-default-queries: false
+      paths:
+      - "projects/mechbot-2x/src
+      - "!**/tests"
+      
           - name: "📊 Analyze (With Love)"
         uses: github/codeql-action/analyze@v3
         with:
@@ -75,9 +81,3 @@ jobs:
           echo "¡Análisis completado para ${{ matrix.language }}!" \
           "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
           | tee -a $GITHUB_STEP_SUMMARY
-          
-      - name: "MechMind Config"
-      disable-default-queries: false
-      paths:
-      - "projects/mechbot-2x/src
-      - "!**/tests"
