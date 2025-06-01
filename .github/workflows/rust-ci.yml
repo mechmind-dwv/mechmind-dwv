@@ -11,5 +11,9 @@ jobs:
         with:
           toolchain: nightly
           override: true
-      - run: cargo check --all-targets
-      - run: cargo test
+      
+      - name: Build MechBot-2X
+        working-directory: ./projects/rust/mechbot-2x
+        run: |
+          cargo check --all-targets
+          cargo test -- --nocapture
