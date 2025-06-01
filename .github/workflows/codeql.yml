@@ -5,17 +5,17 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '41 21 * * 0'
+    - cron: '41 21 * * 0'  # Domingo a las 21:41 (¡Hora de debuggear!)
 
-         jobs:
-    analywrite ze:
+jobs:
+  analyze:
     name: "🦀 Análisis Profundo (${{ matrix.language }})"
     runs-on: ubuntu-latest
     permissions:
       security-events: write
       packages: read
       actions: read
-      contents: read//
+      contents: read
 
     strategy:
       fail-fast: false
