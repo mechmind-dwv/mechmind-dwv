@@ -1,3 +1,5 @@
+.github/codeql
+/analysis.yml
 name: "🛡️ MechMind CodeQL Fortress"
 
 on:
@@ -6,7 +8,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '30 21 * * 0'  # Cada domingo a las 21:30 UTC
+    - cron: '30 21 * * 0'
 
 jobs:
   analyze:
