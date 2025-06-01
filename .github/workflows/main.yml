@@ -1,5 +1,7 @@
 name: 🚀 MechMind Profile Power-Up
-on:
+permissions:
+  contents: read
+  on:
   schedule:
     - cron: "0 12 * * *"  # Daily at noon UTC (¡hora del café!)
   push:
