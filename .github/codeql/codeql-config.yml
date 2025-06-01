@@ -42,14 +42,8 @@ jobs:
         if: matrix.language == 'python'
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.10' 
           
-          name: "MechMind Config"
-disable-default-queries: false
-paths:
-  - "projects/mechbot-2x/src"
-  - "!**/tests"
-
       - name: "🚀 Initialize CodeQL (Custom Queries)"
         uses: github/codeql-action/init@v3
         with:
@@ -67,8 +61,14 @@ paths:
           cargo build --release --features ffi,secure
           echo "Binary hashes:" >> $GITHUB_STEP_SUMMARY
           sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
-
-      - name: "📊 Analyze (With Love)"
+          
+        - name: "MechMind Config"
+        disable-default-queries: false
+        paths:
+        - "projects/mechbot-2x/src
+        - "!**/tests"
+        
+        - name: "📊 Analyze (With Love)"
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{matrix.language}}/mechmind"
