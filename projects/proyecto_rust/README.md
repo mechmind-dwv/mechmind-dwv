@@ -1,4 +1,7 @@
 # 🚀 Tecnologías & Arquitectura
+![Codecov](https://img.shields.io/codecov/c/github/tu_usuario/tu_repo)
+![Lines](https://img.shields.io/tokei/lines/github/tu_usuario/tu_repo)
+![Dependencies](https://img.shields.io/crates/d/serde)
 
 ## 🔍 Stack Principal
 <div align="center">
