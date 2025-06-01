@@ -93,4 +93,3 @@ Si no se actualiza:
 fn main() {
     println!("🌟 Stats actualizados con éxito!");
 }
-```
