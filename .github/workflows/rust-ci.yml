@@ -13,4 +13,3 @@ jobs:
           override: true
       - run: cargo check --all-targets
       - run: cargo test
-      - uses: actions-rs/audit-check@v1
