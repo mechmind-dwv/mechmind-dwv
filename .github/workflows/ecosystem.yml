@@ -1,7 +1,5 @@
- # 🤖 ECOSISTEMA GITHUB-ACTIONS
-  # ----------------------------
-  - package-ecosystem: "github-actions"
-    directory: "/.github/workflows"
-    schedule:
-      interval: "daily"  # Revisión diaria por seguridad
-    open-pull-requests-limit: 3  # Máximo de PRs simultáneos
+ package-ecosystem: "github-actions"
+ directory: "/.github/workflows"
+ schedule:
+ interval: "daily"  # Revisión diaria por seguridad
+  open-pull-requests-limit: 3  # Máximo de PRs simultáneos
