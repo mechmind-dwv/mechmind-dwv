@@ -1,46 +1,21 @@
-name: "📊 MechMind Stats Updater"
-
+name: Update Stats
 on:
   schedule:
-    - cron: "0 */6 * * *"  # Cada 6 horas (UTC)
+    - cron: "0 */6 * * *"  # Cada 6 horas
   workflow_dispatch:
-    inputs:
-      theme:
-        description: 'Tema para las tarjetas'
-        required: false
-        default: 'radical'
 
 jobs:
-  update-stats:
-    name: "⚡ Update README Stats"
+  update:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Necesario para hacer push
-
     steps:
-      - name: "🛰️ Checkout Code"
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - uses: anuraghazra/github-readme-stats@latest
         with:
-          fetch-depth: 0  # Necesario para el historial de commits
-
-      - name: "📊 Generate Stats Cards"
-        uses: anuraghazra/github-readme-stats@latest
-        id: stats
-        with:
-          username: mechmind-dwv
-          theme: ${{ inputs.theme || 'radical' }}
-          show_icons: true
-          hide_border: true
-          include_all_commits: true
-          count_private: true
-          custom_title: "MechMind GitHub Stats"
-          card_width: 500
-          cache_seconds: 43200  # 12 horas de caché
-
-      - name: "💾 Commit Changes"
-        run: |
-          git config --global user.name "MechMind-dwv"
-          git config --global user.email "ia.mechmind@gmail.com"
+          USERNAME: mechmind-dwv
+          THEME: radical
+          CARD_WIDTH: 500
+      - run: |
+          git config --global user.name "MechMind Stats Bot"
           git add README.md
-          git commit -m "📈 Auto-update stats [skip ci]" || echo "No changes to commit"
+          git commit -m "📈 Auto-update stats"
           git push
