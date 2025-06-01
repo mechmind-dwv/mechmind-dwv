@@ -13,7 +13,7 @@ jobs:
           override: true
       
       - name: Build MechBot-2X
-        working-directory: ./projects/rust/mechbot-2x
+        working-directory: projects/rust/mechbot-2x
         run: |
           cargo check --all-targets
           cargo test -- --nocapture
