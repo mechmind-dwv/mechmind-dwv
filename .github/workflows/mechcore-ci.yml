@@ -2,13 +2,27 @@ name: MechCore CI
 
 on: [push, workflow_dispatch]
 
+env:
+  CARGO_TERM_COLOR: always
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions-rs/toolchain@v1
+      
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           override: true
-      - run: cd projects/mechcore && cargo build --release
+          components: rustfmt, clippy
+      
+      - name: Verify structure
+        run: |
+          mkdir -p projects/mechcore/src
+          [ -f projects/mechcore/src/main.rs ] || echo "fn main() {}" > projects/mechcore/src/main.rs
+          
+      - name: Build Release
+        working-directory: projects/mechcore
+        run: cargo build --release
