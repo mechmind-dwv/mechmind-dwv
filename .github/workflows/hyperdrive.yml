@@ -1,0 +1,36 @@
+# .github/workflows/hyperdrive.yml
+name: MechMind Hyperdrive
+
+on: 
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      turbo_mode:
+        description: "Activar modo turbo"  
+        required: false
+        default: "false"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Mega-Environment
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          components: rust-src, clippy, rustfmt
+          override: true
+
+      - name: Build All Projects
+        run: |
+          cd projects/mechcore && cargo build --release --features "quantum"
+          cd ../ros2 && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+          
+      - name: Cosmic Deploy
+        if: ${{ github.event.inputs.turbo_mode == 'true' }}
+        run: |
+          echo "🚀 ACTIVANDO MODO TURBO COSMICO" > deploy.log
+          ./scripts/deploy/interstellar.sh

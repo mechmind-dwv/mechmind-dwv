@@ -1,0 +1,15 @@
+# Entorno
+/target
+**/*.rs.bk
+.env
+.venv
+
+# Binarios
+*.bin
+*.so
+*.dll
+
+# ROS2
+install/
+log/
+build/
