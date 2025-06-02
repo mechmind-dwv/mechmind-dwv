@@ -4,6 +4,7 @@ on: [push, workflow_dispatch]
 
 env:
   CARGO_TERM_COLOR: always
+  RUSTFLAGS: '-C target-feature=-crt-static'
 
 jobs:
   build:
@@ -12,17 +13,17 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Setup Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-          components: rustfmt, clippy
+        uses: dtolnay/rust-toolchain@stable
       
       - name: Verify structure
         run: |
           mkdir -p projects/mechcore/src
-          [ -f projects/mechcore/src/main.rs ] || echo "fn main() {}" > projects/mechcore/src/main.rs
+          [ -f projects/mechcore/src/main.rs ] || {
+            echo 'fn main() {}' > projects/mechcore/src/main.rs
+          }
           
       - name: Build Release
         working-directory: projects/mechcore
-        run: cargo build --release
+        run: |
+          cargo build --release
+          ./target/release/mechai
