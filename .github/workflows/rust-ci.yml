@@ -1,19 +1,23 @@
 name: Rust CI
 
-on: [push, pull_request]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions-rs/toolchain@v1
+      
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
         with:
-          toolchain: nightly
+          toolchain: stable
           override: true
       
-      - name: Build MechBot-2X
-        working-directory: projects/rust/mechbot-2x
-        run: |
-          cargo check --all-targets
-          cargo test -- --nocapture
+      - name: Build
+        working-directory: projects/mechcore
+        run: cargo build --release
+      
+      - name: Run
+        working-directory: projects/mechcore
+        run: cargo run

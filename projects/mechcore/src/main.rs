@@ -1,5 +1,14 @@
+use std::time::SystemTime;
+
 fn main() {
-    println!("✅ MechCore operativo!");
-    println!("🦀 Versión: 0.1.0");
-    println!("🚀 Build: {}", env!("CARGO_PKG_VERSION"));
+    let start_time = SystemTime::now()
+        .duration_since(SystemTime::UNIX_EPOCH)
+        .unwrap()
+        .as_secs();
+
+    println!("⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡");
+    println!("🤖 *SISTEMA MECHCORE ACTIVADO*");
+    println!("🌌 Tiempo UNIX: {}", start_time);
+    println!("🦀 Rust Version: {}", env!("CARGO_PKG_VERSION"));
+    println!("⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡⬡");
 }
