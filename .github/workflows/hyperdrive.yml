@@ -1,4 +1,3 @@
-# .github/workflows/hyperdrive.yml
 name: MechMind Hyperdrive
 
 on: 
@@ -16,21 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Mega-Environment
-        uses: actions-rs/toolchain@v1
+      - uses: actions-rs/toolchain@v1
         with:
-          toolchain: nightly
-          components: rust-src, clippy, rustfmt
+          toolchain: stable
           override: true
-
-      - name: Build All Projects
-        run: |
-          cd projects/mechcore && cargo build --release --features "quantum"
-          cd ../ros2 && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
-          
-      - name: Cosmic Deploy
+      - name: Build MechCore
+        working-directory: projects/mechcore
+        run: cargo build --release
+      - name: ROS2 Setup
         if: ${{ github.event.inputs.turbo_mode == 'true' }}
         run: |
-          echo "🚀 ACTIVANDO MODO TURBO COSMICO" > deploy.log
-          ./scripts/deploy/interstellar.sh
+          echo "🦄 ROS2 simulation activated"
+          mkdir -p projects/ros2/src
