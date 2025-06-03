@@ -11,9 +11,13 @@ on:
         default: "false"
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
+  my-job:
+    permissions:
+      contents: read
+      pull-requests: write
+      build:
+      runs-on: ubuntu-latest
+      steps:
       - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1
         with:
