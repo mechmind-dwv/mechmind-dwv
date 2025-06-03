@@ -526,3 +526,30 @@ impl SafetyMonitor {
                 return Ok(false);
             }
         }
+        
+        // Verificar velocidades angulares
+        if let Some(angular_vel) = commands.angular_velocity {
+            if angular_vel.magnitude() > self.max_angular_velocity {
+                warn!("⚠️ Velocidad angular excede límite: {} > {}", 
+                      angular_vel.magnitude(), self.max_angular_velocity);
+                return Ok(false);
+            }
+        }
+        
+        // Verificar velocidades de motores
+        if let Some(ref speeds) = commands.motor_speeds {
+            for &speed in speeds {
+                if speed.abs() > 3000.0 {
+                    warn!("⚠️ Velocidad de motor excede límite: {} > 3000", speed.abs());
+                    return Ok(false);
+                }
+            }
+        }
+        
+        Ok(true)
+    }
+    
+    async fn is_active(&self) -> bool {
+        self.active
+    }
+}
