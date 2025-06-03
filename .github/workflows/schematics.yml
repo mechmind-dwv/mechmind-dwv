@@ -1,9 +1,7 @@
 name: Update Diagrams
-permissions:
-  contents: write
 on:
   push:
-     paths:
+    paths:
       - 'docs/robotics/api/schematics/*.drawio'
 jobs:
   convert:
