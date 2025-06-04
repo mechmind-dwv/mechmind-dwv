@@ -39,7 +39,7 @@ jobs:
   documentation:
 - name: "📚 Generar Documentación"
     runs-on: ubuntu-latest
-    container:
+    container: read
       image: rustlang/rust:${{ env.RUST_VERSION }}
       options: --privileged  # Requerido para algunos crates
 
@@ -56,11 +56,7 @@ jobs:
       # ======================
       # 1. PREPARACIÓN
       # ======================
-  - name: Build Docs
-       run: |
-      cd docs/robotics/api
-      cargo doc --no-deps
-      mv target/doc rustdoc/ })
+  - 
     
    - name: "🛸 Checkout del Código"
         uses: actions/checkout@v4
@@ -68,6 +64,11 @@ jobs:
           fetch-depth: 0
           submodules: recursive
           persist-credentials: false
+      - name: Build Docs
+       run: |
+      cd docs/robotics/api
+      cargo doc --no-deps
+      mv target/doc rustdoc/ })
 
       # ======================
       # 2. CONFIGURACIÓN RUST
