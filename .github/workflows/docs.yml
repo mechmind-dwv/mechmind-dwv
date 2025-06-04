@@ -37,7 +37,7 @@ env:
 # ======================
 jobs:
   documentation:
-    name: "📚 Generar Documentación"
+- name: "📚 Generar Documentación"
     runs-on: ubuntu-latest
     container:
       image: rustlang/rust:${{ env.RUST_VERSION }}
@@ -46,15 +46,23 @@ jobs:
     # ======================
     # 🌐 ENTORNO DE EJECUCIÓN
     # ======================
+
     environment:
-      name: mechmind-docs
+  - name: mechmind-docs
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+    
       # ======================
       # 1. PREPARACIÓN
       # ======================
-      - name: "🛸 Checkout del Código"
+  - name: Build Docs
+       run: |
+      cd docs/robotics/api
+      cargo doc --no-deps
+      mv target/doc rustdoc/ })
+    
+   - name: "🛸 Checkout del Código"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -121,4 +129,3 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: `📚 Documentación actualizada: ${process.env.DOCS_VERSION}\n🌐 Vista previa: ${{ steps.deployment.outputs.page_url }}`
-            })
