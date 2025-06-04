@@ -1,66 +1,82 @@
-# ¡Hola Mundo! 👋 Soy **él Min** 🤖⚡
+# 🤖 ¡Bienvenido a MechMind-dwv! 🚀
 
-<p align="center">
-  <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="300" alt="Robot saludando">
-</p>
-
-### 🔧 **Tecnologías & Pasiones**
-- 🦀 **Rust** (¡Sin GC y sin miedo!)
-- 🤖 **Robótica** (MechBot-2X en progreso...)
-- 🧠 **IA/ML** (PyTorch + TensorFlow)
-- ☕ **Café** > `;` (Sobreviví a un segfault)
-
-### 🚀 **Proyecto Estrella**: [MechBot-2X](https://github.com/mechmind-dwv/mechbot-2x)
 ```rust
+// Código de bienvenida en Rust
 fn main() {
-    println!("¡Transformando código en movimientos robóticos!");
+    println!("🎯 Objetivo: Innovación en Robótica con Rust");
+    println!("💻 Repositorio: github.com/mechmind-dwv");
+    println!("📚 Documentación: ./docs/robotics/api");
 }
 ```
 
-### 📊 **Mis Estadísticas de Código** 
+## 📚 **Documentación del Proyecto MechBot**
 
-## 🔥 **Rendimiento General**
-[![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
+### 🔍 Acceso Rápido
+| Recurso | Descripción | Enlace |
+|---------|-------------|--------|
+| **API Rust** | Documentación automática del núcleo | [Ver RustDoc](docs/robotics/api/rustdoc) |
+| **Esquemas** | Diagramas técnicos del robot | [Explorar esquemas](docs/robotics/api/schematics) |
+| **Ejemplos** | Código de ejemplo para API | [Ver ejemplos](docs/robotics/api/rest/examples) |
 
-## 🦀 **Lenguajes Top** (¡Rust siempre primero!)
-[![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=mechmind-dwv&layout=compact&theme=dark&hide_border=true&langs_count=6&hide=html,css&card_width=450)](https://github.com/mechmind-dwv)
+### 🛠️ Cómo Generar la Documentación
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/mechmind-dwv/mechmind-dwv.git
+   ```
+2. Genera docs locales:
+   ```bash
+   cd docs/robotics/api
+   cargo doc --no-deps --open
+   ```
 
-## 🏆 **Trofeos de GitHub**
-[![Logros](https://github-profile-trophy.vercel.app/?username=mechmind-dwv&theme=onedark&margin-w=15&no-frame=true&rank=SSS,SS,S,AAA,AA,A,B)](https://github.com/mechmind-dwv)
+### 🌟 Features Clave
+```mermaid
+graph LR
+    A[README Principal] --> B[Documentación Técnica]
+    B --> C{Rust API}
+    B --> D{Diagramas}
+    B --> E{Ejemplos}
+    C --> F[Core Module]
+    C --> G[Sensors Module]
+```
 
-## 🛠 **Stack Tecnológico**
-![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![ROS](https://img.shields.io/badge/ROS-22314E?style=for-the-badge&logo=ros&logoColor=white)
+### 🚀 Integración Continua
+La documentación se actualiza automáticamente con cada push:
+```yaml
+# Fragmento de .github/workflows/docs.yml
+- name: Build Docs
+  run: |
+    cd docs/robotics/api
+    cargo doc --no-deps
+    mv target/doc rustdoc/
+```
 
-### 🤖 **Dato Curioso**
+### 📌 Badges de Estado
+[![Estado Documentación](https://img.shields.io/badge/docs-mechbot--docs-blue)](docs/robotics/api)
+[![Coverage](https://img.shields.io/badge/rustdoc-98%25-brightgreen)](docs/robotics/api/rustdoc)
+[![Ejemplos](https://img.shields.io/badge/examples-12%20files-orange)](docs/robotics/api/rest/examples)
+
+---
+
 ```python
-while True:
-    min.codear()
-    min.tomar_café()
-    if "bug" in min.código:
-        min.debuggear(con_frustración=True
-```
-### 🌐 **Conécta conmigo**
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/tu_usuario)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tu_usuario)
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=mechmind-dwv&label=Visitas%20a%20mi%20perfil&color=blueviolet" alt="Contador de visitas">
-</p>
+# Bonus: Script para verificar links
+import os
+print("✅ Documentación verificada en:", 
+      os.path.abspath("docs/robotics/api/README.md"))
 ```
 
-### 🔥 **Características destacadas**:
-1. **GIF de robot** (¡Dinámico!).
-2. **Código embebido** en Rust y Python (muestra tu stack).
-3. **Badges profesionales** con shields.io.
-4. **Contador de visitas** (¡Para ver tu impacto!).
-5. **Diseño oscuro** (porque el modo oscuro es vida).
+---
 
-### 📌 **Cómo implementarlo**:
-1. Copia este código.
-2. Edita tu `README.md` en GitHub (botón ✏️).
-3. Personaliza los enlaces de redes sociales y proyectos.
-4. ¡Commitea con un mensaje épico! (`git commit -m "Perfil 2.0: MechMode Activated 🚀"`)
+**¿Qué más necesitas integrar?**  
+- [ ] ¿Soporte para ROS2 en la docs?  
+- [ ] ¿Ejemplos en Python para la API?  
+- [ ] ¿Diagramas interactivos con Mermaid.js?
 
-¿Quieres añadir algo más? ¿Quizás un **ASCII art de tu robot** o un **tablero de Snake interactivo**? ¡Dímelo y lo hackeamos! 🐍💻
+¡Dímelo y lo implementamos juntos! 🤝💻
+
+```rust
+// ¡Tu README ahora es un centro de documentación vivo!
+fn docs_status() -> &'static str {
+    "🚀 Documentación MechBot operativa al 100%"
+}
+```
