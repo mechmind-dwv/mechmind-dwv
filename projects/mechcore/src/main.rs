@@ -1,5 +1,4 @@
 use std::time::SystemTime;
-
 fn main() {
     let start_time = SystemTime::now()
         .duration_since(SystemTime::UNIX_EPOCH)
