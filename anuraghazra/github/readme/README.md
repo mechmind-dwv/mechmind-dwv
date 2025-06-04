@@ -1,6 +1,8 @@
 ### 🚀 **Implementación Avanzada en tu `README.md`**
 
 ## 📊 **Mis Estadísticas de Código** 
+![Rust](https://img.shields.io/badge/Rust-Expert-FF00FF?logo=rust)](https://github.com/mechmind-dwv)  
+![Tema Merko](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&theme=merko)
 
 ### 🔥 **Rendimiento General**
 [![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
