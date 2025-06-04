@@ -1,4 +1,4 @@
-#!/bin/bash
+⅜#!/bin/bash
 # Script de activación manual
 curl -X POST \
   -H "Authorization: Bearer ${{ secrets.OMEGA_KEY }}" \
