@@ -1,5 +1,4 @@
-name: "📊 MechMind Stats Updater Pro"Add commentMore actions
-
+name: "📊 MechMind Stats Updater Pro"
 on:
   schedule:
     - cron: "0 */6 * * *"  # Cada 6 horas (UTC)
