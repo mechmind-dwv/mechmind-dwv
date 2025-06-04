@@ -1,5 +1,5 @@
 name: "MechMind Security Protocol"
-disable-default-queries: true
+disable-default-queries: false
 paths:
   include:
     - "projects/mechbot-2x/src/**"
