@@ -10,6 +10,12 @@ jobs:
       build:
       runs-on: ubuntu-latest
     steps:
+    - name: Run
+        working-directory: projects/mechcore
+        run: cargo run
+        // Función de verificación
+fn verify_diagrams() -> Result<(), &'static str> {
+    println!("✅ Diagramas ubicados en: docs/robotics/api/schematics/");
     - uses: actions/checkout@v4
     
     - name: Setup Rust
@@ -19,8 +25,4 @@ jobs:
     override: true
       - name: Build
         working-directory: projects/mechcore
-        run: cargo build --release
-      
-      - name: Run
-        working-directory: projects/mechcore
-        run: cargo run
+        run: cargo build --releas
