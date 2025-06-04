@@ -10,17 +10,17 @@ on:
         required: false
         default: "false"
 
-jobs:
-    permissions:
-      contents: read
-      pull-requests: write
-      build:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v4
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
+  jobs:
+permissions:
+       contents: read
+       pull-requests: write
+       build:
+       runs-on: ubuntu-latest
+       steps:
+        - uses: actions/checkout@v4
+        - uses: actions-rs/toolchain@v1
+            with:
+            toolchain: stable
           override: true
       - name: Build MechCore
         working-directory: projects/mechcore
