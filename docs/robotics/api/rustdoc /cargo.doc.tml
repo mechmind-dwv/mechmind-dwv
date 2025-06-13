@@ -1,7 +1,4 @@
-## 🌐 **Cómo Acceder**
-1. **Localmente/**:
-   ```bash
-   cd docs/robotics/firmware
+cd docs/robotics/firmware
    cargo doc --open  # Abre documentación Rust
    ```
 2. **En GitHub Pages**:
