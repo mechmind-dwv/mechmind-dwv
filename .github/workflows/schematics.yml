@@ -1,6 +1,6 @@
 name: Update Diagrams
 on:
-  push:
+  push: main
     paths:
       - 'docs/robotics/api/schematics/*.drawio'
 jobs:
