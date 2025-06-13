@@ -4,9 +4,12 @@ on:
     paths:
       - 'docs/robotics/api/schematics/*.drawio'
 jobs:
-  convert:
-    runs-on: ubuntu-latest
-    steps:
+permissions:
+      contents: read
+      pull-requests: write
+      runs-on: ubuntu-latest
+      
+      steps:
       - uses: actions/checkout@v4
       - name: Convert to PDF
         uses: docker://jgraph/drawio
