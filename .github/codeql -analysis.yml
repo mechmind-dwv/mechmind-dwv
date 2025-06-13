@@ -19,7 +19,7 @@ jobs:
       packages: read
 
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         language: ['rust', 'python']
         include:
