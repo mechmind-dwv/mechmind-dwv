@@ -1,5 +1,4 @@
 ### 3. **Simulación en Gazebo** (`simulations/gazebo/launch/`)
-```xml
 <!-- mechbot.launch.xml -->
 <launch>
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_mechbot"
