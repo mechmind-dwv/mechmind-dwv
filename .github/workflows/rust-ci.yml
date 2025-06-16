@@ -26,9 +26,3 @@ fn verify_diagrams() -> Result<(), &'static str> {
       - name: Build
         working-directory: projects/mechcore
         run: cargo build --releas
-        // Código de bienvenida en Rust
-fn main() {
-    println!("🎯 Objetivo: Innovación en Robótica con Rust");
-    println!("💻 Repositorio: github.com/mechmind-dwv");
-    println!("📚 Documentación: ./docs/robotics/api");
-}
