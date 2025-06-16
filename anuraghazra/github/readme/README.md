@@ -12,9 +12,10 @@
 
 ### 🏆 **Trofeos de GitHub**
 [![Logros](https://github-profile-trophy.vercel.app/?username=mechmind-dwv&theme=onedark&margin-w=15&no-frame=true&rank=SSS,SS,S,AAA,AA,A,B)](https://github.com/mechmind-dwv)
-```
+
 ![Tema Merko](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&theme=merko)
 [![Rust](https://img.shields.io/badge/Rust-Expert-FF00FF?logo=rust)](https://github.com/mechmind-dwv)
+```
 ---
 
 ### ⚙️ **Parámetros Secretos Útiles**
