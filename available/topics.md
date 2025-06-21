@@ -1,4 +1,3 @@
-**Temas Disponibles**:
 - `radical` (default)
 - `merko`
 - `gruvbox`
