@@ -1,5 +1,6 @@
-name: Update Stats
-on:
+name: 📊 GitHub Readme Stats
+ uses: anuraghazra/github-readme-stats@latest
+     on:
   schedule:
     - cron: "0 */6 * * *"  # Cada 6 horas
   workflow_dispatch:
