@@ -1,5 +1,3 @@
-### 2. **Firmware en Rust** (`firmware/src/main.rs`)
-```rust
 #![no_std]
 #![no_main]
 
@@ -15,4 +13,3 @@ fn main() -> ! {
         hal::delay::FreeRtos::delay_ms(1000); // Parpadeo ROS2-compatible
     }
 }
-```
