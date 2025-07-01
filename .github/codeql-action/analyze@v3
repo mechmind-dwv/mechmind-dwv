@@ -1,11 +1,9 @@
-- nombre : " 📊 Analizar (Con Amor) "
-        usos : github/codeql-action/analyze@v3
-
-       jobs:
-        my-job:
-     b permissions:
-        contents: read
-      pull-requests: write
+- nombre : " 📊 Analizar (Con Amor)
+   usos : github/codeql-action/analyze@v3
+  b jobs:
+permissions:
+   contents: read
+pull-requests: write
         con :
           categoría : " /idioma:${{matrix.language}}/mechmind "
           subir : verdadero
