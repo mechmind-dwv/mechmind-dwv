@@ -1,0 +1,37 @@
+- name: 📊 GitHub Readme Stats
+        uses: anuraghazra/github-readme-stats@latest
+        with:
+          username: mechmind-dwv
+          show_icons: true
+          theme: radical
+          cache_seconds: 86400 # 24h cache
+          exclude_repo: mechmind-dwv  # Excluye este repo
+
+      # Paso 3: Actualizar tecnologías (¡Rust primero!)
+      - name: 🦀 Tech Radar
+        run: |
+          echo "## 🛠️ Stack Tecnológico Actualizado" >> README.md
+          echo "- 🦀 **Rust** v$(curl -s https://api.github.com/repos/rust-lang/rust/releases/latest | jq -r '.tag_name')" >> README.md
+          echo "- 🤖 **ROS2** Humble Hawksbill" >> README.md
+
+      # Paso 4: Commit sexy
+      - name: 💾 Guardar Cambios
+        run: |
+          git config --global user.name "MechMind Bot"
+          git config --global user.email "bot@mechmind.tech"
+          git add README.md
+          git commit -m "✨ Auto-update: $(date +'%d/%m/%Y %H:%M')"
+          git push
+
+  # Bonus: Auto-deploy para MechBot-2X
+  deploy-mechbot:
+    name: 🤖 Deploy MechBot-2X
+    needs: supercharge-profile
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && contains(github.event.head_commit.message, 'mechbot')
+    steps:
+      - uses: actions/checkout@v4
+      - run: cd projects/mechbot-2x && cargo build --release
+      - uses: ros-tooling/setup-ros@v0.3
+        with:
+          required-ros-distributions: humble
