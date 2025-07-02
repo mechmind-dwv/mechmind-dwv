@@ -1,6 +1,5 @@
-name: 📊 GitHub Readme Stats
- uses: anuraghazra/github-readme-stats@latest
-     on:
+name: Update Stats
+on:
   schedule:
     - cron: "0 */6 * * *"  # Cada 6 horas
   workflow_dispatch:
@@ -11,7 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: anuraghazra/github-readme-stats@latest
+2 weeks ago
+
+Update github-readme-stats@latest
         with:
+2 weeks ago
+
+Update github-readme-stats@latest
           USERNAME: mechmind-dwv
           THEME: radical
           CARD_WIDTH: 500
