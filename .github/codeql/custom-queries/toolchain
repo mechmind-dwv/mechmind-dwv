@@ -1,0 +1,11 @@
+### 🎨 **Personalizaciones Épicas**:
+1. **Rust Nightly**: Usamos la toolchain específica para MechBot.
+2. **Queries Custom**: 
+   ```ql
+   // .github/codeql/custom.qls
+   - import: codeql-suites/security-extended.qls
+   - queries: ./custom-queries/rust-unsafe-audit.ql
+   ```
+3. **Reportes MechMind**: 
+   - Hashes de binarios en el summary
+   - Categorización especial `/mechmind`
