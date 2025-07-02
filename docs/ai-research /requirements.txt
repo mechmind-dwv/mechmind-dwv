@@ -1,5 +1,4 @@
-# 🐍 ECOSISTEMA PYTHON (requirements.txt)Add commentMore actions
-  - package-ecosystem: "pip"
+ - package-ecosystem: "pip"
     directory: "/docs/ai-research"
     schedule:
       interval: "monthly"  # Primer día de cada mes
