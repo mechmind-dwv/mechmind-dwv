@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '41 21 * * 0'
+    - cron: '41 21 * * 0'  # Domingo a las 21:41 (¡Hora de debuggear!)
 
 jobs:
   analyze:
@@ -13,35 +13,77 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       security-events: write
+      packages: read
       actions: read
       contents: read
 
     strategy:
+      fail-fast: false
       matrix:
-        language: ['c-cpp', 'python', 'javascript-typescript']
         include:
           - language: c-cpp
-            extra: "🛡️ FFI & Rust Audit"
+            build-mode: none
+            extra: "🛡️ Análisis para C/Rust (FFI)"
           - language: python
-            extra: "🐍 AI/ML Security"
+            build-mode: none
+            extra: "🐍 Scans para IA/ML"
           - language: javascript-typescript
-            extra: "🌐 Web Exploits"
+            build-mode: none
+            extra: "🌐 Web del MechBot"
+
+    env:
+      MECHMIND_SECRET: ${{ secrets.MECHBOT_KEY }}
+      RUST_VERSION: "nightly-2024-03-01"
 
     steps:
       - name: "🤖 Checkout (MechMind Style)"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          lfs: true
+          lfs: true  # Para modelos de IA
 
-      - name: "🚀 Initialize CodeQL"
+      - name: "🦀 Setup Rust"
+        if: matrix.language == 'c-cpp'
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ env.RUST_VERSION }}
+          override: true
+
+      - name: "🐍 Setup Python"
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: "🚀 Initialize CodeQL (Custom Queries)"
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          queries: +${{ github.workspace }}/.github/codeql/custom.qls
-          config-file: .github/codeql/codeql-config.yml
+          queries: |
+            security-extended
+            security-and-quality
+            +${{ github.workspace }}/.github/codeql/custom.qls
+          config-file: ./.github/codeql/codeql-config.yml
 
-      - name: "📊 Analyze & Upload"
+      - name: "🔍 Build MechBot (Special Mode)"
+        if: matrix.language == 'c-cpp'
+        run: |
+          cd projects/mechbot-2x
+          cargo build --release --features ffi,secure
+          echo "Binary hashes:" >> $GITHUB_STEP_SUMMARY
+          sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
+
+      - name: "📊 Analyze (With Love)"
         uses: github/codeql-action/analyze@v3
         with:
-          category: "/mechmind:${{ matrix.language }}"
+          category: "/language:${{matrix.language}}/mechmind"
+          upload: true
+          output: codeql_results.sarif
+
+      - name: "💌 Notify Us"
+        if: always()
+        run: |
+          echo "¡Análisis completado para ${{ matrix.language }}!" \
+          "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
+          | tee -a $GITHUB_STEP_SUMMARY
