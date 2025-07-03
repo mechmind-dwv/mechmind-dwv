@@ -1,8 +1,5 @@
-Aquí tienes un archivo **SECURITY.md** completo y profesional para tu perfil **MechMind-dwv**, con enfoque en robótica y Rust:
-
 # 🔒 Política de Seguridad de MechMind-dwv
 
-```rust
 // Representación en código de nuestra política
 pub struct SecurityPolicy {
     pub report_vulnerabilities: Channel,
