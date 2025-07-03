@@ -41,19 +41,14 @@ while True:
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=mechmind-dwv&label=Visitas%20a%20mi%20perfil&color=blueviolet" alt="Contador de visitas">
 </p>
+
+
+## 🤖 MechBot-2X ASCII Art
+```text
+    __  __      _     _ ____        __  _______ ____  
+   |  \/  | ___| |__ | | __ ) _   _ \ \/ /_   _|___ \ 
+   | |\/| |/ _ \ '_ \| |  _ \| | | | \  /  | |   __) |
+   | |  | |  __/ |_) | | |_) | |_| | /  \  | |  / __/ 
+   |_|  |_|\___|_.__/|_|____/ \__, |/_/\_\ |_| |_____|
+                              |___/                    
 ```
-
-### 🔥 **Características destacadas**:
-1. **GIF de robot** (¡Dinámico!).
-2. **Código embebido** en Rust y Python (muestra tu stack).
-3. **Badges profesionales** con shields.io.
-4. **Contador de visitas** (¡Para ver tu impacto!).
-5. **Diseño oscuro** (porque el modo oscuro es vida).
-
-### 📌 **Cómo implementarlo**:
-1. Copia este código.
-2. Edita tu `README.md` en GitHub (botón ✏️).
-3. Personaliza los enlaces de redes sociales y proyectos.
-4. ¡Commitea con un mensaje épico! (`git commit -m "Perfil 2.0: MechMode Activated 🚀"`)
-
-¿Quieres añadir algo más? ¿Quizás un **ASCII art de tu robot** o un **tablero de Snake interactivo**? ¡Dímelo y lo hackeamos! 🐍💻
