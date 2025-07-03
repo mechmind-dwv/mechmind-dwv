@@ -5,6 +5,7 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:       # Trigger manual
+
 jobs:
   supercharge-profile:
     name: ⚡ Actualización Dinámica
@@ -14,7 +15,7 @@ jobs:
       - name: 🛸 Clonar Repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Para stats de commits
+          fetch-depth: 0 # Para stats de commits
       # Paso 2: Actualizar README.md con stats
       - name: 📊 GitHub Readme Stats
         uses: anuraghazra/github-readme-stats@latest
