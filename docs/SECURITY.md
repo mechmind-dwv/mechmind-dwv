@@ -1,6 +1,5 @@
 Aquí tienes un archivo **SECURITY.md** completo y profesional para tu perfil **MechMind-dwv**, con enfoque en robótica y Rust:
 
-```markdown
 # 🔒 Política de Seguridad de MechMind-dwv
 
 ```rust
