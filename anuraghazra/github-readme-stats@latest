@@ -1,5 +1,5 @@
 ### 🚀 **Implementación Avanzada en tu `README.md`**
-```markdown
+
 ## 📊 **Mis Estadísticas de Código** 
 
 ### 🔥 **Rendimiento General**
@@ -93,4 +93,3 @@ Si no se actualiza:
 fn main() {
     println!("🌟 Stats actualizados con éxito!");
 }
-```
