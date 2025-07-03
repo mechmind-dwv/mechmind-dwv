@@ -3,4 +3,50 @@ members = [
     "mechbot-2x",
     "atomic-rs", 
     "oxide-security"
+      "mechros2"
+]
+
+[package]
+name = "mechros2"
+version = "1.0.0"
+edition = "2021"
+authors = ["MechMind Team <dev@mechmind.ai>"]
+description = "🦾 MechMind ROS2 Integration Layer"
+license = "MIT"
+
+[dependencies]
+# ROS2 Core
+r2r = "0.8"
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Async & Concurrency
+futures = "0.3"
+async-trait = "0.1"
+
+# Logging & Monitoring
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Math & Geometry
+nalgebra = "0.32"
+approx = "0.5"
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# Configuration
+config = "0.14"
+
+[dev-dependencies]
+tokio-test = "0.4"
+
+[[bin]]
+name = "mechros2_node"
+path = "src/main.rs"
+
+[lib]
+name = "mechros2"
+path = "src/lib.rs"
 ]
