@@ -13,3 +13,14 @@
 install/
 log/
 build/
+# Rust
+/target/
+Cargo.lock
+*.bin
+
+# Logs
+*.log
+
+# Entornos
+.env
+env.*
