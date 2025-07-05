@@ -1,6 +1,4 @@
 // 🔬 Sensor Hub Module
-// File: projects/mechros2/src/sensors.rs
-
 use std::sync::Arc;
 use nalgebra::{Vector3, Point3};
 use serde::{Deserialize, Serialize};
