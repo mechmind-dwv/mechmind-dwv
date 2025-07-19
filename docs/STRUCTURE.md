@@ -136,7 +136,7 @@ graph TD
 
 ```bash
 # 1. Clonar repositorio
-git clone https://github.com/mechmind-dwv/mechmind-dwv
+git clone https://github.com/mechmind-dwv/mechmind-dwv.git
 
 # 2. Ejecutar pruebas
 ./scripts/build.sh
