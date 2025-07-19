@@ -1,4 +1,4 @@
-[![PDF](https://img.shields.io/badge/PDF-Protocol-green)](ddocs/es/api/schematics/communication-protocol.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Protocol-green)](docs/es/api/schematics/communication-protocol.pdf)
 
 ```mermaid
 %% Ejemplo del protocolo
