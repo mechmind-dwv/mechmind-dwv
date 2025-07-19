@@ -1,0 +1,9 @@
+### 2. **Protocolo de Comunicación** (`communication-protocol.pdf`)
+[![PDF](https://img.shields.io/badge/PDF-Protocol-green)](docs/robotics/api/schematics/communication-protocol.pdf)
+
+```mermaid
+%% Ejemplo del protocolo
+sequenceDiagram
+    MechBot->>ROS2: /cmd_vel (Twist)
+    ROS2->>ESP32: Serial@115200bps
+    ESP32-->>Sensors: I2C Request
