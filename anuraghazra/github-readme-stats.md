@@ -1,9 +1,6 @@
-¡Ah, **la joya de la corona** para tu perfil de GitHub! 👑✨ Vamos a personalizar al máximo el uso de `anuraghazra/github-readme-stats` para que tu perfil **MechMind-dwv** brille como nunca. Aquí tienes la configuración épica:
-
 ### 🚀 **Implementación Avanzada en tu `README.md`**
-
 ## 📊 **Mis Estadísticas de Código** 
-
+[![Ejemplo](https://github-readme-stats.vercel.app/api/pin?username=anuraghazra&repo=github-readme-stats)](https://github.com/anuraghazra/github-readme-stats)
 ### 🔥 **Rendimiento General**
 [![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
 
