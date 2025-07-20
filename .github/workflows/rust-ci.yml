@@ -26,10 +26,3 @@ fn verify_diagrams() -> Result<(), &'static str> {
       - name: Build
         working-directory: projects/mechcore
         run: cargo build --releas
-
-// ¡Verificación en Rust!
-#[test]
-fn test_codeql_setup() {
-    assert!(std::path::exists(".github/codeql"));
-    println!("✅ Todo listo para escanear");
-}
