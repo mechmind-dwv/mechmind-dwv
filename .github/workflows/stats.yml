@@ -9,14 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: anuraghazra/github-readme-stats@latestv5.0.0
-2 weeks ago
-
-Update github-readme-stats@latest
+      - uses: anuraghazra/github-readme-stats@latest
         with:
-2 weeks ago
-
-Update github-readme-stats@latest
           USERNAME: mechmind-dwv
           THEME: radical
           CARD_WIDTH: 500
