@@ -1,4 +1,3 @@
-```markdown
 # 🤖 **Estructura de docs/robotics/** (MechBot-2X)
 
 ```bash
@@ -18,5 +17,4 @@ docs/
     │   └── rustdoc/              # `cargo doc --open`
     └── DATASHEET.md              # Especificaciones técnicas
 ```
-
----
+docs/es/docs/robotics/api/STRUCTURE.md
