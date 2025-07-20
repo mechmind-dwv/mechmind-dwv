@@ -17,4 +17,3 @@ docs/
     │   └── rustdoc/              # `cargo doc --open`
     └── DATASHEET.md              # Especificaciones técnicas
 ```
-docs/es/docs/robotics/api/STRUCTURE.md
