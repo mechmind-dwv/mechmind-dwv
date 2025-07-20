@@ -1,5 +1,5 @@
 # 🤖 ¡Bienvenido a MechMind-dwv! 🚀
-
+```
 // Código de bienvenida en Rust
 fn main() {
     println!("🎯 Objetivo: Innovación en Robótica con Rust");
@@ -24,7 +24,7 @@ fn main() {
    ```
 2. Genera docs locales:
    ```bash
-   cd docs/es/robotics/api
+   cd docs/robotics/api
    cargo doc --no-deps --open
    ```
 
