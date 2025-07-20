@@ -4,7 +4,7 @@ fn main() {
     println!("💻 Repositorio: github.com/mechmind-dwv");
     println!("📚 Documentación: ./docs/robotics/api");
 }
-**Query Custom** (ejemplo para Rust):
+
 // custom-queries/rust-unsafe-audit.ql
 import rust
 
