@@ -126,5 +126,5 @@ graph TB
 ```rust
 // ¡Tu documentación siempre actualizada!
 fn main() {
-    println!("Documentación viva en ./docs/robotics/");
+    println!("Documentación viva en ./docs/es/docs/robotics/");
 }
