@@ -1,6 +1,3 @@
-¡Vamos a profundizar en la estructura de **docs/robotics/** para que sea un hub de documentación profesional para tu MechBot-2X! Aquí tienes la arquitectura detallada con archivos clave y automatización:
-
-```markdown
 # 🤖 **Estructura de docs/robotics/** (MechBot-2X)
 
 ```bash
@@ -131,4 +128,3 @@ graph TB
 fn main() {
     println!("Documentación viva en ./docs/robotics/");
 }
-```
