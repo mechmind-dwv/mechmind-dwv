@@ -24,7 +24,7 @@ fn main() {
    ```
 2. Genera docs locales:
    ```bash
-   cd docs/robotics/api
+   cd docs/es/robotics/api
    cargo doc --no-deps --open
    ```
 
