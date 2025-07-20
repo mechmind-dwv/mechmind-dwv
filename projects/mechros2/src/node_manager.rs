@@ -1,6 +1,4 @@
 // 🚀 Node Manager Module
-// File: projects/mechros2/src/node_manager.rs
-
 use std::sync::Arc;
 use std::collections::HashMap;
 use r2r::QosProfile;
