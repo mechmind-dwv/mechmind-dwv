@@ -1,15 +1,47 @@
-name: Rust CI
+name: "🦀 Rust Super Pipeline"
 
-on: [push, workflow_dispatch]
+on: [push, pull_request]
 
 jobs:
-  my-job:
-    permissions:
-      contents: read
-      pull-requests: write
-      build:
-      runs-on: ubuntu-latest
+  test:
+    name: "Test Suite (MechBot-2X)"
+    runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly
+          override: true
+          components: rustfmt, clippy
+      - run: cargo test --all-features --verbose
+      - uses: actions-rs/cargo@v1
+        with:
+          command: bench
+          args: --all-features --no-run
+
+  security:
+    name: "🔒 Cargo Audit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/audit-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  coverage:
+    name: "📊 Code Coverage"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/tarpaulin@v0.1
+        with:
+          args: --all-features --out Html
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: cobertura.html
+          
     - name: Run
         working-directory: projects/mechcore
         run: cargo run
