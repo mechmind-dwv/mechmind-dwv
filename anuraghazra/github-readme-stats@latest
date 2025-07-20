@@ -1,4 +1,3 @@
-**Parámetros Secretos Útiles**
 | Parámetro | Efecto | Ejemplo |
 |-----------|--------|---------|
 | `&hide=` | Oculta lenguajes | `&hide=javascript,scss` |
