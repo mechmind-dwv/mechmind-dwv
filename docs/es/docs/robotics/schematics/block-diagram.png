@@ -1,6 +1,9 @@
+## 🎨 **Ejemplo Visual**
+```mermaid
 graph TB
     A[Firmware Rust] --> B[ROS2 Nodes]
     B --> C[Gazebo Sim]
     C --> D{Testing}
     D -->|Pass| E[Deploy to PCB]
     D -->|Fail| F[Debug en VSCode]
+```
