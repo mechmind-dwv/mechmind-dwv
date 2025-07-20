@@ -6,7 +6,7 @@
 [![Security Audit](https://img.shields.io/badge/cargo--audit-clean-success?logo=rust)](https://github.com/mechmind-dwv)
 [![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/)
 
-# ¡Hola Mundo! 👋 Soy **él Min** 🤖⚡
+# ¡Hola Mundo! 👋 Soy **el Min** 🤖⚡
 
 <p align="center">
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="300" alt="Robot saludando">
