@@ -1,6 +1,6 @@
 ### 1. **Documentación con Estilo**
 
-- `docses/docs/robotics/api/`: 
+- `docs/es/docs/robotics/api/`: 
   - Documentación que brilla más que tu pantalla a medianoche
   - Ejemplos que hasta el CEO entendería (quizás)
 - `schematics/`:
