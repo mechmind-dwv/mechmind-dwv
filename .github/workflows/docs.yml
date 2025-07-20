@@ -20,3 +20,10 @@ jobs:
         with:
           name: mechbot-docs
           path: docs/es/docs/robotics/api/
+  
+  # Fragmento de .github/workflows/docs.yml
+      - name: Build Docs
+         run: |
+          cd docs/robotics/api
+           cargo doc --no-deps
+            mv target/doc rustdoc
