@@ -15,7 +15,7 @@ jobs:
           THEME: radical
           CARD_WIDTH: 500
       - run: |
-          git config --global user.name "MechMind Stats Bot"
+          git config --global user.name "mechmind-dwv"
           git add README.md
           git commit -m "📈 Auto-update stats"
           git push
