@@ -16,3 +16,4 @@ docs/
     ├── api/                     # Documentación API
     │   └── rustdoc/              # `cargo doc --open`
     └── DATASHEET.md              # Especificaciones técnicas
+    ``` 
