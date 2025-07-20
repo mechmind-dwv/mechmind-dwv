@@ -1,8 +1,24 @@
 [package]
 name = "mechbot-2x"
-version = "0.1.0"
+version = "2.0.0"
 edition = "2021"
+license = "GPL-3.0"
+rust-version = "1.70"
+
+[features]
+default = ["ros2"]
+ros2 = ["ros2-rust/iron"]  # Integración con ROS2 Iron
+simulation = ["bevy/3d"]   # Motor para simulaciones
 
 [dependencies]
-# Añade tus dependencias reales aquí
-ros2-rust = { git = "https://github.com/ros2-rust/ros2-rust" }
+ros2-rust = { version = "0.9", optional = true }
+bevy = { version = "0.11", optional = true }
+nalgebra = "0.32"
+
+[dev-dependencies]
+criterion = "0.5"
+mockall = "0.12"
+
+[profile.release]
+lto = true
+codegen-units = 1
