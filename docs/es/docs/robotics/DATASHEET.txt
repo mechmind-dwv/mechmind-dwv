@@ -81,7 +81,7 @@ jobs:
       
       - name: Generate RustDoc
         run: |
-          cd docs/robotics/firmware
+          cd docs/es/docs/robotics/firmware
           cargo doc --no-deps
           mv target/doc ./api/rustdoc
 
@@ -89,7 +89,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: mechbot-docs
-          path: docs/robotics/api/
+          path: docs/es/docs/robotics/api/
 ```
 
 ---
@@ -97,7 +97,7 @@ jobs:
 ## 🌐 **Cómo Acceder**
 1. **Localmente**:
    ```bash
-   cd docs/robotics/firmware
+   cd docs/es/docs/robotics/firmware
    cargo doc --open  # Abre documentación Rust
    ```
 2. **En GitHub Pages**:
