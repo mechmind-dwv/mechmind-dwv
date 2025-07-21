@@ -1,57 +1,3 @@
-### 🚀 **Implementación Avanzada en tu `README.md`**
-## 📊 **Mis Estadísticas de Código** 
-[![Ejemplo](https://github-readme-stats.vercel.app/api/pin?username=anuraghazra&repo=github-readme-stats)](https://github.com/anuraghazra/github-readme-stats)
-### 🔥 **Rendimiento General**
-[![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
-
-### 🦀 **Lenguajes Top** (¡Rust siempre primero!)
-[![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=mechmind-dwv&layout=compact&theme=dark&hide_border=true&langs_count=6&hide=html,css&card_width=450)](https://github.com/mechmind-dwv)
-
-### 🏆 **Trofeos de GitHub**
-[![Logros](https://github-profile-trophy.vercel.app/?username=mechmind-dwv&theme=onedark&margin-w=15&no-frame=true&rank=SSS,SS,S,AAA,AA,A,B)](https://github.com/mechmind-dwv)
-```
-
----
-
-### ⚙️ **Parámetros Secretos Útiles**
-| Parámetro | Efecto | Ejemplo |
-|-----------|--------|---------|
-| `&hide=` | Oculta lenguajes | `&hide=javascript,scss` |
-| `&custom_title=` | Título personalizado | `&custom_title=MechMind+Domina` |
-| `&bg_color=` | Color de fondo HEX | `&bg_color=0D1117` |
-| `&ring_color=` | Anillo de nivel | `&ring_color=58A6FF` |
-| `&locale=` | Idioma | `&locale=es` |
-
----
-
-### 🔄 **Auto-Actualización con GitHub Actions**
-Añade esto a tu `.github/workflows/stats.yml`:
-```yaml
-name: Update Stats
-on:
-  schedule:
-    - cron: "0 */6 * * *"  # Cada 6 horas
-  workflow_dispatch:
-
-jobs:
-  update:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: anuraghazra/github-readme-stats@latest
-        with:
-          USERNAME: mechmind-dwv
-          THEME: radical
-          CARD_WIDTH: 500
-      - run: |
-          git config --global user.name "MechMind Stats Bot"
-          git add README.md
-          git commit -m "📈 Auto-update stats"
-          git push
-```
-
----
-
 ### 🎨 **Temas Personalizados**
 Prueba estos themes alternativos:
 - `onedark` (Para modo oscuro elegante)
@@ -92,4 +38,3 @@ Si no se actualiza:
 fn main() {
     println!("🌟 Stats actualizados con éxito!");
 }
-```
