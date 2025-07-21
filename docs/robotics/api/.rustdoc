@@ -1,2 +1,0 @@
-cd docs/robotics/firmware
-   cargo doc --open  # Abre documentación Rust
