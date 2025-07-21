@@ -1,4 +1,3 @@
-### 2. **Firmware en Rust** (``)
 #![no_std]
 #![no_main]
 
