@@ -1,5 +1,3 @@
- **Query Custom** (ejemplo para Rust):
-```ql
 // custom-queries/rust-unsafe-audit.ql
 import rust
 
