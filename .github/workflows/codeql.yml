@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '41 21 * * 0'  # Domingo a las 21:41 (¡Hora de debuggear!)
+    - cron: '41 21 * * 0'  # Domingo a las 21:41
 
 jobs:
   analyze:
@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          lfs: true  # Para modelos de IA
+          lfs: true
 
       - name: "🦀 Setup Rust"
         if: matrix.language == 'c-cpp'
@@ -56,7 +56,7 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: "🚀 Initialize CodeQL (Custom Queries)"
+      - name: "🚀 Initialize CodeQL"
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
@@ -66,37 +66,39 @@ jobs:
             +${{ github.workspace }}/.github/codeql/custom.qls
           config-file: ./.github/codeql/codeql-config.yml
 
-      - name: "🔍 Build MechBot (Special Mode)"
+      - name: "🔍 Build MechBot"
         if: matrix.language == 'c-cpp'
         run: |
           cd projects/mechbot-2x
           cargo build --release --features ffi,secure
-          echo "Binary hashes:" >> $GITHUB_STEP_SUMMARY
+          
+          # Enhanced MechMind Reporting
+          echo "### 🔐 MechMind Binary Integrity Report" >> $GITHUB_STEP_SUMMARY
+          echo "#### 📅 Scan Date: $(date +'%Y-%m-%d %H:%M:%S %Z')" >> $GITHUB_STEP_SUMMARY
+          echo "#### 🦀 Toolchain: ${{ env.RUST_VERSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "\n**Artifact Hashes (SHA256):**" >> $GITHUB_STEP_SUMMARY
+          echo '```sh' >> $GITHUB_STEP_SUMMARY
           sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          
+          # Additional binary metadata
+          echo "\n**Binary Metadata:**" >> $GITHUB_STEP_SUMMARY
+          echo '```sh' >> $GITHUB_STEP_SUMMARY
+          file target/release/mechbot >> $GITHUB_STEP_SUMMARY
+          ls -lh target/release/mechbot | awk '{print "Size:", $5}' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
 
-      - name: "📊 Analyze (With Love)"
+      - name: "📊 Analyze"
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{matrix.language}}/mechmind"
           upload: true
           output: codeql_results.sarif
 
-      - name: "💌 Notify Us"
+      - name: "💌 Notify Results"
         if: always()
         run: |
-          echo "¡Análisis completado para ${{ matrix.language }}!" \
-          "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
-          | tee -a $GITHUB_STEP_SUMMARY
-
-     - name: "🔍 Generar Reporte MechMind"
-  if: matrix.language == 'c-cpp' # Solo para Rust/C++
-  run: |
-    # Generar hashes de binarios
-    echo "### 🔐 Hashes MechMind (SHA256)" >> $GITHUB_STEP_SUMMARY
-    echo '```sh' >> $GITHUB_STEP_SUMMARY
-    sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
-    echo '```' >> $GITHUB_STEP_SUMMARY
-
-    # Metadata adicional
-    echo "#### 📅 Fecha: $(date)" >> $GITHUB_STEP_SUMMARY
-    echo "#### 🦀 Toolchain: ${{ env.RUST_VERSION }}" >> $GITHUB_STEP_SUMMARY 
+          echo "### 📊 MechMind Analysis Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- **Language**: ${{ matrix.language }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Report**: [View Scan Results](https://github.com/${{ github.repository }}/security/code-scanning)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Workflow Run**: [View Details](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
