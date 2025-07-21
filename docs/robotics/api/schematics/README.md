@@ -1,6 +1,6 @@
 ### 🌟 **Visualización en README**
 
-[![Arquitectura](docs/robotics/api/schematics/preview-architecture.png)](docs/robotics/api/schematics/mechbot-architecture.drawio)
+[![Arquitectura](preview-architecture.png)](mechbot-architecture.drawio)
 ```
 
 **Consejos Pro**:
