@@ -5,7 +5,6 @@
 [![Coverage](https://img.shields.io/codecov/c/github/mechmind-dwv/mechmind-dwv?logo=codecov)](https://codecov.io/gh/mechmind-dwv)
 [![Security Audit](https://img.shields.io/badge/cargo--audit-clean-success?logo=rust)](https://github.com/mechmind-dwv)
 [![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/)
-[![Arquitectura](docs/robotics/api/schematics/preview-architecture.png)](docs/robotics/api/schematics/mechbot-architecture.drawio)
 
 # ¡Hola Mundo! 👋 Soy **el Min** 🤖⚡
 
@@ -18,6 +17,8 @@
 - 🤖 **Robótica** (MechBot-2X en progreso...)
 - 🧠 **IA/ML** (PyTorch + TensorFlow)
 - ☕ **Café** > `;` (Sobreviví a un segfault)
+ 
+[![Arquitectura](docs/robotics/api/schematics/preview-architecture.png)](docs/robotics/api/schematics/mechbot-architecture.drawio)
 
 ## 🚀 **Proyecto Estrella**: [MechBot-2X](https://github.com/mechmind-dwv/mechbot-2x)
 ```rust
