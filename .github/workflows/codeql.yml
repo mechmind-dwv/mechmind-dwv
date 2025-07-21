@@ -87,3 +87,16 @@ jobs:
           echo "¡Análisis completado para ${{ matrix.language }}!" \
           "Ver reporte: https://github.com/mechmind-dwv/mechmind-dwv/security/code-scanning" \
           | tee -a $GITHUB_STEP_SUMMARY
+
+     - name: "🔍 Generar Reporte MechMind"
+  if: matrix.language == 'c-cpp' # Solo para Rust/C++
+  run: |
+    # Generar hashes de binarios
+    echo "### 🔐 Hashes MechMind (SHA256)" >> $GITHUB_STEP_SUMMARY
+    echo '```sh' >> $GITHUB_STEP_SUMMARY
+    sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
+    echo '```' >> $GITHUB_STEP_SUMMARY
+
+    # Metadata adicional
+    echo "#### 📅 Fecha: $(date)" >> $GITHUB_STEP_SUMMARY
+    echo "#### 🦀 Toolchain: ${{ env.RUST_VERSION }}" >> $GITHUB_STEP_SUMMARY 
