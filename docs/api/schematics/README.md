@@ -29,4 +29,3 @@ fn verify_diagrams() -> Result<(), &'static str> {
     println!("✅ Diagramas ubicados en: docs/robotics/api/schematics/");
     Ok(())
 }
-```
