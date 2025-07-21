@@ -78,4 +78,3 @@ jobs:
         run: |
           echo "🔄 No se detectaron cambios en las estadísticas" >> $GITHUB_STEP_SUMMARY
           echo "Cache válida hasta: $(date -d '+12 hours')" >> $GITHUB_STEP_SUMMARY
-docs/robotics/api
