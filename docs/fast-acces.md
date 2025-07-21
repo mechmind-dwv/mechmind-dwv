@@ -1,6 +1,3 @@
-## 📚 **Documentación del Proyecto MechBot**
-
-### 🔍 Acceso Rápido
 | Recurso | Descripción | Enlace |
 |---------|-------------|--------|
 | **API Rust** | Documentación automática del núcleo | [Ver RustDoc](docs/robotics/api/rustdoc) |
