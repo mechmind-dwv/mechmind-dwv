@@ -1,7 +1,0 @@
-graph LR
-    A[README Principal] --> B[Documentación Técnica]
-    B --> C{Rust API}
-    B --> D{Diagramas}
-    B --> E{Ejemplos}
-    C --> F[Core Module]
-    C --> G[Sensors Module]
