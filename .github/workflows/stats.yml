@@ -1,4 +1,4 @@
-```name: "📊 MechMind Stats Updater Pro"
+name: "📊 MechMind Stats Updater Pro"
 
 on:
   schedule:
