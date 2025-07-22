@@ -1,0 +1,13 @@
+# Actualización para ROS2 (Paquetes específicos)
+  - package-ecosystem: "ros2"
+    directory: "/projects/mechbot-2x/ros_packages"
+    schedule:
+      interval: "monthly"
+    versioning-strategy: "increase-if-necessary"
+  # Configuración global
+  rebase-strategy: "disabled"
+  versioning-strategy: "auto"
+  target-branch: "dependabot-updates"
+  labels:
+    - "dependencies"
+    - "automatic"
