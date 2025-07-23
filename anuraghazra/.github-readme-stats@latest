@@ -1,95 +1,65 @@
-### 🚀 **Implementación Avanzada en tu `README.md`**
-```markdown
-## 📊 **Mis Estadísticas de Código** 
-
-### 🔥 **Rendimiento General**
-[![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
-
-### 🦀 **Lenguajes Top** (¡Rust siempre primero!)
-[![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=mechmind-dwv&layout=compact&theme=dark&hide_border=true&langs_count=6&hide=html,css&card_width=450)](https://github.com/mechmind-dwv)
-
-### 🏆 **Trofeos de GitHub**
-[![Logros](https://github-profile-trophy.vercel.app/?username=mechmind-dwv&theme=onedark&margin-w=15&no-frame=true&rank=SSS,SS,S,AAA,AA,A,B)](https://github.com/mechmind-dwv)
-```
-
----
-
-### ⚙️ **Parámetros Secretos Útiles**
-| Parámetro | Efecto | Ejemplo |
-|-----------|--------|---------|
-| `&hide=` | Oculta lenguajes | `&hide=javascript,scss` |
-| `&custom_title=` | Título personalizado | `&custom_title=MechMind+Domina` |
-| `&bg_color=` | Color de fondo HEX | `&bg_color=0D1117` |
-| `&ring_color=` | Anillo de nivel | `&ring_color=58A6FF` |
-| `&locale=` | Idioma | `&locale=es` |
-
----
-
-### 🔄 **Auto-Actualización con GitHub Actions**
-Añade esto a tu `.github/workflows/stats.yml`:
-```yaml
-name: Update Stats
+name: "📊 MechMind Stats Updater Pro"
 on:
   schedule:
-    - cron: "0 */6 * * *"  # Cada 6 horas
+    - cron: "0 */6 * * *"  # Cada 6 horas (UTC)
   workflow_dispatch:
+    inputs:
+      theme:
+        description: 'Tema para las tarjetas (radical, dark, etc)'
+        required: false
+        default: 'radical'
+      force_update:
+        description: 'Forzar actualización ignorando caché'
+        required: false
+        default: 'false'
 
 jobs:
-  update:
+  update-stats:
+    name: "⚡ Update README Stats"
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Permiso esencial para commits
+      pull-requests: write  # Para futuras integraciones
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: anuraghazra/github-readme-stats@latest
+      - name: "🛰️ Checkout Profundo"
+        uses: actions/checkout@v4
         with:
-          USERNAME: mechmind-dwv
-          THEME: radical
-          CARD_WIDTH: 500
-      - run: |
-          git config --global user.name "MechMind Stats Bot"
+          fetch-depth: 0  # Historial completo para análisis
+          persist-credentials: false  # Más seguro
+
+      - name: "📊 Generar Estadísticas Inteligentes"
+        uses: anuraghazra/github-readme-stats@v4.2.1
+        id: stats
+        with:
+          username: mechmind-dwv
+          theme: ${{ inputs.theme || 'radical' }}
+          show_icons: true
+          theme: radical
+          cache_seconds: 86400 # 24h cache
+          exclude_repo: mechmind-dwv  # Excluye este repo
+          hide_border: true
+          include_all_commits: true
+          count_private: true
+          cache_seconds: ${{ inputs.force_update == 'true' && '0' || '43200' }}  # 12h cache
+          exclude_repo: 'deprecated-project,test-sandbox'  # Filtro opcional
+
+      - name: "🔍 Detección de Cambios"
+        id: changes
+        run: |
+          git diff --quiet README.md || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: "💾 Commit Seguro"
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config --global user.name "MechMind Bot v2.0"
+          git config --global user.email "mechmind-ops@bots.github"
           git add README.md
-          git commit -m "📈 Auto-update stats"
-          git push
-```
+          git commit -m "📈 Auto-update stats [skip ci] --theme=${{ inputs.theme }}"
+          git push origin HEAD:${{ github.ref }}
 
----
-
-### 🎨 **Temas Personalizados**
-Prueba estos themes alternativos:
-- `onedark` (Para modo oscuro elegante)
-- `gruvbox` (Estilo retro)
-- `algolia` (Profesional)
-- `merko` (Para amantes del verde)
-
-```markdown
-![Tema Merko](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&theme=merko)
-```
-
----
-
-### 💡 **Tips Pro**:
-1. **Cacheo Local**:  
-   Usa `&cache_seconds=86400` para reducir llamadas a la API.  
-2. **Badges Combinados**:  
-   ```markdown
-   [![Rust](https://img.shields.io/badge/Rust-Expert-FF00FF?logo=rust)](https://github.com/mechmind-dwv)
-   ```  
-3. **Excluir Repos**:  
-   `&exclude_repo=repo1,repo2` para no mostrar ciertos proyectos.
-
----
-
-### 🐞 **Debugging Común**
-Si no se actualiza:
-1. Verifica que el workflow tenga permisos de escritura.  
-2. Asegúrate que el cron job esté activo.  
-3. Usa `&show=reviews,discussions` para datos adicionales.
-
----
-
-¿Quieres que hagamos una **versión interactiva** con filtros por lenguajes? ¡O incluso integrar tus stats de **WakaTime**! 😏  
-
-```rust
-// ¡Tu perfil ahora es imparable!
-fn main() {
-    println!("🌟 Stats actualizados con éxito!");
-}
+      - name: "📌 Notificar sin Cambios"
+        if: steps.changes.outputs.has_changes != 'true'
+        run: |
+          echo "🔄 No se detectaron cambios en las estadísticas" >> $GITHUB_STEP_SUMMARY
+          echo "Cache válida hasta: $(date -d '+12 hours')" >> $GITHUB_STEP_SUMMARY
