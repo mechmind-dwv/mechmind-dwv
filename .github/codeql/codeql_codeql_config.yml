@@ -21,7 +21,6 @@ jobs:
           - language: javascript-typescript
             build-mode: none
             extra: "🌐 Web del MechBot"
-    
 
     steps:
       - name: "🤖 Checkout (MechMind Style)"
