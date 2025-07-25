@@ -37,10 +37,6 @@ fn main() {
 ### 🏆 **Trofeos de GitHub**
 [![Logros](https://github-profile-trophy.vercel.app/?username=mechmind-dwv&theme=onedark&margin-w=15&no-frame=true&rank=SSS,SS,S,AAA,AA,A,B)](https://github.com/mechmind-dwv)
 
-## 📊 **Mis Stats de GitHub**
-[![Tus estadísticas](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=dark&hide_border=true)](https://github.com/mechmind-dwv)
-[![Lenguajes Top](https://github-readme-stats.vercel.app/api/top-langs/?username=mechmind-dwv&layout=compact&theme=dark&hide_border=true)](https://github.com/mechmind-dwv)
-
 ## 🛠 **Stack Tecnológico**
 ![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -71,4 +67,3 @@ while True:
    | |  | |  __/ |_) | | |_) | |_| | /  \  | |  / __/ 
    |_|  |_|\___|_.__/|_|____/ \__, |/_/\_\ |_| |_____|
                               |___/                    
-```
