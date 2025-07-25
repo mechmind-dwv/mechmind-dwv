@@ -1,5 +1,3 @@
-## 🔄 **Automatización con GitHub Actions**
-
 name: Build Robotics Docs
 on: [push]
 
