@@ -13,9 +13,9 @@ fn main() {
 ### 🔍 Acceso Rápido
 | Recurso | Descripción | Enlace |
 |---------|-------------|--------|
-| **API Rust** | Documentación automática del núcleo | [Ver RustDoc](docs/robotics/api/rustdoc) |
+| **API Rust** | Documentación automática del núcleo | [Ver RustDoc](robotics/api/rustdoc) |
 | **Esquemas** | Diagramas técnicos del robot | [Explorar esquemas](robotics/api/schematics) |
-| **Ejemplos** | Código de ejemplo para API | [Ver ejemplos](docs/robotics/api/rest/examples) |
+| **Ejemplos** | Código de ejemplo para API | [Ver ejemplos](robotics/api/rest/examples) |
 
 ### 🛠️ Cómo Generar la Documentación
 1. Clona el repositorio:
@@ -77,4 +77,4 @@ print("✅ Documentación verificada en:",
 // ¡Tu README ahora es un centro de documentación vivo!
 fn docs_status() -> &'static str {
     "🚀 Documentación MechBot operativa al 100%"
-)
+}
