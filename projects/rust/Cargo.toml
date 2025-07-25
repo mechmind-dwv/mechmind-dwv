@@ -48,3 +48,8 @@ path = "src/main.rs"
 [lib]
 name = "mechros2"
 path = "src/lib.rs"
+
+[toolchain]
+channel = "stable"
+targets = ["aarch64-linux-android"]
+profile = "minimal"
