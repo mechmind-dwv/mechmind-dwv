@@ -47,7 +47,7 @@ jobs:
         file: ./coverage.xml
         
     - name: Upload security reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v1
       with:
         name: security-reports
         path: |
