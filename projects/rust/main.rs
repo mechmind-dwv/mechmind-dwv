@@ -40,3 +40,7 @@ fn main() {
     println!("🚀 Proyectos: {:?}", min.proyectos);
     println!("☕ Café consumido: {}mg", min.coffee_level);
 }
+// ¡Tu perfil ahora es imparable!
+fn main() {
+    println!("🌟 Stats actualizados con éxito!");
+}
