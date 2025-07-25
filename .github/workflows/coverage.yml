@@ -40,7 +40,7 @@ jobs:
         coverage report --fail-under=80  # Falla si cobertura < 80%
         
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v1
       if: ${{ always() }}
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
@@ -52,4 +52,4 @@ jobs:
         name: security-reports
         path: |
           bandit_results.json
-          safety_report.json
+          safety_report.jso
