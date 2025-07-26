@@ -5,6 +5,7 @@
 [![Coverage](https://img.shields.io/codecov/c/github/mechmind-dwv/mechmind-dwv?logo=codecov)](https://codecov.io/gh/mechmind-dwv)
 [![Security Audit](https://img.shields.io/badge/cargo--audit-clean-success?logo=rust)](https://github.com/mechmind-dwv)
 [![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/)
+[![PDF](https://img.shields.io/badge/PDF-Protocol-green)](docs/robotics/api/schematics/communication-protocol.pdf)
 
 # ¡Hola Mundo! 👋 Soy **el Min** 🤖⚡
 
