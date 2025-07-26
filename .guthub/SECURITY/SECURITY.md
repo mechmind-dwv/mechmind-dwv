@@ -1,3 +1,4 @@
+```markdown
 # 🔒 Política de Seguridad de MechMind-dwv
 ```rust
 // Representación en código de nuestra política
