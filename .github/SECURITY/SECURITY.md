@@ -124,3 +124,4 @@ fn main() {
 - [ ] Comunicación inalámbrica segura?
 - [ ] Validación de firmas de firmware?
 - [ ] Políticas de actualización OTA?
+```
