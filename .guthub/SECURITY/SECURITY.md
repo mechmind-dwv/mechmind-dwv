@@ -1,5 +1,5 @@
 # 🔒 Política de Seguridad de MechMind-dwv
-
+```rust
 // Representación en código de nuestra política
 pub struct SecurityPolicy {
     pub report_vulnerabilities: Channel,
