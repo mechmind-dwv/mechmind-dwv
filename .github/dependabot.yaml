@@ -54,3 +54,10 @@ updates:
         schedule:
       interval: "daily"
    open-pull-requests-limit: 3
+
+ # 📦 ECOSISTEMA DOCKER (opcional)
+  - package-ecosystem: "docker"
+    directory: "/projects/mechbot-2x/deploy"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: "increase-if-necessary
