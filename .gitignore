@@ -24,3 +24,5 @@ Cargo.lock
 # Entornos
 .env
 env.*
+bandit_results.json
+safety_report.json
