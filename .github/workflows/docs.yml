@@ -1,5 +1,5 @@
 name: Build Robotics Docs
-on:[push]
+on: push
 
 jobs:
   docs:
