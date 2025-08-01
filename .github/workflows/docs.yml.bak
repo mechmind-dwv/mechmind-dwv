@@ -1,0 +1,124 @@
+name: "📜 MechMind Documentation Engine"
+
+# ======================
+# 🔐 PERMISOS DE SEGURIDAD
+# ======================
+permissions:
+  contents: read      # Acceso mínimo al código
+  pages: write        # Despliegue en GitHub Pages
+  id-token: write     # Autenticación OIDC segura
+  deployments: write  # Para seguimiento de despliegues
+
+# ======================
+# 🕒 DISPARADORES
+# ======================
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'docs/**'
+      - 'projects/mechbot-2x/src/**'
+  workflow_dispatch:
+    inputs:
+      force-rebuild:
+        description: 'Reconstruir completamente'
+        required: false
+        type: boolean
+
+# ======================
+# 🏗️ CONFIGURACIÓN GLOBAL
+# ======================
+env:
+  RUST_VERSION: "nightly-2024-03-01"
+  DOCS_DIR: "docs/robotics/api"
+
+# ======================
+# 🛠️ JOBS PRINCIPALES
+# ======================
+jobs:
+  documentation:
+    name: "📚 Generar Documentación"
+    runs-on: ubuntu-latest
+    container:
+      image: rustlang/rust:${{ env.RUST_VERSION }}
+      options: --privileged  # Requerido para algunos crates
+
+    # ======================
+    # 🌐 ENTORNO DE EJECUCIÓN
+    # ======================
+    environment:
+      name: mechmind-docs
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # ======================
+      # 1. PREPARACIÓN
+      # ======================
+      - name: "🛸 Checkout del Código"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+          persist-credentials: false
+
+      # ======================
+      # 2. CONFIGURACIÓN RUST
+      # ======================
+      - name: "⚙️ Configurar Toolchain"
+        run: |
+          rustup component add rust-docs
+          rustup target add wasm32-unknown-unknown
+          echo "CARGO_TARGET_DIR=./target-docs" >> $GITHUB_ENV
+
+      # ======================
+      # 3. GENERACIÓN DE DOCS
+      # ======================
+      - name: "🦀 Generar RustDoc Avanzado"
+        working-directory: ${{ env.DOCS_DIR }}
+        run: |
+          cargo doc \
+            --no-deps \
+            --document-private-items \
+            --all-features \
+            --target-dir ${{ env.CARGO_TARGET_DIR }} \
+            --offline
+          
+          # Post-procesamiento de docs
+          find target-docs/doc -name "*.html" -exec \
+            sed -i 's/<body>/<body class="mechmind-theme">/g' {} \;
+
+      # ======================
+      # 4. CONTROL DE CALIDAD
+      # ======================
+      - name: "🔍 Validar Documentación"
+        run: |
+          # Verificar links rotos
+          pip install linkchecker
+          linkchecker ${{ env.DOCS_DIR }}/target-docs/doc
+
+      # ======================
+      # 5. DESPLIEGUE
+      # ======================
+      - name: "🚀 Desplegar en GitHub Pages"
+        uses: actions/deploy-pages@v4
+        id: deployment
+        with:
+          token: ${{ secrets.MECHMIND_DEPLOY_KEY }}
+          target-branch: gh-pages
+          publish-dir: ${{ env.DOCS_DIR }}/target-docs/doc
+          environment-name: mechmind-docs
+
+      # ======================
+      # 6. NOTIFICACIONES
+      # ======================
+      - name: "📨 Notificar Equipo"
+        if: always()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `📚 Documentación actualizada: ${process.env.DOCS_VERSION}\n🌐 Vista previa: ${{ steps.deployment.outputs.page_url }}`
+            })
