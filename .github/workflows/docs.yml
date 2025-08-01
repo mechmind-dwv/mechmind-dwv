@@ -1,5 +1,5 @@
 name: Build Robotics Docs
-on: [push]
+on:[push]
 
 jobs:
   docs:
@@ -9,7 +9,7 @@ jobs:
       
       - name: Generate RustDoc
         run: |
-          cd docs/es/docs/robotics/firmware
+          cd docs/robotics/firmware
           cargo doc --no-deps
           mv target/doc ./api/rustdoc
 
@@ -17,7 +17,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: mechbot-docs
-          path: docs/es/docs/robotics/api/
+          path: docs/robotics/api/
           
       - name: Build Docs
          run: |
