@@ -39,17 +39,22 @@ jobs:
           if [ -f "README.md" ]; then
             cp README.md README.md.backup
             
-            sed -i "s|https://github-readme-stats\.vercel\.app/api?username=${USERNAME}[^)]*|${STATS_URL}|g" README.md
-            sed -i "s|https://github-readme-stats\.vercel\.app/api/top-langs/?username=${USERNAME}[^)]*|${LANGS_URL}|g" README.md
-            sed -i "s|https://github-readme-streak-stats\.herokuapp\.com/?user=${USERNAME}[^)]*|${STREAK_URL}|g" README.md
-            
-            if ! grep -q "github-readme-stats" README.md; then
+            # Actualizar URLs existentes o añadir nuevas
+            if grep -q "github-readme-stats" README.md; then
+              sed -i "s|https://github-readme-stats\.vercel\.app/api?username=${USERNAME}[^)]*|${STATS_URL}|g" README.md
+              sed -i "s|https://github-readme-stats\.vercel\.app/api/top-langs/?username=${USERNAME}[^)]*|${LANGS_URL}|g" README.md
+            else
               echo "" >> README.md
               echo "## 📊 GitHub Stats" >> README.md
               echo "" >> README.md
               echo "![GitHub Stats](${STATS_URL})" >> README.md
               echo "" >> README.md
               echo "![Top Languages](${LANGS_URL})" >> README.md
+            fi
+            
+            if grep -q "github-readme-streak-stats" README.md; then
+              sed -i "s|https://github-readme-streak-stats\.herokuapp\.com/?user=${USERNAME}[^)]*|${STREAK_URL}|g" README.md
+            else
               echo "" >> README.md
               echo "![GitHub Streak](${STREAK_URL})" >> README.md
             fi
@@ -64,9 +69,9 @@ jobs:
         run: |
           if [[ -n $(git status --porcelain) ]]; then
             git add README.md
-            git commit -m "📈 Auto-update GitHub stats [skip ci]"
+            git commit -m "📈 Auto-update GitHub stats with theme: ${{ inputs.theme || 'radical' }} [skip ci]"
             git push
-            echo "✅ Cambios commiteados"
+            echo "✅ Cambios commiteados y pusheados"
           else
-            echo "ℹ️ No hay cambios"
+            echo "ℹ️ No hay cambios para commitear"
           fi
