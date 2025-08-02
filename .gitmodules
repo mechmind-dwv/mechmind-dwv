@@ -1,0 +1,3 @@
+[submodule "MechMind-IA"]
+    path = MechMind-IA
+    url = https://github.com/mechmind-dwv/MechMind-IA.git
