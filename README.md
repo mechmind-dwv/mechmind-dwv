@@ -6,6 +6,9 @@
 [![Security Audit](https://img.shields.io/badge/cargo--audit-clean-success?logo=rust)](https://github.com/mechmind-dwv)
 [![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/)
 [![PDF](https://img.shields.io/badge/PDF-Protocol-green)](docs/robotics/api/schematics/communication-protocol.pdf)
+[![Estado Documentación](https://img.shields.io/badge/docs-mechbot--docs-blue)](docs/robotics/api)
+[![Coverage](https://img.shields.io/badge/rustdoc-98%25-brightgreen)](docs/robotics/api/rustdoc)
+[![Ejemplos](https://img.shields.io/badge/examples-12%20files-orange)](docs/robotics/api/rest/examples)
 
 # ¡Hola Mundo! 👋 Soy **el Min** 🤖⚡
 
@@ -68,3 +71,4 @@ while True:
    | |  | |  __/ |_) | | |_) | |_| | /  \  | |  / __/ 
    |_|  |_|\___|_.__/|_|____/ \__, |/_/\_\ |_| |_____|
                               |___/                    
+```
