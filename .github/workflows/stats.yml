@@ -1,63 +1,77 @@
-name: "📊 MechMind Stats Updater Pro"
+name: "📊 MechMind Stats Updater"
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # Cada 6 horas (UTC)
+    - cron: "0 */6 * * *"
   workflow_dispatch:
     inputs:
       theme:
-        description: 'Tema para las tarjetas (radical, dark, etc)'
+        description: 'Tema para las tarjetas'
         required: false
         default: 'radical'
-      force_update:
-        description: 'Forzar actualización ignorando caché'
-        required: false
-        default: 'false'
 
 jobs:
   update-stats:
     name: "⚡ Update README Stats"
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Permiso esencial para commits
-      pull-requests: write  # Para futuras integraciones
+      contents: write
 
     steps:
-      - name: "🛰️ Checkout Profundo"
+      - name: "🛰️ Checkout Repository"
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Historial completo para análisis
-          persist-credentials: false  # Más seguro
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
-      - name: "📊 Generar Estadísticas Inteligentes"
-        uses: anuraghazra/github-readme-stats@v4.2.1
-        id: stats
-        with:
-          username: mechmind-dwv
-          theme: ${{ inputs.theme || 'radical' }}
-          show_icons: true
-          hide_border: true
-          include_all_commits: true
-          count_private: true
-          cache_seconds: ${{ inputs.force_update == 'true' && '0' || '43200' }}  # 12h cache
-          exclude_repo: 'deprecated-project,test-sandbox'  # Filtro opcional
-
-      - name: "🔍 Detección de Cambios"
-        id: changes
+      - name: "📊 Update README with Stats"
         run: |
-          git diff --quiet README.md || echo "has_changes=true" >> $GITHUB_OUTPUT
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          USERNAME="mechmind-dwv"
+          THEME="${{ inputs.theme || 'radical' }}"
+          
+          STATS_URL="https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&theme=${THEME}&hide_border=true&include_all_commits=true&count_private=true"
+          LANGS_URL="https://github-readme-stats.vercel.app/api/top-langs/?username=${USERNAME}&theme=${THEME}&hide_border=true&layout=compact"
+          STREAK_URL="https://github-readme-streak-stats.herokuapp.com/?user=${USERNAME}&theme=${THEME}&hide_border=true"
+          
+          if [ -f "README.md" ]; then
+            cp README.md README.md.backup
+            
+            # Actualizar URLs existentes o añadir nuevas
+            if grep -q "github-readme-stats" README.md; then
+              sed -i "s|https://github-readme-stats\.vercel\.app/api?username=${USERNAME}[^)]*|${STATS_URL}|g" README.md
+              sed -i "s|https://github-readme-stats\.vercel\.app/api/top-langs/?username=${USERNAME}[^)]*|${LANGS_URL}|g" README.md
+            else
+              echo "" >> README.md
+              echo "## 📊 GitHub Stats" >> README.md
+              echo "" >> README.md
+              echo "![GitHub Stats](${STATS_URL})" >> README.md
+              echo "" >> README.md
+              echo "![Top Languages](${LANGS_URL})" >> README.md
+            fi
+            
+            if grep -q "github-readme-streak-stats" README.md; then
+              sed -i "s|https://github-readme-streak-stats\.herokuapp\.com/?user=${USERNAME}[^)]*|${STREAK_URL}|g" README.md
+            else
+              echo "" >> README.md
+              echo "![GitHub Streak](${STREAK_URL})" >> README.md
+            fi
+            
+            echo "✅ README.md actualizado con tema: ${THEME}"
+          else
+            echo "❌ README.md no encontrado"
+            exit 1
+          fi
 
-      - name: "💾 Commit Seguro"
-        if: steps.changes.outputs.has_changes == 'true'
+      - name: "💾 Commit and Push Changes"
         run: |
-          git config --global user.name "MechMind Bot v2.0"
-          git config --global user.email "mechmind-ops@bots.github"
-          git add README.md
-          git commit -m "📈 Auto-update stats [skip ci] --theme=${{ inputs.theme }}"
-          git push origin HEAD:${{ github.ref }}
-
-      - name: "📌 Notificar sin Cambios"
-        if: steps.changes.outputs.has_changes != 'true'
-        run: |
-          echo "🔄 No se detectaron cambios en las estadísticas" >> $GITHUB_STEP_SUMMARY
-          echo "Cache válida hasta: $(date -d '+12 hours')" >> $GITHUB_STEP_SUMMARY
+          if [[ -n $(git status --porcelain) ]]; then
+            git add README.md
+            git commit -m "📈 Auto-update GitHub stats with theme: ${{ inputs.theme || 'radical' }} [skip ci]"
+            git push
+            echo "✅ Cambios commiteados y pusheados"
+          else
+            echo "ℹ️ No hay cambios para commitear"
+          fi
