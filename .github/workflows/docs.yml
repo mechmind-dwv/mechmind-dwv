@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-name: Build Robotics Docs
-on: push
-=======
 name: "📜 MechMind Documentation Engine"
 
 # ======================
@@ -73,10 +69,6 @@ jobs:
       - name: "🛸 Checkout del Código"
         uses: actions/checkout@v4
         with:
-<<<<<<< HEAD
-          name: mechbot-docs
-          path: docs/robotics/api/
-=======
           fetch-depth: 0
           submodules: recursive
           persist-credentials: false
