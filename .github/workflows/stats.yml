@@ -2,7 +2,7 @@ name: "📊 MechMind Stats Updater"
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # Cada 6 horas (UTC)
+    - cron: "0 */6 * * *"
   workflow_dispatch:
     inputs:
       theme:
@@ -15,13 +15,13 @@ jobs:
     name: "⚡ Update README Stats"
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Necesario para hacer push
+      contents: write
 
     steps:
       - name: "🛰️ Checkout Code"
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Necesario para el historial de commits
+          fetch-depth: 0
 
       - name: "📊 Generate Stats Cards"
         uses: anuraghazra/github-readme-stats@latest
@@ -33,23 +33,15 @@ jobs:
           hide_border: true
           include_all_commits: true
           count_private: true
-          custom_title: "MechMind GitHub Stats"
-          card_width: 500
-          cache_seconds: 43200  # 12 horas de caché
 
       - name: "💾 Commit Changes"
         run: |
           git config --global user.name "MechMind Bot"
           git config --global user.email "mechmind@bots.github"
-          git add README.md
-          git commit -m "📈 Auto-update stats [skip ci]" || echo "No changes to commit"
-          git push
-```
-
-### 🛠️ **Mejoras Clave Implementadas**:
-
-1. **Permisos Correctos**: Añadida sección `permissions` para evitar errores de autenticación
-2. **Inputs Personalizables**: Puedes cambiar el tema manualmente cuando triggers el workflow
-3. **Manejo Elegante de Cambios**: El `|| echo` evita fallos cuando no hay cambios
-4. **Optimización de Caché**: 12 horas de caché para reducir llamadas a la API
-5. **Metadatos Mejorados**: Commit message con `[skip ci]` para evitar loops
+          if [[ -n $(git status --porcelain) ]]; then
+            git add README.md
+            git commit -m "📈 Auto-update stats [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
