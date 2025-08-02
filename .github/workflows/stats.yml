@@ -2,11 +2,11 @@ name: "📊 MechMind Stats Updater"
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */12 * * *"  # Cada 12 horas
   workflow_dispatch:
     inputs:
       theme:
-        description: 'Tema para las tarjetas'
+        description: 'Theme for cards'
         required: false
         default: 'radical'
 
@@ -20,9 +20,6 @@ jobs:
     steps:
       - name: "🛰️ Checkout Repository"
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
 
       - name: "📊 Update README with Stats"
         run: |
@@ -39,27 +36,28 @@ jobs:
           if [ -f "README.md" ]; then
             cp README.md README.md.backup
             
-            # Actualizar URLs existentes o añadir nuevas
+            # Actualizar URLs existentes
             if grep -q "github-readme-stats" README.md; then
               sed -i "s|https://github-readme-stats\.vercel\.app/api?username=${USERNAME}[^)]*|${STATS_URL}|g" README.md
               sed -i "s|https://github-readme-stats\.vercel\.app/api/top-langs/?username=${USERNAME}[^)]*|${LANGS_URL}|g" README.md
+              echo "✅ URLs de stats actualizadas"
             else
               echo "" >> README.md
               echo "## 📊 GitHub Stats" >> README.md
-              echo "" >> README.md
               echo "![GitHub Stats](${STATS_URL})" >> README.md
-              echo "" >> README.md
               echo "![Top Languages](${LANGS_URL})" >> README.md
+              echo "✅ Sección de stats añadida"
             fi
             
             if grep -q "github-readme-streak-stats" README.md; then
               sed -i "s|https://github-readme-streak-stats\.herokuapp\.com/?user=${USERNAME}[^)]*|${STREAK_URL}|g" README.md
+              echo "✅ URL de streak actualizada"
             else
-              echo "" >> README.md
               echo "![GitHub Streak](${STREAK_URL})" >> README.md
+              echo "✅ Streak stats añadida"
             fi
             
-            echo "✅ README.md actualizado con tema: ${THEME}"
+            echo "📝 README.md procesado con tema: ${THEME}"
           else
             echo "❌ README.md no encontrado"
             exit 1
@@ -69,7 +67,7 @@ jobs:
         run: |
           if [[ -n $(git status --porcelain) ]]; then
             git add README.md
-            git commit -m "📈 Auto-update GitHub stats with theme: ${{ inputs.theme || 'radical' }} [skip ci]"
+            git commit -m "📈 Auto-update GitHub stats (theme: ${{ inputs.theme || 'radical' }}) [skip ci]"
             git push
             echo "✅ Cambios commiteados y pusheados"
           else
