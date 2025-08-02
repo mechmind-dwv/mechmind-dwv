@@ -1,0 +1,50 @@
+version: 2
+updates:
+  # Actualización para Rust (MechBot-2X y proyectos principales)
+  - package-ecosystem: "cargo"
+    directory: "/projects/mechbot-2x"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "mechmind-dwv"
+    commit-message:
+      prefix: "🦀"
+      prefix-development: "[rust-dev]"
+
+  # Actualización para Python (IA/ML y scripts)
+  - package-ecosystem: "pip"
+    directory: "/docs/ai-research"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+    allow:
+      - dependency-name: "torch"
+        dependency-type: "direct"
+      - dependency-name: "numpy"
+        dependency-type: "direct"
+
+  # Actualización para GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "monthly"
+    ignore:
+      - dependency-name: "actions/checkout"
+        versions: ["1", "2"]  # Mantenemos v2+
+
+  # Actualización para ROS2 (Paquetes específicos)
+  - package-ecosystem: "ros2"
+    directory: "/projects/mechbot-2x/ros_packages"
+    schedule:
+      interval: "monthly"
+    versioning-strategy: "increase-if-necessary"
+
+  # Configuración global
+  rebase-strategy: "disabled"
+  versioning-strategy: "auto"
+  target-branch: "dependabot-updates"
+  labels:
+    - "dependencies"
+    - "automatic"
