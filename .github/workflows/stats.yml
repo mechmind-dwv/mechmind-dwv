@@ -18,30 +18,55 @@ jobs:
       contents: write
 
     steps:
-      - name: "🛰️ Checkout Code"
+      - name: "🛰️ Checkout Repository"
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: "📊 Generate Stats Cards"
-        uses: anuraghazra/github-readme-stats@latest
-        id: stats
-        with:
-          username: mechmind-dwv
-          theme: ${{ inputs.theme || 'radical' }}
-          show_icons: true
-          hide_border: true
-          include_all_commits: true
-          count_private: true
-
-      - name: "💾 Commit Changes"
+      - name: "📊 Update README with Stats"
         run: |
-          git config --global user.name "MechMind Bot"
-          git config --global user.email "mechmind@bots.github"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          USERNAME="mechmind-dwv"
+          THEME="${{ inputs.theme || 'radical' }}"
+          
+          STATS_URL="https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&theme=${THEME}&hide_border=true&include_all_commits=true&count_private=true"
+          LANGS_URL="https://github-readme-stats.vercel.app/api/top-langs/?username=${USERNAME}&theme=${THEME}&hide_border=true&layout=compact"
+          STREAK_URL="https://github-readme-streak-stats.herokuapp.com/?user=${USERNAME}&theme=${THEME}&hide_border=true"
+          
+          if [ -f "README.md" ]; then
+            cp README.md README.md.backup
+            
+            sed -i "s|https://github-readme-stats\.vercel\.app/api?username=${USERNAME}[^)]*|${STATS_URL}|g" README.md
+            sed -i "s|https://github-readme-stats\.vercel\.app/api/top-langs/?username=${USERNAME}[^)]*|${LANGS_URL}|g" README.md
+            sed -i "s|https://github-readme-streak-stats\.herokuapp\.com/?user=${USERNAME}[^)]*|${STREAK_URL}|g" README.md
+            
+            if ! grep -q "github-readme-stats" README.md; then
+              echo "" >> README.md
+              echo "## 📊 GitHub Stats" >> README.md
+              echo "" >> README.md
+              echo "![GitHub Stats](${STATS_URL})" >> README.md
+              echo "" >> README.md
+              echo "![Top Languages](${LANGS_URL})" >> README.md
+              echo "" >> README.md
+              echo "![GitHub Streak](${STREAK_URL})" >> README.md
+            fi
+            
+            echo "✅ README.md actualizado con tema: ${THEME}"
+          else
+            echo "❌ README.md no encontrado"
+            exit 1
+          fi
+
+      - name: "💾 Commit and Push Changes"
+        run: |
           if [[ -n $(git status --porcelain) ]]; then
             git add README.md
-            git commit -m "📈 Auto-update stats [skip ci]"
+            git commit -m "📈 Auto-update GitHub stats [skip ci]"
             git push
+            echo "✅ Cambios commiteados"
           else
-            echo "No changes to commit"
+            echo "ℹ️ No hay cambios"
           fi
