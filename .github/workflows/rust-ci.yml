@@ -1,8 +1,8 @@
 name: "🦀 Rust Super Pipeline"
-permissions:
-  contents: read
 
-on: [push, pull_request]
+push:
+on
+pull request:
 
 jobs:
   test:
