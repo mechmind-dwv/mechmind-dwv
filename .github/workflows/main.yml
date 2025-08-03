@@ -10,6 +10,8 @@ jobs:
   supercharge-profile:
     name: ⚡ Actualización Dinámica
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       # Paso 1: Checkout mágico
       - name: 🛸 Clonar Repo
