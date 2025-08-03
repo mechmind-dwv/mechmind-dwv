@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-name: Build Robotics Docs
-on: push
-=======
 name: "📜 MechMind Documentation Engine"
 
 # ======================
@@ -12,7 +8,8 @@ permissions:
   pages: write        # Despliegue en GitHub Pages
   id-token: write     # Autenticación OIDC segura
   deployments: write  # Para seguimiento de despliegues
->>>>>>> 18737787 (Agrega nuevos archivos y modificaciones listados)
+name: Build Robotics Docs
+on: push
 
 # ======================
 # 🕒 DISPARADORES
@@ -44,8 +41,12 @@ jobs:
   documentation:
     name: "📚 Generar Documentación"
     runs-on: ubuntu-latest
-<<<<<<< HEAD
-    steps:
+    container:
+      image: rustlang/rust:${{ env.RUST_VERSION }}
+      options: --privileged
+      
+      # Requerido para algunos crates
+ steps:
       - uses: actions/checkout@v4
       
       - name: Generate RustDoc
@@ -53,11 +54,6 @@ jobs:
           cd docs/robotics/firmware
           cargo doc --no-deps
           mv target/doc ./api/rustdoc
-=======
-    container:
-      image: rustlang/rust:${{ env.RUST_VERSION }}
-      options: --privileged  # Requerido para algunos crates
->>>>>>> 18737787 (Agrega nuevos archivos y modificaciones listados)
 
     # ======================
     # 🌐 ENTORNO DE EJECUCIÓN
@@ -73,10 +69,6 @@ jobs:
       - name: "🛸 Checkout del Código"
         uses: actions/checkout@v4
         with:
-<<<<<<< HEAD
-          name: mechbot-docs
-          path: docs/robotics/api/
-=======
           fetch-depth: 0
           submodules: recursive
           persist-credentials: false
@@ -102,7 +94,9 @@ jobs:
             --all-features \
             --target-dir ${{ env.CARGO_TARGET_DIR }} \
             --offline
->>>>>>> 18737787 (Agrega nuevos archivos y modificaciones listados)
+       
+       - name: mechbot-docs
+          path: docs/robotics/api/
           
           # Post-procesamiento de docs
           find target-docs/doc -name "*.html" -exec \
