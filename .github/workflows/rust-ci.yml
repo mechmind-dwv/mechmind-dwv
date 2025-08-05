@@ -1,8 +1,6 @@
 name: "🦀 Rust Super Pipeline"
 
-push:
-on
-pull request:
+on: [push, pull_request]
 
 jobs:
   test:
