@@ -26,8 +26,8 @@ jobs:
 
       - name: "📊 Update README with Stats"
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "ia.mechmind@gmail.com"
+          git config --local user.name "MechMind-dwv"
           
           USERNAME="mechmind-dwv"
           THEME="${{ inputs.theme || 'radical' }}"
