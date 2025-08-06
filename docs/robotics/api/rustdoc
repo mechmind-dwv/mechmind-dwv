@@ -1,6 +1,9 @@
-// Código de bienvenida en Rust
-fn main() {
-    println!("🎯 Objetivo: Innovación en Robótica con Rust");
-    println!("💻 Repositorio: github.com/mechmind-dwv");
-    println!("📚 Documentación: ./docs/robotics/api");
-}
+### 🛠️ Cómo Generar la Documentación
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/mechmind-dwv/mechmind-dwv.git
+   ```
+2. Genera docs locales:
+   ```bash
+   cd docs/robotics/api
+   cargo doc --no-deps --open
