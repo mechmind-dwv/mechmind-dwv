@@ -1,9 +1,5 @@
-### 🛠️ Cómo Generar la Documentación
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/mechmind-dwv/mechmind-dwv.git
-   ```
-2. Genera docs locales:
-   ```bash
+git clone https://github.com/mechmind-dwv/mechmind-dwv.git
+cd ~/MechMind-dwv 
+# Genera docs locales:
    cd docs/robotics/api
    cargo doc --no-deps --open
