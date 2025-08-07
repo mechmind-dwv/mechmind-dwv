@@ -51,9 +51,9 @@ La documentación se actualiza automáticamente con cada push:
 ```
 
 ### 📌 Badges de Estado
-[![Estado Documentación](https://img.shields.io/badge/docs-mechbot--docs-blue)](docs/robotics/api)
-[![Coverage](https://img.shields.io/badge/rustdoc-98%25-brightgreen)](docs/robotics/api/rustdoc)
-[![Ejemplos](https://img.shields.io/badge/examples-12%20files-orange)](docs/robotics/api/rest/examples)
+[![Estado Documentación](https://img.shields.io/badge/docs-mechbot--docs-blue)](robotics/api)
+[![Coverage](https://img.shields.io/badge/rustdoc-98%25-brightgreen)](robotics/api/rustdoc)
+[![Ejemplos](https://img.shields.io/badge/examples-12%20files-orange)](robotics/api/rest/examples)
 
 ---
 
