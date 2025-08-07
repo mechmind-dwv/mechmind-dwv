@@ -33,3 +33,9 @@ node_modules/
 .ai-venv/
 env/
 *.pyc
+
+# Virtual environments
+.venv/
+.ai-venv/
+env/
+*.pyc
