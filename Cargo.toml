@@ -49,4 +49,3 @@ path = "src/main.rs"
 [lib]
 name = "mechros2"
 path = "src/lib.rs"
-]
