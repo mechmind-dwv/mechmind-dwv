@@ -2,7 +2,7 @@
 members = [
     "mechbot-2x",
     "atomic-rs", 
-    "oxide-security"
+    "oxide-security",
       "mechros2"
 ]
 
