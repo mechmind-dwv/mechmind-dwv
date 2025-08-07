@@ -1,2 +1,7 @@
+from src import add, subtract
+
 def test_addition():
-    assert 1 + 1 == 2
+    assert add(2, 3) == 5
+
+def test_subtraction():
+    assert subtract(5, 2) == 3
