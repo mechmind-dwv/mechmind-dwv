@@ -27,3 +27,9 @@ env.*
 bandit_results.json
 safety_report.json
 node_modules/
+
+# Virtual environments
+.venv/
+.ai-venv/
+env/
+*.pyc
