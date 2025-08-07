@@ -1,7 +1,8 @@
-name: 💾 Guardar Cambios
- run: |
-git config --global user.name "mechmind-dwv"
-git config --global user.email "ia.mechmind@gmail.com"
-git add README.md
-git commit -m "✨ Auto-update: $(date +'%d/%m/%Y %H:%M')"
-git push
+ # Paso 4: Commit sexy
+      - name: 💾 Guardar Cambios
+        run: |
+          git config --global user.name "MechMind Bot"
+          git config --global user.email "bot@mechmind.tech"
+          git add README.md
+          git commit -m "✨ Auto-update: $(date +'%d/%m/%Y %H:%M')"
+          git push
