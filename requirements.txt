@@ -1,0 +1,5 @@
+bandit
+safety
+pytest
+pytest-cov
+coverage

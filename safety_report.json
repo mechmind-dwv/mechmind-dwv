@@ -1,0 +1,5334 @@
+
+
++===========================================================================================================================================================================================+
+
+
+DEPRECATED: this command (`check`) has been DEPRECATED, and will be unsupported beyond 01 June 2024.
+
+
+We highly encourage switching to the new `scan` command which is easier to use, more powerful, and can be set up to mimic the deprecated command if required.
+
+
++===========================================================================================================================================================================================+
+
+
+{
+    "report_meta": {
+        "scan_target": "environment",
+        "scanned": [
+            "/home/min/MECHBOT/venv/bin",
+            "/home/min/mechmind-dwv/~/MECHBOT/dummy_packages",
+            "/home/min/MECHBOT",
+            "/home/min/MECHBOT/venv/lib/python3.12/site-packages",
+            "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor",
+            "/usr/lib/python312.zip",
+            "/home/min/mechmind-dwv",
+            "/home/min/MECHBOT/dummy_packages",
+            "/opt/ros/jazzy/lib/python3.12/site-packages",
+            "/usr/lib/python3.12/lib-dynload",
+            "/usr/lib/python3.12"
+        ],
+        "scanned_full_path": [
+            "/home/min/MECHBOT/venv/bin",
+            "/opt/ros/jazzy/lib/python3.12/site-packages",
+            "/home/min/mechmind-dwv",
+            "/home/min/MECHBOT",
+            "/home/min/MECHBOT/dummy_packages",
+            "/home/min/mechmind-dwv/~/MECHBOT/dummy_packages",
+            "/usr/lib/python312.zip",
+            "/usr/lib/python3.12",
+            "/usr/lib/python3.12/lib-dynload",
+            "/home/min/MECHBOT/venv/lib/python3.12/site-packages",
+            "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+        ],
+        "target_languages": [
+            "python"
+        ],
+        "policy_file": null,
+        "policy_file_source": "local",
+        "audit_and_monitor": false,
+        "api_key": false,
+        "account": "",
+        "local_database_path": null,
+        "safety_version": "3.6.0",
+        "timestamp": "2025-08-08 01:19:22",
+        "packages_found": 312,
+        "vulnerabilities_found": 2,
+        "vulnerabilities_ignored": 0,
+        "remediations_recommended": 0,
+        "telemetry": {
+            "safety_options": {
+                "output": {
+                    "--output": 1
+                }
+            },
+            "safety_version": "3.6.0",
+            "safety_source": "cli",
+            "os_type": "Linux",
+            "os_release": "6.8.0-71-generic",
+            "os_description": "Linux-6.8.0-71-generic-x86_64-with-glibc2.39",
+            "python_version": "3.12.3",
+            "safety_command": "check"
+        },
+        "git": {
+            "branch": "feature/your-changes",
+            "tag": "",
+            "commit": "d2982f9bd745c9e145a56889d136b42983ab695f",
+            "dirty": "True",
+            "origin": "git@github.com:mechmind-dwv/MechMind-dwv.git"
+        },
+        "project": null,
+        "json_version": "1.1",
+        "remediations_attempted": 0,
+        "remediations_completed": 0,
+        "remediation_mode": "NON_INTERACTIVE"
+    },
+    "scanned_packages": {
+        "action-msgs": {
+            "name": "action-msgs",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "action-msgs==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "action-msgs",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "action-tutorials-interfaces": {
+            "name": "action-tutorials-interfaces",
+            "version": "0.33.5",
+            "requirements": [
+                {
+                    "raw": "action-tutorials-interfaces==0.33.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "action-tutorials-interfaces",
+                    "specifier": "==0.33.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "action-tutorials-py": {
+            "name": "action-tutorials-py",
+            "version": "0.33.5",
+            "requirements": [
+                {
+                    "raw": "action-tutorials-py==0.33.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "action-tutorials-py",
+                    "specifier": "==0.33.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "actionlib-msgs": {
+            "name": "actionlib-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "actionlib-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "actionlib-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-cmake-test": {
+            "name": "ament-cmake-test",
+            "version": "2.5.4",
+            "requirements": [
+                {
+                    "raw": "ament-cmake-test==2.5.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-cmake-test",
+                    "specifier": "==2.5.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-copyright": {
+            "name": "ament-copyright",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-copyright==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-copyright",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-cppcheck": {
+            "name": "ament-cppcheck",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-cppcheck==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-cppcheck",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-cpplint": {
+            "name": "ament-cpplint",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-cpplint==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-cpplint",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-flake8": {
+            "name": "ament-flake8",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-flake8==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-flake8",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-index-python": {
+            "name": "ament-index-python",
+            "version": "1.8.1",
+            "requirements": [
+                {
+                    "raw": "ament-index-python==1.8.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-index-python",
+                    "specifier": "==1.8.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-lint": {
+            "name": "ament-lint",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-lint==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-lint",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-lint-cmake": {
+            "name": "ament-lint-cmake",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-lint-cmake==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-lint-cmake",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-package": {
+            "name": "ament-package",
+            "version": "0.16.4",
+            "requirements": [
+                {
+                    "raw": "ament-package==0.16.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-package",
+                    "specifier": "==0.16.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-pep257": {
+            "name": "ament-pep257",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-pep257==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-pep257",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-uncrustify": {
+            "name": "ament-uncrustify",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-uncrustify==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-uncrustify",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ament-xmllint": {
+            "name": "ament-xmllint",
+            "version": "0.17.2",
+            "requirements": [
+                {
+                    "raw": "ament-xmllint==0.17.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ament-xmllint",
+                    "specifier": "==0.17.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "angles": {
+            "name": "angles",
+            "version": "1.16.0",
+            "requirements": [
+                {
+                    "raw": "angles==1.16.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "angles",
+                    "specifier": "==1.16.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "builtin-interfaces": {
+            "name": "builtin-interfaces",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "builtin-interfaces==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "builtin-interfaces",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "composition-interfaces": {
+            "name": "composition-interfaces",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "composition-interfaces==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "composition-interfaces",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "cv-bridge": {
+            "name": "cv-bridge",
+            "version": "4.1.0",
+            "requirements": [
+                {
+                    "raw": "cv-bridge==4.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "cv-bridge",
+                    "specifier": "==4.1.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "demo-nodes-py": {
+            "name": "demo-nodes-py",
+            "version": "0.33.5",
+            "requirements": [
+                {
+                    "raw": "demo-nodes-py==0.33.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "demo-nodes-py",
+                    "specifier": "==0.33.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "diagnostic-msgs": {
+            "name": "diagnostic-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "diagnostic-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "diagnostic-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "domain-coordinator": {
+            "name": "domain-coordinator",
+            "version": "0.12.0",
+            "requirements": [
+                {
+                    "raw": "domain-coordinator==0.12.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "domain-coordinator",
+                    "specifier": "==0.12.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "example-interfaces": {
+            "name": "example-interfaces",
+            "version": "0.12.0",
+            "requirements": [
+                {
+                    "raw": "example-interfaces==0.12.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "example-interfaces",
+                    "specifier": "==0.12.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "examples-rclpy-executors": {
+            "name": "examples-rclpy-executors",
+            "version": "0.19.5",
+            "requirements": [
+                {
+                    "raw": "examples-rclpy-executors==0.19.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "examples-rclpy-executors",
+                    "specifier": "==0.19.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "examples-rclpy-minimal-action-client": {
+            "name": "examples-rclpy-minimal-action-client",
+            "version": "0.19.5",
+            "requirements": [
+                {
+                    "raw": "examples-rclpy-minimal-action-client==0.19.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "examples-rclpy-minimal-action-client",
+                    "specifier": "==0.19.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "examples-rclpy-minimal-action-server": {
+            "name": "examples-rclpy-minimal-action-server",
+            "version": "0.19.5",
+            "requirements": [
+                {
+                    "raw": "examples-rclpy-minimal-action-server==0.19.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "examples-rclpy-minimal-action-server",
+                    "specifier": "==0.19.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "examples-rclpy-minimal-client": {
+            "name": "examples-rclpy-minimal-client",
+            "version": "0.19.5",
+            "requirements": [
+                {
+                    "raw": "examples-rclpy-minimal-client==0.19.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "examples-rclpy-minimal-client",
+                    "specifier": "==0.19.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "examples-rclpy-minimal-publisher": {
+            "name": "examples-rclpy-minimal-publisher",
+            "version": "0.19.5",
+            "requirements": [
+                {
+                    "raw": "examples-rclpy-minimal-publisher==0.19.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "examples-rclpy-minimal-publisher",
+                    "specifier": "==0.19.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "examples-rclpy-minimal-service": {
+            "name": "examples-rclpy-minimal-service",
+            "version": "0.19.5",
+            "requirements": [
+                {
+                    "raw": "examples-rclpy-minimal-service==0.19.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "examples-rclpy-minimal-service",
+                    "specifier": "==0.19.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "examples-rclpy-minimal-subscriber": {
+            "name": "examples-rclpy-minimal-subscriber",
+            "version": "0.19.5",
+            "requirements": [
+                {
+                    "raw": "examples-rclpy-minimal-subscriber==0.19.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "examples-rclpy-minimal-subscriber",
+                    "specifier": "==0.19.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "geometry-msgs": {
+            "name": "geometry-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "geometry-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "geometry-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "image-geometry": {
+            "name": "image-geometry",
+            "version": "4.1.0",
+            "requirements": [
+                {
+                    "raw": "image-geometry==4.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "image-geometry",
+                    "specifier": "==4.1.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "interactive-markers": {
+            "name": "interactive-markers",
+            "version": "2.5.4",
+            "requirements": [
+                {
+                    "raw": "interactive-markers==2.5.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "interactive-markers",
+                    "specifier": "==2.5.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "laser-geometry": {
+            "name": "laser-geometry",
+            "version": "2.7.1",
+            "requirements": [
+                {
+                    "raw": "laser-geometry==2.7.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "laser-geometry",
+                    "specifier": "==2.7.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "launch": {
+            "name": "launch",
+            "version": "3.4.5",
+            "requirements": [
+                {
+                    "raw": "launch==3.4.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "launch",
+                    "specifier": "==3.4.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "launch-ros": {
+            "name": "launch-ros",
+            "version": "0.26.8",
+            "requirements": [
+                {
+                    "raw": "launch-ros==0.26.8",
+                    "extras": [],
+                    "marker": null,
+                    "name": "launch-ros",
+                    "specifier": "==0.26.8",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "launch-testing": {
+            "name": "launch-testing",
+            "version": "3.4.5",
+            "requirements": [
+                {
+                    "raw": "launch-testing==3.4.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "launch-testing",
+                    "specifier": "==3.4.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "launch-testing-ros": {
+            "name": "launch-testing-ros",
+            "version": "0.26.8",
+            "requirements": [
+                {
+                    "raw": "launch-testing-ros==0.26.8",
+                    "extras": [],
+                    "marker": null,
+                    "name": "launch-testing-ros",
+                    "specifier": "==0.26.8",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "launch-xml": {
+            "name": "launch-xml",
+            "version": "3.4.5",
+            "requirements": [
+                {
+                    "raw": "launch-xml==3.4.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "launch-xml",
+                    "specifier": "==3.4.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "launch-yaml": {
+            "name": "launch-yaml",
+            "version": "3.4.5",
+            "requirements": [
+                {
+                    "raw": "launch-yaml==3.4.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "launch-yaml",
+                    "specifier": "==3.4.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "lifecycle-msgs": {
+            "name": "lifecycle-msgs",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "lifecycle-msgs==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "lifecycle-msgs",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "logging-demo": {
+            "name": "logging-demo",
+            "version": "0.33.5",
+            "requirements": [
+                {
+                    "raw": "logging-demo==0.33.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "logging-demo",
+                    "specifier": "==0.33.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "map-msgs": {
+            "name": "map-msgs",
+            "version": "2.4.1",
+            "requirements": [
+                {
+                    "raw": "map-msgs==2.4.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "map-msgs",
+                    "specifier": "==2.4.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "message-filters": {
+            "name": "message-filters",
+            "version": "4.11.6",
+            "requirements": [
+                {
+                    "raw": "message-filters==4.11.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "message-filters",
+                    "specifier": "==4.11.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "nav-msgs": {
+            "name": "nav-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "nav-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "nav-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "osrf-pycommon": {
+            "name": "osrf-pycommon",
+            "version": "2.1.6",
+            "requirements": [
+                {
+                    "raw": "osrf-pycommon==2.1.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "osrf-pycommon",
+                    "specifier": "==2.1.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pcl-msgs": {
+            "name": "pcl-msgs",
+            "version": "1.0.0",
+            "requirements": [
+                {
+                    "raw": "pcl-msgs==1.0.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pcl-msgs",
+                    "specifier": "==1.0.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pendulum-msgs": {
+            "name": "pendulum-msgs",
+            "version": "0.33.5",
+            "requirements": [
+                {
+                    "raw": "pendulum-msgs==0.33.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pendulum-msgs",
+                    "specifier": "==0.33.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "python-qt-binding": {
+            "name": "python-qt-binding",
+            "version": "2.2.1",
+            "requirements": [
+                {
+                    "raw": "python-qt-binding==2.2.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "python-qt-binding",
+                    "specifier": "==2.2.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "qt-dotgraph": {
+            "name": "qt-dotgraph",
+            "version": "2.7.5",
+            "requirements": [
+                {
+                    "raw": "qt-dotgraph==2.7.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "qt-dotgraph",
+                    "specifier": "==2.7.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "qt-gui": {
+            "name": "qt-gui",
+            "version": "2.7.5",
+            "requirements": [
+                {
+                    "raw": "qt-gui==2.7.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "qt-gui",
+                    "specifier": "==2.7.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "qt-gui-cpp": {
+            "name": "qt-gui-cpp",
+            "version": "2.7.5",
+            "requirements": [
+                {
+                    "raw": "qt-gui-cpp==2.7.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "qt-gui-cpp",
+                    "specifier": "==2.7.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "qt-gui-py-common": {
+            "name": "qt-gui-py-common",
+            "version": "2.7.5",
+            "requirements": [
+                {
+                    "raw": "qt-gui-py-common==2.7.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "qt-gui-py-common",
+                    "specifier": "==2.7.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "quality-of-service-demo-py": {
+            "name": "quality-of-service-demo-py",
+            "version": "0.33.5",
+            "requirements": [
+                {
+                    "raw": "quality-of-service-demo-py==0.33.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "quality-of-service-demo-py",
+                    "specifier": "==0.33.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rcl-interfaces": {
+            "name": "rcl-interfaces",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "rcl-interfaces==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rcl-interfaces",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rclpy": {
+            "name": "rclpy",
+            "version": "7.1.4",
+            "requirements": [
+                {
+                    "raw": "rclpy==7.1.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rclpy",
+                    "specifier": "==7.1.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rcutils": {
+            "name": "rcutils",
+            "version": "6.7.2",
+            "requirements": [
+                {
+                    "raw": "rcutils==6.7.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rcutils",
+                    "specifier": "==6.7.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "resource-retriever": {
+            "name": "resource-retriever",
+            "version": "3.4.4",
+            "requirements": [
+                {
+                    "raw": "resource-retriever==3.4.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "resource-retriever",
+                    "specifier": "==3.4.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rmw-dds-common": {
+            "name": "rmw-dds-common",
+            "version": "3.1.0",
+            "requirements": [
+                {
+                    "raw": "rmw-dds-common==3.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rmw-dds-common",
+                    "specifier": "==3.1.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2action": {
+            "name": "ros2action",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2action==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2action",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2bag": {
+            "name": "ros2bag",
+            "version": "0.26.7",
+            "requirements": [
+                {
+                    "raw": "ros2bag==0.26.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2bag",
+                    "specifier": "==0.26.7",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2bag-mcap-cli": {
+            "name": "ros2bag-mcap-cli",
+            "version": "0.26.7",
+            "requirements": [
+                {
+                    "raw": "ros2bag-mcap-cli==0.26.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2bag-mcap-cli",
+                    "specifier": "==0.26.7",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2bag-sqlite3-cli": {
+            "name": "ros2bag-sqlite3-cli",
+            "version": "0.26.7",
+            "requirements": [
+                {
+                    "raw": "ros2bag-sqlite3-cli==0.26.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2bag-sqlite3-cli",
+                    "specifier": "==0.26.7",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2cli": {
+            "name": "ros2cli",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2cli==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2cli",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2component": {
+            "name": "ros2component",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2component==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2component",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2doctor": {
+            "name": "ros2doctor",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2doctor==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2doctor",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2interface": {
+            "name": "ros2interface",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2interface==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2interface",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2launch": {
+            "name": "ros2launch",
+            "version": "0.26.8",
+            "requirements": [
+                {
+                    "raw": "ros2launch==0.26.8",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2launch",
+                    "specifier": "==0.26.8",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2lifecycle": {
+            "name": "ros2lifecycle",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2lifecycle==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2lifecycle",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2multicast": {
+            "name": "ros2multicast",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2multicast==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2multicast",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2node": {
+            "name": "ros2node",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2node==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2node",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2param": {
+            "name": "ros2param",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2param==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2param",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2pkg": {
+            "name": "ros2pkg",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2pkg==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2pkg",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2run": {
+            "name": "ros2run",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2run==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2run",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2service": {
+            "name": "ros2service",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2service==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2service",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ros2topic": {
+            "name": "ros2topic",
+            "version": "0.32.4",
+            "requirements": [
+                {
+                    "raw": "ros2topic==0.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ros2topic",
+                    "specifier": "==0.32.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosbag2-interfaces": {
+            "name": "rosbag2-interfaces",
+            "version": "0.26.7",
+            "requirements": [
+                {
+                    "raw": "rosbag2-interfaces==0.26.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosbag2-interfaces",
+                    "specifier": "==0.26.7",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosbag2-py": {
+            "name": "rosbag2-py",
+            "version": "0.26.7",
+            "requirements": [
+                {
+                    "raw": "rosbag2-py==0.26.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosbag2-py",
+                    "specifier": "==0.26.7",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosgraph-msgs": {
+            "name": "rosgraph-msgs",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "rosgraph-msgs==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosgraph-msgs",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-adapter": {
+            "name": "rosidl-adapter",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-adapter==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-adapter",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-cli": {
+            "name": "rosidl-cli",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-cli==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-cli",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-cmake": {
+            "name": "rosidl-cmake",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-cmake==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-cmake",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-generator-c": {
+            "name": "rosidl-generator-c",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-generator-c==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-generator-c",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-generator-cpp": {
+            "name": "rosidl-generator-cpp",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-generator-cpp==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-generator-cpp",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-generator-py": {
+            "name": "rosidl-generator-py",
+            "version": "0.22.1",
+            "requirements": [
+                {
+                    "raw": "rosidl-generator-py==0.22.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-generator-py",
+                    "specifier": "==0.22.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-generator-type-description": {
+            "name": "rosidl-generator-type-description",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-generator-type-description==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-generator-type-description",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-parser": {
+            "name": "rosidl-parser",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-parser==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-parser",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-pycommon": {
+            "name": "rosidl-pycommon",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-pycommon==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-pycommon",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-runtime-py": {
+            "name": "rosidl-runtime-py",
+            "version": "0.13.1",
+            "requirements": [
+                {
+                    "raw": "rosidl-runtime-py==0.13.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-runtime-py",
+                    "specifier": "==0.13.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-typesupport-c": {
+            "name": "rosidl-typesupport-c",
+            "version": "3.2.2",
+            "requirements": [
+                {
+                    "raw": "rosidl-typesupport-c==3.2.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-typesupport-c",
+                    "specifier": "==3.2.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-typesupport-cpp": {
+            "name": "rosidl-typesupport-cpp",
+            "version": "3.2.2",
+            "requirements": [
+                {
+                    "raw": "rosidl-typesupport-cpp==3.2.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-typesupport-cpp",
+                    "specifier": "==3.2.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-typesupport-fastrtps-c": {
+            "name": "rosidl-typesupport-fastrtps-c",
+            "version": "3.6.1",
+            "requirements": [
+                {
+                    "raw": "rosidl-typesupport-fastrtps-c==3.6.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-typesupport-fastrtps-c",
+                    "specifier": "==3.6.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-typesupport-fastrtps-cpp": {
+            "name": "rosidl-typesupport-fastrtps-cpp",
+            "version": "3.6.1",
+            "requirements": [
+                {
+                    "raw": "rosidl-typesupport-fastrtps-cpp==3.6.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-typesupport-fastrtps-cpp",
+                    "specifier": "==3.6.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-typesupport-introspection-c": {
+            "name": "rosidl-typesupport-introspection-c",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-typesupport-introspection-c==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-typesupport-introspection-c",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rosidl-typesupport-introspection-cpp": {
+            "name": "rosidl-typesupport-introspection-cpp",
+            "version": "4.6.5",
+            "requirements": [
+                {
+                    "raw": "rosidl-typesupport-introspection-cpp==4.6.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rosidl-typesupport-introspection-cpp",
+                    "specifier": "==4.6.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rpyutils": {
+            "name": "rpyutils",
+            "version": "0.4.1",
+            "requirements": [
+                {
+                    "raw": "rpyutils==0.4.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rpyutils",
+                    "specifier": "==0.4.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-action": {
+            "name": "rqt-action",
+            "version": "2.2.0",
+            "requirements": [
+                {
+                    "raw": "rqt-action==2.2.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-action",
+                    "specifier": "==2.2.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-bag": {
+            "name": "rqt-bag",
+            "version": "1.5.4",
+            "requirements": [
+                {
+                    "raw": "rqt-bag==1.5.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-bag",
+                    "specifier": "==1.5.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-bag-plugins": {
+            "name": "rqt-bag-plugins",
+            "version": "1.5.4",
+            "requirements": [
+                {
+                    "raw": "rqt-bag-plugins==1.5.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-bag-plugins",
+                    "specifier": "==1.5.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-console": {
+            "name": "rqt-console",
+            "version": "2.2.1",
+            "requirements": [
+                {
+                    "raw": "rqt-console==2.2.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-console",
+                    "specifier": "==2.2.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-graph": {
+            "name": "rqt-graph",
+            "version": "1.5.4",
+            "requirements": [
+                {
+                    "raw": "rqt-graph==1.5.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-graph",
+                    "specifier": "==1.5.4",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-gui": {
+            "name": "rqt-gui",
+            "version": "1.6.0",
+            "requirements": [
+                {
+                    "raw": "rqt-gui==1.6.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-gui",
+                    "specifier": "==1.6.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-gui-py": {
+            "name": "rqt-gui-py",
+            "version": "1.6.0",
+            "requirements": [
+                {
+                    "raw": "rqt-gui-py==1.6.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-gui-py",
+                    "specifier": "==1.6.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-msg": {
+            "name": "rqt-msg",
+            "version": "1.5.1",
+            "requirements": [
+                {
+                    "raw": "rqt-msg==1.5.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-msg",
+                    "specifier": "==1.5.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-plot": {
+            "name": "rqt-plot",
+            "version": "1.4.3",
+            "requirements": [
+                {
+                    "raw": "rqt-plot==1.4.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-plot",
+                    "specifier": "==1.4.3",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-publisher": {
+            "name": "rqt-publisher",
+            "version": "1.7.2",
+            "requirements": [
+                {
+                    "raw": "rqt-publisher==1.7.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-publisher",
+                    "specifier": "==1.7.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-py-common": {
+            "name": "rqt-py-common",
+            "version": "1.6.0",
+            "requirements": [
+                {
+                    "raw": "rqt-py-common==1.6.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-py-common",
+                    "specifier": "==1.6.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-py-console": {
+            "name": "rqt-py-console",
+            "version": "1.2.2",
+            "requirements": [
+                {
+                    "raw": "rqt-py-console==1.2.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-py-console",
+                    "specifier": "==1.2.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-reconfigure": {
+            "name": "rqt-reconfigure",
+            "version": "1.6.2",
+            "requirements": [
+                {
+                    "raw": "rqt-reconfigure==1.6.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-reconfigure",
+                    "specifier": "==1.6.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-service-caller": {
+            "name": "rqt-service-caller",
+            "version": "1.2.1",
+            "requirements": [
+                {
+                    "raw": "rqt-service-caller==1.2.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-service-caller",
+                    "specifier": "==1.2.1",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-shell": {
+            "name": "rqt-shell",
+            "version": "1.2.2",
+            "requirements": [
+                {
+                    "raw": "rqt-shell==1.2.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-shell",
+                    "specifier": "==1.2.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-srv": {
+            "name": "rqt-srv",
+            "version": "1.2.2",
+            "requirements": [
+                {
+                    "raw": "rqt-srv==1.2.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-srv",
+                    "specifier": "==1.2.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rqt-topic": {
+            "name": "rqt-topic",
+            "version": "1.7.3",
+            "requirements": [
+                {
+                    "raw": "rqt-topic==1.7.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rqt-topic",
+                    "specifier": "==1.7.3",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "sensor-msgs": {
+            "name": "sensor-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "sensor-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "sensor-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "sensor-msgs-py": {
+            "name": "sensor-msgs-py",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "sensor-msgs-py==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "sensor-msgs-py",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "service-msgs": {
+            "name": "service-msgs",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "service-msgs==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "service-msgs",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "shape-msgs": {
+            "name": "shape-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "shape-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "shape-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "sros2": {
+            "name": "sros2",
+            "version": "0.13.3",
+            "requirements": [
+                {
+                    "raw": "sros2==0.13.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "sros2",
+                    "specifier": "==0.13.3",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "statistics-msgs": {
+            "name": "statistics-msgs",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "statistics-msgs==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "statistics-msgs",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "std-msgs": {
+            "name": "std-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "std-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "std-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "std-srvs": {
+            "name": "std-srvs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "std-srvs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "std-srvs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "stereo-msgs": {
+            "name": "stereo-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "stereo-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "stereo-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "teleop-twist-keyboard": {
+            "name": "teleop-twist-keyboard",
+            "version": "2.4.0",
+            "requirements": [
+                {
+                    "raw": "teleop-twist-keyboard==2.4.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "teleop-twist-keyboard",
+                    "specifier": "==2.4.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tf2-geometry-msgs": {
+            "name": "tf2-geometry-msgs",
+            "version": "0.36.12",
+            "requirements": [
+                {
+                    "raw": "tf2-geometry-msgs==0.36.12",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tf2-geometry-msgs",
+                    "specifier": "==0.36.12",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tf2-kdl": {
+            "name": "tf2-kdl",
+            "version": "0.36.12",
+            "requirements": [
+                {
+                    "raw": "tf2-kdl==0.36.12",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tf2-kdl",
+                    "specifier": "==0.36.12",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tf2-msgs": {
+            "name": "tf2-msgs",
+            "version": "0.36.12",
+            "requirements": [
+                {
+                    "raw": "tf2-msgs==0.36.12",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tf2-msgs",
+                    "specifier": "==0.36.12",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tf2-py": {
+            "name": "tf2-py",
+            "version": "0.36.12",
+            "requirements": [
+                {
+                    "raw": "tf2-py==0.36.12",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tf2-py",
+                    "specifier": "==0.36.12",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tf2-ros-py": {
+            "name": "tf2-ros-py",
+            "version": "0.36.12",
+            "requirements": [
+                {
+                    "raw": "tf2-ros-py==0.36.12",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tf2-ros-py",
+                    "specifier": "==0.36.12",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tf2-sensor-msgs": {
+            "name": "tf2-sensor-msgs",
+            "version": "0.36.12",
+            "requirements": [
+                {
+                    "raw": "tf2-sensor-msgs==0.36.12",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tf2-sensor-msgs",
+                    "specifier": "==0.36.12",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tf2-tools": {
+            "name": "tf2-tools",
+            "version": "0.36.12",
+            "requirements": [
+                {
+                    "raw": "tf2-tools==0.36.12",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tf2-tools",
+                    "specifier": "==0.36.12",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "topic-monitor": {
+            "name": "topic-monitor",
+            "version": "0.33.5",
+            "requirements": [
+                {
+                    "raw": "topic-monitor==0.33.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "topic-monitor",
+                    "specifier": "==0.33.5",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "trajectory-msgs": {
+            "name": "trajectory-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "trajectory-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "trajectory-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "turtlesim": {
+            "name": "turtlesim",
+            "version": "1.8.3",
+            "requirements": [
+                {
+                    "raw": "turtlesim==1.8.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "turtlesim",
+                    "specifier": "==1.8.3",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "type-description-interfaces": {
+            "name": "type-description-interfaces",
+            "version": "2.0.2",
+            "requirements": [
+                {
+                    "raw": "type-description-interfaces==2.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "type-description-interfaces",
+                    "specifier": "==2.0.2",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "unique-identifier-msgs": {
+            "name": "unique-identifier-msgs",
+            "version": "2.5.0",
+            "requirements": [
+                {
+                    "raw": "unique-identifier-msgs==2.5.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "unique-identifier-msgs",
+                    "specifier": "==2.5.0",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "visualization-msgs": {
+            "name": "visualization-msgs",
+            "version": "5.3.6",
+            "requirements": [
+                {
+                    "raw": "visualization-msgs==5.3.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "visualization-msgs",
+                    "specifier": "==5.3.6",
+                    "url": null,
+                    "found": "/opt/ros/jazzy/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "markdown": {
+            "name": "markdown",
+            "version": "3.3.7",
+            "requirements": [
+                {
+                    "raw": "markdown==3.3.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "markdown",
+                    "specifier": "==3.3.7",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "markupsafe": {
+            "name": "markupsafe",
+            "version": "3.0.2",
+            "requirements": [
+                {
+                    "raw": "markupsafe==3.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "markupsafe",
+                    "specifier": "==3.0.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pyyaml": {
+            "name": "pyyaml",
+            "version": "6.0.2",
+            "requirements": [
+                {
+                    "raw": "pyyaml==6.0.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pyyaml",
+                    "specifier": "==6.0.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "send2trash": {
+            "name": "send2trash",
+            "version": "1.8.3",
+            "requirements": [
+                {
+                    "raw": "send2trash==1.8.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "send2trash",
+                    "specifier": "==1.8.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "annotated-types": {
+            "name": "annotated-types",
+            "version": "0.7.0",
+            "requirements": [
+                {
+                    "raw": "annotated-types==0.7.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "annotated-types",
+                    "specifier": "==0.7.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "anyio": {
+            "name": "anyio",
+            "version": "4.10.0",
+            "requirements": [
+                {
+                    "raw": "anyio==4.10.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "anyio",
+                    "specifier": "==4.10.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "argon2-cffi": {
+            "name": "argon2-cffi",
+            "version": "25.1.0",
+            "requirements": [
+                {
+                    "raw": "argon2-cffi==25.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "argon2-cffi",
+                    "specifier": "==25.1.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "argon2-cffi-bindings": {
+            "name": "argon2-cffi-bindings",
+            "version": "25.1.0",
+            "requirements": [
+                {
+                    "raw": "argon2-cffi-bindings==25.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "argon2-cffi-bindings",
+                    "specifier": "==25.1.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "arrow": {
+            "name": "arrow",
+            "version": "1.3.0",
+            "requirements": [
+                {
+                    "raw": "arrow==1.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "arrow",
+                    "specifier": "==1.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "asttokens": {
+            "name": "asttokens",
+            "version": "3.0.0",
+            "requirements": [
+                {
+                    "raw": "asttokens==3.0.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "asttokens",
+                    "specifier": "==3.0.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "async-lru": {
+            "name": "async-lru",
+            "version": "2.0.5",
+            "requirements": [
+                {
+                    "raw": "async-lru==2.0.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "async-lru",
+                    "specifier": "==2.0.5",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "attrs": {
+            "name": "attrs",
+            "version": "25.3.0",
+            "requirements": [
+                {
+                    "raw": "attrs==25.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "attrs",
+                    "specifier": "==25.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "authlib": {
+            "name": "authlib",
+            "version": "1.6.1",
+            "requirements": [
+                {
+                    "raw": "authlib==1.6.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "authlib",
+                    "specifier": "==1.6.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "babel": {
+            "name": "babel",
+            "version": "2.17.0",
+            "requirements": [
+                {
+                    "raw": "babel==2.17.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "babel",
+                    "specifier": "==2.17.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "backrefs": {
+            "name": "backrefs",
+            "version": "5.9",
+            "requirements": [
+                {
+                    "raw": "backrefs==5.9",
+                    "extras": [],
+                    "marker": null,
+                    "name": "backrefs",
+                    "specifier": "==5.9",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "bandit": {
+            "name": "bandit",
+            "version": "1.8.6",
+            "requirements": [
+                {
+                    "raw": "bandit==1.8.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "bandit",
+                    "specifier": "==1.8.6",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "beautifulsoup4": {
+            "name": "beautifulsoup4",
+            "version": "4.13.4",
+            "requirements": [
+                {
+                    "raw": "beautifulsoup4==4.13.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "beautifulsoup4",
+                    "specifier": "==4.13.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "bleach": {
+            "name": "bleach",
+            "version": "6.2.0",
+            "requirements": [
+                {
+                    "raw": "bleach==6.2.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "bleach",
+                    "specifier": "==6.2.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "certifi": {
+            "name": "certifi",
+            "version": "2025.8.3",
+            "requirements": [
+                {
+                    "raw": "certifi==2025.8.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "certifi",
+                    "specifier": "==2025.8.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "cffi": {
+            "name": "cffi",
+            "version": "1.17.1",
+            "requirements": [
+                {
+                    "raw": "cffi==1.17.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "cffi",
+                    "specifier": "==1.17.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "charset-normalizer": {
+            "name": "charset-normalizer",
+            "version": "3.4.2",
+            "requirements": [
+                {
+                    "raw": "charset-normalizer==3.4.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "charset-normalizer",
+                    "specifier": "==3.4.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "click": {
+            "name": "click",
+            "version": "8.2.1",
+            "requirements": [
+                {
+                    "raw": "click==8.2.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "click",
+                    "specifier": "==8.2.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "colorama": {
+            "name": "colorama",
+            "version": "0.4.6",
+            "requirements": [
+                {
+                    "raw": "colorama==0.4.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "colorama",
+                    "specifier": "==0.4.6",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "coloredlogs": {
+            "name": "coloredlogs",
+            "version": "15.0.1",
+            "requirements": [
+                {
+                    "raw": "coloredlogs==15.0.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "coloredlogs",
+                    "specifier": "==15.0.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "comm": {
+            "name": "comm",
+            "version": "0.2.3",
+            "requirements": [
+                {
+                    "raw": "comm==0.2.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "comm",
+                    "specifier": "==0.2.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "coverage": {
+            "name": "coverage",
+            "version": "7.10.2",
+            "requirements": [
+                {
+                    "raw": "coverage==7.10.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "coverage",
+                    "specifier": "==7.10.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "cryptography": {
+            "name": "cryptography",
+            "version": "45.0.6",
+            "requirements": [
+                {
+                    "raw": "cryptography==45.0.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "cryptography",
+                    "specifier": "==45.0.6",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "debugpy": {
+            "name": "debugpy",
+            "version": "1.8.16",
+            "requirements": [
+                {
+                    "raw": "debugpy==1.8.16",
+                    "extras": [],
+                    "marker": null,
+                    "name": "debugpy",
+                    "specifier": "==1.8.16",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "decorator": {
+            "name": "decorator",
+            "version": "5.2.1",
+            "requirements": [
+                {
+                    "raw": "decorator==5.2.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "decorator",
+                    "specifier": "==5.2.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "defusedxml": {
+            "name": "defusedxml",
+            "version": "0.7.1",
+            "requirements": [
+                {
+                    "raw": "defusedxml==0.7.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "defusedxml",
+                    "specifier": "==0.7.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "dparse": {
+            "name": "dparse",
+            "version": "0.6.4",
+            "requirements": [
+                {
+                    "raw": "dparse==0.6.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "dparse",
+                    "specifier": "==0.6.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "executing": {
+            "name": "executing",
+            "version": "2.2.0",
+            "requirements": [
+                {
+                    "raw": "executing==2.2.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "executing",
+                    "specifier": "==2.2.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "fastjsonschema": {
+            "name": "fastjsonschema",
+            "version": "2.21.1",
+            "requirements": [
+                {
+                    "raw": "fastjsonschema==2.21.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "fastjsonschema",
+                    "specifier": "==2.21.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "filelock": {
+            "name": "filelock",
+            "version": "3.16.1",
+            "requirements": [
+                {
+                    "raw": "filelock==3.16.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "filelock",
+                    "specifier": "==3.16.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "flatbuffers": {
+            "name": "flatbuffers",
+            "version": "25.2.10",
+            "requirements": [
+                {
+                    "raw": "flatbuffers==25.2.10",
+                    "extras": [],
+                    "marker": null,
+                    "name": "flatbuffers",
+                    "specifier": "==25.2.10",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "fqdn": {
+            "name": "fqdn",
+            "version": "1.5.1",
+            "requirements": [
+                {
+                    "raw": "fqdn==1.5.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "fqdn",
+                    "specifier": "==1.5.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ghp-import": {
+            "name": "ghp-import",
+            "version": "2.1.0",
+            "requirements": [
+                {
+                    "raw": "ghp-import==2.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ghp-import",
+                    "specifier": "==2.1.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "grpcio": {
+            "name": "grpcio",
+            "version": "1.74.0",
+            "requirements": [
+                {
+                    "raw": "grpcio==1.74.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "grpcio",
+                    "specifier": "==1.74.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "h11": {
+            "name": "h11",
+            "version": "0.16.0",
+            "requirements": [
+                {
+                    "raw": "h11==0.16.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "h11",
+                    "specifier": "==0.16.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "httpcore": {
+            "name": "httpcore",
+            "version": "1.0.9",
+            "requirements": [
+                {
+                    "raw": "httpcore==1.0.9",
+                    "extras": [],
+                    "marker": null,
+                    "name": "httpcore",
+                    "specifier": "==1.0.9",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "httpx": {
+            "name": "httpx",
+            "version": "0.28.1",
+            "requirements": [
+                {
+                    "raw": "httpx==0.28.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "httpx",
+                    "specifier": "==0.28.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "humanfriendly": {
+            "name": "humanfriendly",
+            "version": "10.0",
+            "requirements": [
+                {
+                    "raw": "humanfriendly==10.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "humanfriendly",
+                    "specifier": "==10.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "idna": {
+            "name": "idna",
+            "version": "3.10",
+            "requirements": [
+                {
+                    "raw": "idna==3.10",
+                    "extras": [],
+                    "marker": null,
+                    "name": "idna",
+                    "specifier": "==3.10",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "iniconfig": {
+            "name": "iniconfig",
+            "version": "2.1.0",
+            "requirements": [
+                {
+                    "raw": "iniconfig==2.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "iniconfig",
+                    "specifier": "==2.1.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ipykernel": {
+            "name": "ipykernel",
+            "version": "6.30.1",
+            "requirements": [
+                {
+                    "raw": "ipykernel==6.30.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ipykernel",
+                    "specifier": "==6.30.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ipython": {
+            "name": "ipython",
+            "version": "9.4.0",
+            "requirements": [
+                {
+                    "raw": "ipython==9.4.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ipython",
+                    "specifier": "==9.4.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ipython-pygments-lexers": {
+            "name": "ipython-pygments-lexers",
+            "version": "1.1.1",
+            "requirements": [
+                {
+                    "raw": "ipython-pygments-lexers==1.1.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ipython-pygments-lexers",
+                    "specifier": "==1.1.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ipywidgets": {
+            "name": "ipywidgets",
+            "version": "8.1.7",
+            "requirements": [
+                {
+                    "raw": "ipywidgets==8.1.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ipywidgets",
+                    "specifier": "==8.1.7",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "isoduration": {
+            "name": "isoduration",
+            "version": "20.11.0",
+            "requirements": [
+                {
+                    "raw": "isoduration==20.11.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "isoduration",
+                    "specifier": "==20.11.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jedi": {
+            "name": "jedi",
+            "version": "0.19.2",
+            "requirements": [
+                {
+                    "raw": "jedi==0.19.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jedi",
+                    "specifier": "==0.19.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jinja2": {
+            "name": "jinja2",
+            "version": "3.1.6",
+            "requirements": [
+                {
+                    "raw": "jinja2==3.1.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jinja2",
+                    "specifier": "==3.1.6",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "joblib": {
+            "name": "joblib",
+            "version": "1.5.1",
+            "requirements": [
+                {
+                    "raw": "joblib==1.5.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "joblib",
+                    "specifier": "==1.5.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "json5": {
+            "name": "json5",
+            "version": "0.12.0",
+            "requirements": [
+                {
+                    "raw": "json5==0.12.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "json5",
+                    "specifier": "==0.12.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jsonpointer": {
+            "name": "jsonpointer",
+            "version": "3.0.0",
+            "requirements": [
+                {
+                    "raw": "jsonpointer==3.0.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jsonpointer",
+                    "specifier": "==3.0.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jsonschema": {
+            "name": "jsonschema",
+            "version": "4.25.0",
+            "requirements": [
+                {
+                    "raw": "jsonschema==4.25.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jsonschema",
+                    "specifier": "==4.25.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jsonschema-specifications": {
+            "name": "jsonschema-specifications",
+            "version": "2025.4.1",
+            "requirements": [
+                {
+                    "raw": "jsonschema-specifications==2025.4.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jsonschema-specifications",
+                    "specifier": "==2025.4.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyter": {
+            "name": "jupyter",
+            "version": "1.1.1",
+            "requirements": [
+                {
+                    "raw": "jupyter==1.1.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyter",
+                    "specifier": "==1.1.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyter-client": {
+            "name": "jupyter-client",
+            "version": "8.6.3",
+            "requirements": [
+                {
+                    "raw": "jupyter-client==8.6.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyter-client",
+                    "specifier": "==8.6.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyter-console": {
+            "name": "jupyter-console",
+            "version": "6.6.3",
+            "requirements": [
+                {
+                    "raw": "jupyter-console==6.6.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyter-console",
+                    "specifier": "==6.6.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyter-core": {
+            "name": "jupyter-core",
+            "version": "5.8.1",
+            "requirements": [
+                {
+                    "raw": "jupyter-core==5.8.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyter-core",
+                    "specifier": "==5.8.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyter-events": {
+            "name": "jupyter-events",
+            "version": "0.12.0",
+            "requirements": [
+                {
+                    "raw": "jupyter-events==0.12.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyter-events",
+                    "specifier": "==0.12.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyter-lsp": {
+            "name": "jupyter-lsp",
+            "version": "2.2.6",
+            "requirements": [
+                {
+                    "raw": "jupyter-lsp==2.2.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyter-lsp",
+                    "specifier": "==2.2.6",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyter-server": {
+            "name": "jupyter-server",
+            "version": "2.16.0",
+            "requirements": [
+                {
+                    "raw": "jupyter-server==2.16.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyter-server",
+                    "specifier": "==2.16.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyter-server-terminals": {
+            "name": "jupyter-server-terminals",
+            "version": "0.5.3",
+            "requirements": [
+                {
+                    "raw": "jupyter-server-terminals==0.5.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyter-server-terminals",
+                    "specifier": "==0.5.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyterlab": {
+            "name": "jupyterlab",
+            "version": "4.4.5",
+            "requirements": [
+                {
+                    "raw": "jupyterlab==4.4.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyterlab",
+                    "specifier": "==4.4.5",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyterlab-pygments": {
+            "name": "jupyterlab-pygments",
+            "version": "0.3.0",
+            "requirements": [
+                {
+                    "raw": "jupyterlab-pygments==0.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyterlab-pygments",
+                    "specifier": "==0.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyterlab-server": {
+            "name": "jupyterlab-server",
+            "version": "2.27.3",
+            "requirements": [
+                {
+                    "raw": "jupyterlab-server==2.27.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyterlab-server",
+                    "specifier": "==2.27.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "jupyterlab-widgets": {
+            "name": "jupyterlab-widgets",
+            "version": "3.0.15",
+            "requirements": [
+                {
+                    "raw": "jupyterlab-widgets==3.0.15",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jupyterlab-widgets",
+                    "specifier": "==3.0.15",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "lark": {
+            "name": "lark",
+            "version": "1.2.2",
+            "requirements": [
+                {
+                    "raw": "lark==1.2.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "lark",
+                    "specifier": "==1.2.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "markdown-it-py": {
+            "name": "markdown-it-py",
+            "version": "3.0.0",
+            "requirements": [
+                {
+                    "raw": "markdown-it-py==3.0.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "markdown-it-py",
+                    "specifier": "==3.0.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "marshmallow": {
+            "name": "marshmallow",
+            "version": "4.0.0",
+            "requirements": [
+                {
+                    "raw": "marshmallow==4.0.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "marshmallow",
+                    "specifier": "==4.0.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "matplotlib-inline": {
+            "name": "matplotlib-inline",
+            "version": "0.1.7",
+            "requirements": [
+                {
+                    "raw": "matplotlib-inline==0.1.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "matplotlib-inline",
+                    "specifier": "==0.1.7",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "mdurl": {
+            "name": "mdurl",
+            "version": "0.1.2",
+            "requirements": [
+                {
+                    "raw": "mdurl==0.1.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mdurl",
+                    "specifier": "==0.1.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "mergedeep": {
+            "name": "mergedeep",
+            "version": "1.3.4",
+            "requirements": [
+                {
+                    "raw": "mergedeep==1.3.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mergedeep",
+                    "specifier": "==1.3.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "mistune": {
+            "name": "mistune",
+            "version": "3.1.3",
+            "requirements": [
+                {
+                    "raw": "mistune==3.1.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mistune",
+                    "specifier": "==3.1.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "mkdocs": {
+            "name": "mkdocs",
+            "version": "1.4.2",
+            "requirements": [
+                {
+                    "raw": "mkdocs==1.4.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mkdocs",
+                    "specifier": "==1.4.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "mkdocs-get-deps": {
+            "name": "mkdocs-get-deps",
+            "version": "0.2.0",
+            "requirements": [
+                {
+                    "raw": "mkdocs-get-deps==0.2.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mkdocs-get-deps",
+                    "specifier": "==0.2.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "mkdocs-material": {
+            "name": "mkdocs-material",
+            "version": "8.5.11",
+            "requirements": [
+                {
+                    "raw": "mkdocs-material==8.5.11",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mkdocs-material",
+                    "specifier": "==8.5.11",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "mkdocs-material-extensions": {
+            "name": "mkdocs-material-extensions",
+            "version": "1.3.1",
+            "requirements": [
+                {
+                    "raw": "mkdocs-material-extensions==1.3.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mkdocs-material-extensions",
+                    "specifier": "==1.3.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "mpmath": {
+            "name": "mpmath",
+            "version": "1.3.0",
+            "requirements": [
+                {
+                    "raw": "mpmath==1.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mpmath",
+                    "specifier": "==1.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "narwhals": {
+            "name": "narwhals",
+            "version": "2.0.1",
+            "requirements": [
+                {
+                    "raw": "narwhals==2.0.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "narwhals",
+                    "specifier": "==2.0.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "nbclient": {
+            "name": "nbclient",
+            "version": "0.10.2",
+            "requirements": [
+                {
+                    "raw": "nbclient==0.10.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "nbclient",
+                    "specifier": "==0.10.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "nbconvert": {
+            "name": "nbconvert",
+            "version": "7.16.6",
+            "requirements": [
+                {
+                    "raw": "nbconvert==7.16.6",
+                    "extras": [],
+                    "marker": null,
+                    "name": "nbconvert",
+                    "specifier": "==7.16.6",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "nbformat": {
+            "name": "nbformat",
+            "version": "5.10.4",
+            "requirements": [
+                {
+                    "raw": "nbformat==5.10.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "nbformat",
+                    "specifier": "==5.10.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "nest-asyncio": {
+            "name": "nest-asyncio",
+            "version": "1.6.0",
+            "requirements": [
+                {
+                    "raw": "nest-asyncio==1.6.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "nest-asyncio",
+                    "specifier": "==1.6.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "nltk": {
+            "name": "nltk",
+            "version": "3.9.1",
+            "requirements": [
+                {
+                    "raw": "nltk==3.9.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "nltk",
+                    "specifier": "==3.9.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "notebook": {
+            "name": "notebook",
+            "version": "7.4.5",
+            "requirements": [
+                {
+                    "raw": "notebook==7.4.5",
+                    "extras": [],
+                    "marker": null,
+                    "name": "notebook",
+                    "specifier": "==7.4.5",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "notebook-shim": {
+            "name": "notebook-shim",
+            "version": "0.2.4",
+            "requirements": [
+                {
+                    "raw": "notebook-shim==0.2.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "notebook-shim",
+                    "specifier": "==0.2.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "numpy": {
+            "name": "numpy",
+            "version": "2.3.2",
+            "requirements": [
+                {
+                    "raw": "numpy==2.3.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "numpy",
+                    "specifier": "==2.3.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "onnxruntime": {
+            "name": "onnxruntime",
+            "version": "1.22.1",
+            "requirements": [
+                {
+                    "raw": "onnxruntime==1.22.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "onnxruntime",
+                    "specifier": "==1.22.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "overrides": {
+            "name": "overrides",
+            "version": "7.7.0",
+            "requirements": [
+                {
+                    "raw": "overrides==7.7.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "overrides",
+                    "specifier": "==7.7.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "packaging": {
+            "name": "packaging",
+            "version": "25.0",
+            "requirements": [
+                {
+                    "raw": "packaging==25.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "packaging",
+                    "specifier": "==25.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "paginate": {
+            "name": "paginate",
+            "version": "0.5.7",
+            "requirements": [
+                {
+                    "raw": "paginate==0.5.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "paginate",
+                    "specifier": "==0.5.7",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pandas": {
+            "name": "pandas",
+            "version": "2.3.1",
+            "requirements": [
+                {
+                    "raw": "pandas==2.3.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pandas",
+                    "specifier": "==2.3.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pandocfilters": {
+            "name": "pandocfilters",
+            "version": "1.5.1",
+            "requirements": [
+                {
+                    "raw": "pandocfilters==1.5.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pandocfilters",
+                    "specifier": "==1.5.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "parso": {
+            "name": "parso",
+            "version": "0.8.4",
+            "requirements": [
+                {
+                    "raw": "parso==0.8.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "parso",
+                    "specifier": "==0.8.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pathspec": {
+            "name": "pathspec",
+            "version": "0.12.1",
+            "requirements": [
+                {
+                    "raw": "pathspec==0.12.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pathspec",
+                    "specifier": "==0.12.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pbr": {
+            "name": "pbr",
+            "version": "6.1.1",
+            "requirements": [
+                {
+                    "raw": "pbr==6.1.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pbr",
+                    "specifier": "==6.1.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pexpect": {
+            "name": "pexpect",
+            "version": "4.9.0",
+            "requirements": [
+                {
+                    "raw": "pexpect==4.9.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pexpect",
+                    "specifier": "==4.9.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pip": {
+            "name": "pip",
+            "version": "25.2",
+            "requirements": [
+                {
+                    "raw": "pip==25.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pip",
+                    "specifier": "==25.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "platformdirs": {
+            "name": "platformdirs",
+            "version": "4.3.8",
+            "requirements": [
+                {
+                    "raw": "platformdirs==4.3.8",
+                    "extras": [],
+                    "marker": null,
+                    "name": "platformdirs",
+                    "specifier": "==4.3.8",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "plotly": {
+            "name": "plotly",
+            "version": "6.2.0",
+            "requirements": [
+                {
+                    "raw": "plotly==6.2.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "plotly",
+                    "specifier": "==6.2.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pluggy": {
+            "name": "pluggy",
+            "version": "1.6.0",
+            "requirements": [
+                {
+                    "raw": "pluggy==1.6.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pluggy",
+                    "specifier": "==1.6.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "prometheus-client": {
+            "name": "prometheus-client",
+            "version": "0.22.1",
+            "requirements": [
+                {
+                    "raw": "prometheus-client==0.22.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "prometheus-client",
+                    "specifier": "==0.22.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "prompt-toolkit": {
+            "name": "prompt-toolkit",
+            "version": "3.0.51",
+            "requirements": [
+                {
+                    "raw": "prompt-toolkit==3.0.51",
+                    "extras": [],
+                    "marker": null,
+                    "name": "prompt-toolkit",
+                    "specifier": "==3.0.51",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "protobuf": {
+            "name": "protobuf",
+            "version": "6.31.1",
+            "requirements": [
+                {
+                    "raw": "protobuf==6.31.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "protobuf",
+                    "specifier": "==6.31.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "psutil": {
+            "name": "psutil",
+            "version": "6.1.1",
+            "requirements": [
+                {
+                    "raw": "psutil==6.1.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "psutil",
+                    "specifier": "==6.1.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ptyprocess": {
+            "name": "ptyprocess",
+            "version": "0.7.0",
+            "requirements": [
+                {
+                    "raw": "ptyprocess==0.7.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ptyprocess",
+                    "specifier": "==0.7.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pure-eval": {
+            "name": "pure-eval",
+            "version": "0.2.3",
+            "requirements": [
+                {
+                    "raw": "pure-eval==0.2.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pure-eval",
+                    "specifier": "==0.2.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pycparser": {
+            "name": "pycparser",
+            "version": "2.22",
+            "requirements": [
+                {
+                    "raw": "pycparser==2.22",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pycparser",
+                    "specifier": "==2.22",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pydantic": {
+            "name": "pydantic",
+            "version": "2.9.2",
+            "requirements": [
+                {
+                    "raw": "pydantic==2.9.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pydantic",
+                    "specifier": "==2.9.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pydantic-core": {
+            "name": "pydantic-core",
+            "version": "2.23.4",
+            "requirements": [
+                {
+                    "raw": "pydantic-core==2.23.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pydantic-core",
+                    "specifier": "==2.23.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pygments": {
+            "name": "pygments",
+            "version": "2.19.2",
+            "requirements": [
+                {
+                    "raw": "pygments==2.19.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pygments",
+                    "specifier": "==2.19.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pymdown-extensions": {
+            "name": "pymdown-extensions",
+            "version": "10.4",
+            "requirements": [
+                {
+                    "raw": "pymdown-extensions==10.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pymdown-extensions",
+                    "specifier": "==10.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pytest": {
+            "name": "pytest",
+            "version": "8.4.1",
+            "requirements": [
+                {
+                    "raw": "pytest==8.4.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pytest",
+                    "specifier": "==8.4.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pytest-cov": {
+            "name": "pytest-cov",
+            "version": "6.2.1",
+            "requirements": [
+                {
+                    "raw": "pytest-cov==6.2.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pytest-cov",
+                    "specifier": "==6.2.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "python-dateutil": {
+            "name": "python-dateutil",
+            "version": "2.9.0.post0",
+            "requirements": [
+                {
+                    "raw": "python-dateutil==2.9.0.post0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "python-dateutil",
+                    "specifier": "==2.9.0.post0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "python-json-logger": {
+            "name": "python-json-logger",
+            "version": "3.3.0",
+            "requirements": [
+                {
+                    "raw": "python-json-logger==3.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "python-json-logger",
+                    "specifier": "==3.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pytz": {
+            "name": "pytz",
+            "version": "2025.2",
+            "requirements": [
+                {
+                    "raw": "pytz==2025.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pytz",
+                    "specifier": "==2025.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pyyaml-env-tag": {
+            "name": "pyyaml-env-tag",
+            "version": "1.1",
+            "requirements": [
+                {
+                    "raw": "pyyaml-env-tag==1.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pyyaml-env-tag",
+                    "specifier": "==1.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "pyzmq": {
+            "name": "pyzmq",
+            "version": "27.0.1",
+            "requirements": [
+                {
+                    "raw": "pyzmq==27.0.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "pyzmq",
+                    "specifier": "==27.0.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "referencing": {
+            "name": "referencing",
+            "version": "0.36.2",
+            "requirements": [
+                {
+                    "raw": "referencing==0.36.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "referencing",
+                    "specifier": "==0.36.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "regex": {
+            "name": "regex",
+            "version": "2025.7.34",
+            "requirements": [
+                {
+                    "raw": "regex==2025.7.34",
+                    "extras": [],
+                    "marker": null,
+                    "name": "regex",
+                    "specifier": "==2025.7.34",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "requests": {
+            "name": "requests",
+            "version": "2.32.4",
+            "requirements": [
+                {
+                    "raw": "requests==2.32.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "requests",
+                    "specifier": "==2.32.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rfc3339-validator": {
+            "name": "rfc3339-validator",
+            "version": "0.1.4",
+            "requirements": [
+                {
+                    "raw": "rfc3339-validator==0.1.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rfc3339-validator",
+                    "specifier": "==0.1.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rfc3986-validator": {
+            "name": "rfc3986-validator",
+            "version": "0.1.1",
+            "requirements": [
+                {
+                    "raw": "rfc3986-validator==0.1.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rfc3986-validator",
+                    "specifier": "==0.1.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rfc3987-syntax": {
+            "name": "rfc3987-syntax",
+            "version": "1.1.0",
+            "requirements": [
+                {
+                    "raw": "rfc3987-syntax==1.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rfc3987-syntax",
+                    "specifier": "==1.1.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rich": {
+            "name": "rich",
+            "version": "14.1.0",
+            "requirements": [
+                {
+                    "raw": "rich==14.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rich",
+                    "specifier": "==14.1.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "rpds-py": {
+            "name": "rpds-py",
+            "version": "0.26.0",
+            "requirements": [
+                {
+                    "raw": "rpds-py==0.26.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "rpds-py",
+                    "specifier": "==0.26.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ruamel.yaml": {
+            "name": "ruamel.yaml",
+            "version": "0.18.14",
+            "requirements": [
+                {
+                    "raw": "ruamel.yaml==0.18.14",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ruamel.yaml",
+                    "specifier": "==0.18.14",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "ruamel.yaml.clib": {
+            "name": "ruamel.yaml.clib",
+            "version": "0.2.12",
+            "requirements": [
+                {
+                    "raw": "ruamel.yaml.clib==0.2.12",
+                    "extras": [],
+                    "marker": null,
+                    "name": "ruamel.yaml.clib",
+                    "specifier": "==0.2.12",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "safety": {
+            "name": "safety",
+            "version": "3.6.0",
+            "requirements": [
+                {
+                    "raw": "safety==3.6.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "safety",
+                    "specifier": "==3.6.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "safety-schemas": {
+            "name": "safety-schemas",
+            "version": "0.0.14",
+            "requirements": [
+                {
+                    "raw": "safety-schemas==0.0.14",
+                    "extras": [],
+                    "marker": null,
+                    "name": "safety-schemas",
+                    "specifier": "==0.0.14",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "semantic-version": {
+            "name": "semantic-version",
+            "version": "2.10.0",
+            "requirements": [
+                {
+                    "raw": "semantic-version==2.10.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "semantic-version",
+                    "specifier": "==2.10.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "setuptools": {
+            "name": "setuptools",
+            "version": "80.9.0",
+            "requirements": [
+                {
+                    "raw": "setuptools==80.9.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "setuptools",
+                    "specifier": "==80.9.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "setuptools-rust": {
+            "name": "setuptools-rust",
+            "version": "1.11.1",
+            "requirements": [
+                {
+                    "raw": "setuptools-rust==1.11.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "setuptools-rust",
+                    "specifier": "==1.11.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "shellingham": {
+            "name": "shellingham",
+            "version": "1.5.4",
+            "requirements": [
+                {
+                    "raw": "shellingham==1.5.4",
+                    "extras": [],
+                    "marker": null,
+                    "name": "shellingham",
+                    "specifier": "==1.5.4",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "six": {
+            "name": "six",
+            "version": "1.17.0",
+            "requirements": [
+                {
+                    "raw": "six==1.17.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "six",
+                    "specifier": "==1.17.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "sniffio": {
+            "name": "sniffio",
+            "version": "1.3.1",
+            "requirements": [
+                {
+                    "raw": "sniffio==1.3.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "sniffio",
+                    "specifier": "==1.3.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "soupsieve": {
+            "name": "soupsieve",
+            "version": "2.7",
+            "requirements": [
+                {
+                    "raw": "soupsieve==2.7",
+                    "extras": [],
+                    "marker": null,
+                    "name": "soupsieve",
+                    "specifier": "==2.7",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "stack-data": {
+            "name": "stack-data",
+            "version": "0.6.3",
+            "requirements": [
+                {
+                    "raw": "stack-data==0.6.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "stack-data",
+                    "specifier": "==0.6.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "stevedore": {
+            "name": "stevedore",
+            "version": "5.4.1",
+            "requirements": [
+                {
+                    "raw": "stevedore==5.4.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "stevedore",
+                    "specifier": "==5.4.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "sympy": {
+            "name": "sympy",
+            "version": "1.14.0",
+            "requirements": [
+                {
+                    "raw": "sympy==1.14.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "sympy",
+                    "specifier": "==1.14.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tenacity": {
+            "name": "tenacity",
+            "version": "9.1.2",
+            "requirements": [
+                {
+                    "raw": "tenacity==9.1.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tenacity",
+                    "specifier": "==9.1.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "terminado": {
+            "name": "terminado",
+            "version": "0.18.1",
+            "requirements": [
+                {
+                    "raw": "terminado==0.18.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "terminado",
+                    "specifier": "==0.18.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tinycss2": {
+            "name": "tinycss2",
+            "version": "1.4.0",
+            "requirements": [
+                {
+                    "raw": "tinycss2==1.4.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tinycss2",
+                    "specifier": "==1.4.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tomlkit": {
+            "name": "tomlkit",
+            "version": "0.13.3",
+            "requirements": [
+                {
+                    "raw": "tomlkit==0.13.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tomlkit",
+                    "specifier": "==0.13.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tornado": {
+            "name": "tornado",
+            "version": "6.5.1",
+            "requirements": [
+                {
+                    "raw": "tornado==6.5.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tornado",
+                    "specifier": "==6.5.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tqdm": {
+            "name": "tqdm",
+            "version": "4.67.1",
+            "requirements": [
+                {
+                    "raw": "tqdm==4.67.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tqdm",
+                    "specifier": "==4.67.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "traitlets": {
+            "name": "traitlets",
+            "version": "5.14.3",
+            "requirements": [
+                {
+                    "raw": "traitlets==5.14.3",
+                    "extras": [],
+                    "marker": null,
+                    "name": "traitlets",
+                    "specifier": "==5.14.3",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "typer": {
+            "name": "typer",
+            "version": "0.16.0",
+            "requirements": [
+                {
+                    "raw": "typer==0.16.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "typer",
+                    "specifier": "==0.16.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "types-python-dateutil": {
+            "name": "types-python-dateutil",
+            "version": "2.9.0.20250708",
+            "requirements": [
+                {
+                    "raw": "types-python-dateutil==2.9.0.20250708",
+                    "extras": [],
+                    "marker": null,
+                    "name": "types-python-dateutil",
+                    "specifier": "==2.9.0.20250708",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "typing-extensions": {
+            "name": "typing-extensions",
+            "version": "4.14.1",
+            "requirements": [
+                {
+                    "raw": "typing-extensions==4.14.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "typing-extensions",
+                    "specifier": "==4.14.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "tzdata": {
+            "name": "tzdata",
+            "version": "2025.2",
+            "requirements": [
+                {
+                    "raw": "tzdata==2025.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tzdata",
+                    "specifier": "==2025.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "uri-template": {
+            "name": "uri-template",
+            "version": "1.3.0",
+            "requirements": [
+                {
+                    "raw": "uri-template==1.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "uri-template",
+                    "specifier": "==1.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "urllib3": {
+            "name": "urllib3",
+            "version": "2.5.0",
+            "requirements": [
+                {
+                    "raw": "urllib3==2.5.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "urllib3",
+                    "specifier": "==2.5.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "watchdog": {
+            "name": "watchdog",
+            "version": "6.0.0",
+            "requirements": [
+                {
+                    "raw": "watchdog==6.0.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "watchdog",
+                    "specifier": "==6.0.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "wcwidth": {
+            "name": "wcwidth",
+            "version": "0.2.13",
+            "requirements": [
+                {
+                    "raw": "wcwidth==0.2.13",
+                    "extras": [],
+                    "marker": null,
+                    "name": "wcwidth",
+                    "specifier": "==0.2.13",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "webcolors": {
+            "name": "webcolors",
+            "version": "24.11.1",
+            "requirements": [
+                {
+                    "raw": "webcolors==24.11.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "webcolors",
+                    "specifier": "==24.11.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "webencodings": {
+            "name": "webencodings",
+            "version": "0.5.1",
+            "requirements": [
+                {
+                    "raw": "webencodings==0.5.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "webencodings",
+                    "specifier": "==0.5.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "websocket-client": {
+            "name": "websocket-client",
+            "version": "1.8.0",
+            "requirements": [
+                {
+                    "raw": "websocket-client==1.8.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "websocket-client",
+                    "specifier": "==1.8.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "widgetsnbextension": {
+            "name": "widgetsnbextension",
+            "version": "4.0.14",
+            "requirements": [
+                {
+                    "raw": "widgetsnbextension==4.0.14",
+                    "extras": [],
+                    "marker": null,
+                    "name": "widgetsnbextension",
+                    "specifier": "==4.0.14",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ]
+        },
+        "autocommand": {
+            "name": "autocommand",
+            "version": "2.2.2",
+            "requirements": [
+                {
+                    "raw": "autocommand==2.2.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "autocommand",
+                    "specifier": "==2.2.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "backports.tarfile": {
+            "name": "backports.tarfile",
+            "version": "1.2.0",
+            "requirements": [
+                {
+                    "raw": "backports.tarfile==1.2.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "backports.tarfile",
+                    "specifier": "==1.2.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "importlib-metadata": {
+            "name": "importlib-metadata",
+            "version": "8.0.0",
+            "requirements": [
+                {
+                    "raw": "importlib-metadata==8.0.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "importlib-metadata",
+                    "specifier": "==8.0.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "inflect": {
+            "name": "inflect",
+            "version": "7.3.1",
+            "requirements": [
+                {
+                    "raw": "inflect==7.3.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "inflect",
+                    "specifier": "==7.3.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "jaraco.collections": {
+            "name": "jaraco.collections",
+            "version": "5.1.0",
+            "requirements": [
+                {
+                    "raw": "jaraco.collections==5.1.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jaraco.collections",
+                    "specifier": "==5.1.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "jaraco.context": {
+            "name": "jaraco.context",
+            "version": "5.3.0",
+            "requirements": [
+                {
+                    "raw": "jaraco.context==5.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jaraco.context",
+                    "specifier": "==5.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "jaraco.functools": {
+            "name": "jaraco.functools",
+            "version": "4.0.1",
+            "requirements": [
+                {
+                    "raw": "jaraco.functools==4.0.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jaraco.functools",
+                    "specifier": "==4.0.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "jaraco.text": {
+            "name": "jaraco.text",
+            "version": "3.12.1",
+            "requirements": [
+                {
+                    "raw": "jaraco.text==3.12.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "jaraco.text",
+                    "specifier": "==3.12.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "more-itertools": {
+            "name": "more-itertools",
+            "version": "10.3.0",
+            "requirements": [
+                {
+                    "raw": "more-itertools==10.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "more-itertools",
+                    "specifier": "==10.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "tomli": {
+            "name": "tomli",
+            "version": "2.0.1",
+            "requirements": [
+                {
+                    "raw": "tomli==2.0.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "tomli",
+                    "specifier": "==2.0.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "typeguard": {
+            "name": "typeguard",
+            "version": "4.3.0",
+            "requirements": [
+                {
+                    "raw": "typeguard==4.3.0",
+                    "extras": [],
+                    "marker": null,
+                    "name": "typeguard",
+                    "specifier": "==4.3.0",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "wheel": {
+            "name": "wheel",
+            "version": "0.45.1",
+            "requirements": [
+                {
+                    "raw": "wheel==0.45.1",
+                    "extras": [],
+                    "marker": null,
+                    "name": "wheel",
+                    "specifier": "==0.45.1",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        },
+        "zipp": {
+            "name": "zipp",
+            "version": "3.19.2",
+            "requirements": [
+                {
+                    "raw": "zipp==3.19.2",
+                    "extras": [],
+                    "marker": null,
+                    "name": "zipp",
+                    "specifier": "==3.19.2",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages/setuptools/_vendor"
+                }
+            ]
+        }
+    },
+    "affected_packages": {
+        "mkdocs-material": {
+            "name": "mkdocs-material",
+            "version": "8.5.11",
+            "requirements": [
+                {
+                    "raw": "mkdocs-material==8.5.11",
+                    "extras": [],
+                    "marker": null,
+                    "name": "mkdocs-material",
+                    "specifier": "==8.5.11",
+                    "url": null,
+                    "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                }
+            ],
+            "found": null,
+            "insecure_versions": [
+                "0.1.0",
+                "0.1.1",
+                "0.1.2",
+                "0.1.3",
+                "0.2.0",
+                "0.2.1",
+                "0.2.2",
+                "0.2.3",
+                "0.2.4",
+                "1.0.0",
+                "1.0.1",
+                "1.0.2",
+                "1.0.3",
+                "1.0.4",
+                "1.0.5",
+                "1.1.0",
+                "1.10.0",
+                "1.10.1",
+                "1.10.2",
+                "1.10.3",
+                "1.10.4",
+                "1.1.1",
+                "1.11.0",
+                "1.12.0",
+                "1.12.1",
+                "1.12.2",
+                "1.2.0",
+                "1.3.0",
+                "1.4.0",
+                "1.4.1",
+                "1.5.0",
+                "1.5.1",
+                "1.5.2",
+                "1.5.3",
+                "1.5.4",
+                "1.5.5",
+                "1.6.0",
+                "1.6.1",
+                "1.6.2",
+                "1.6.3",
+                "1.6.4",
+                "1.7.0",
+                "1.7.1",
+                "1.7.2",
+                "1.7.3",
+                "1.7.4",
+                "1.7.5",
+                "1.8.0",
+                "1.8.1",
+                "1.9.0",
+                "2.0.0",
+                "2.0.1",
+                "2.0.2",
+                "2.0.3",
+                "2.0.4",
+                "2.1.0",
+                "2.1.1",
+                "2.2.0",
+                "2.2.1",
+                "2.2.2",
+                "2.2.3",
+                "2.2.4",
+                "2.2.5",
+                "2.2.6",
+                "2.3.0",
+                "2.4.0",
+                "2.5.0",
+                "2.5.1",
+                "2.5.2",
+                "2.5.3",
+                "2.5.4",
+                "2.5.5",
+                "2.6.0",
+                "2.6.1",
+                "2.6.2",
+                "2.6.3",
+                "2.6.4",
+                "2.6.5",
+                "2.6.6",
+                "2.7.0",
+                "2.7.1",
+                "2.7.2",
+                "2.7.3",
+                "2.8.0",
+                "2.9.0",
+                "2.9.1",
+                "2.9.2",
+                "2.9.3",
+                "2.9.4",
+                "3.0.0",
+                "3.0.1",
+                "3.0.2",
+                "3.0.3",
+                "3.0.4",
+                "3.0.5",
+                "3.0.6",
+                "3.1.0",
+                "3.2.0",
+                "3.3.0",
+                "4.0.0",
+                "4.0.1",
+                "4.0.2",
+                "4.1.0",
+                "4.1.1",
+                "4.1.2",
+                "4.2.0",
+                "4.3.0",
+                "4.3.1",
+                "4.4.0",
+                "4.4.1",
+                "4.4.2",
+                "4.4.3",
+                "4.5.0",
+                "4.5.1",
+                "4.6.0",
+                "4.6.1",
+                "4.6.2",
+                "4.6.3",
+                "5.0.0",
+                "5.0.0b1",
+                "5.0.0b2",
+                "5.0.0b2.post1",
+                "5.0.0b3",
+                "5.0.0b3.post1",
+                "5.0.0b3.post2",
+                "5.0.0rc1",
+                "5.0.0rc2",
+                "5.0.0rc3",
+                "5.0.0rc4",
+                "5.0.1",
+                "5.0.2",
+                "5.1.0",
+                "5.1.1",
+                "5.1.2",
+                "5.1.3",
+                "5.1.4",
+                "5.1.5",
+                "5.1.6",
+                "5.1.7",
+                "5.2.0",
+                "5.2.1",
+                "5.2.2",
+                "5.2.3",
+                "5.3.0",
+                "5.3.1",
+                "5.3.2",
+                "5.3.3",
+                "5.4.0",
+                "5.5.0",
+                "5.5.1",
+                "5.5.10",
+                "5.5.11",
+                "5.5.12",
+                "5.5.13",
+                "5.5.14",
+                "5.5.2",
+                "5.5.3",
+                "5.5.4",
+                "5.5.5",
+                "5.5.6",
+                "5.5.7",
+                "5.5.8",
+                "5.5.9",
+                "6.0.0",
+                "6.0.1",
+                "6.0.2",
+                "6.1.0",
+                "6.1.1",
+                "6.1.2",
+                "6.1.3",
+                "6.1.4",
+                "6.1.5",
+                "6.1.6",
+                "6.1.7",
+                "6.2.0",
+                "6.2.1",
+                "6.2.2",
+                "6.2.3",
+                "6.2.4",
+                "6.2.5",
+                "6.2.6",
+                "6.2.7",
+                "6.2.8",
+                "7.0.0",
+                "7.0.0b1",
+                "7.0.0b2",
+                "7.0.1",
+                "7.0.2",
+                "7.0.3",
+                "7.0.4",
+                "7.0.5",
+                "7.0.6",
+                "7.0.7",
+                "7.1.0",
+                "7.1.1",
+                "7.1.10",
+                "7.1.11",
+                "7.1.2",
+                "7.1.3",
+                "7.1.4",
+                "7.1.5",
+                "7.1.6",
+                "7.1.7",
+                "7.1.8",
+                "7.1.9",
+                "7.2.0",
+                "7.2.1",
+                "7.2.2",
+                "7.2.3",
+                "7.2.4",
+                "7.2.5",
+                "7.2.6",
+                "7.2.7",
+                "7.2.8",
+                "7.3.0",
+                "7.3.1",
+                "7.3.2",
+                "7.3.3",
+                "7.3.4",
+                "7.3.5",
+                "7.3.6",
+                "8.0.0",
+                "8.0.0b1",
+                "8.0.0b2",
+                "8.0.1",
+                "8.0.2",
+                "8.0.3",
+                "8.0.4",
+                "8.0.5",
+                "8.1.0",
+                "8.1.1",
+                "8.1.10",
+                "8.1.11",
+                "8.1.2",
+                "8.1.3",
+                "8.1.4",
+                "8.1.5",
+                "8.1.6",
+                "8.1.7",
+                "8.1.8",
+                "8.1.9",
+                "8.2.0",
+                "8.2.1",
+                "8.2.10",
+                "8.2.11",
+                "8.2.12",
+                "8.2.13",
+                "8.2.14",
+                "8.2.15",
+                "8.2.16",
+                "8.2.2",
+                "8.2.3",
+                "8.2.4",
+                "8.2.5",
+                "8.2.6",
+                "8.2.7",
+                "8.2.8",
+                "8.2.9",
+                "8.3.0",
+                "8.3.1",
+                "8.3.2",
+                "8.3.3",
+                "8.3.4",
+                "8.3.5",
+                "8.3.6",
+                "8.3.7",
+                "8.3.8",
+                "8.3.9",
+                "8.4.0",
+                "8.4.0rc1",
+                "8.4.1",
+                "8.4.2",
+                "8.4.3",
+                "8.4.4",
+                "8.5.0",
+                "8.5.1",
+                "8.5.10",
+                "8.5.11",
+                "8.5.2",
+                "8.5.3",
+                "8.5.4",
+                "8.5.5",
+                "8.5.6",
+                "8.5.7",
+                "8.5.8",
+                "8.5.9",
+                "9.0.0",
+                "9.0.0b1",
+                "9.0.0b2",
+                "9.0.0b3",
+                "9.0.0b4",
+                "9.0.1",
+                "9.0.10",
+                "9.0.11",
+                "9.0.12",
+                "9.0.13",
+                "9.0.14",
+                "9.0.15",
+                "9.0.2",
+                "9.0.3",
+                "9.0.4",
+                "9.0.5",
+                "9.0.6",
+                "9.0.7",
+                "9.0.8",
+                "9.0.9",
+                "9.1.0",
+                "9.1.1",
+                "9.1.10",
+                "9.1.11",
+                "9.1.12",
+                "9.1.13",
+                "9.1.14",
+                "9.1.15",
+                "9.1.16",
+                "9.1.17",
+                "9.1.18",
+                "9.1.19",
+                "9.1.2",
+                "9.1.20",
+                "9.1.21",
+                "9.1.3",
+                "9.1.4",
+                "9.1.5",
+                "9.1.6",
+                "9.1.7",
+                "9.1.8",
+                "9.1.9",
+                "9.2.0",
+                "9.2.0b0",
+                "9.2.0b1",
+                "9.2.0b2",
+                "9.2.0b3",
+                "9.2.1",
+                "9.2.2",
+                "9.2.3",
+                "9.2.4",
+                "9.2.5",
+                "9.2.6",
+                "9.2.7",
+                "9.2.8",
+                "9.3.0",
+                "9.3.1",
+                "9.3.2",
+                "9.4.0",
+                "9.4.1",
+                "9.4.10",
+                "9.4.11",
+                "9.4.12",
+                "9.4.13",
+                "9.4.14",
+                "9.4.2",
+                "9.4.3",
+                "9.4.4",
+                "9.4.5",
+                "9.4.6",
+                "9.4.7",
+                "9.4.8",
+                "9.4.9",
+                "9.5.0",
+                "9.5.1",
+                "9.5.10",
+                "9.5.11",
+                "9.5.12",
+                "9.5.13",
+                "9.5.14",
+                "9.5.15",
+                "9.5.16",
+                "9.5.17",
+                "9.5.18",
+                "9.5.19",
+                "9.5.2",
+                "9.5.20",
+                "9.5.21",
+                "9.5.22",
+                "9.5.23",
+                "9.5.24",
+                "9.5.25",
+                "9.5.26",
+                "9.5.27",
+                "9.5.28",
+                "9.5.29",
+                "9.5.3",
+                "9.5.30",
+                "9.5.31",
+                "9.5.4",
+                "9.5.5",
+                "9.5.6",
+                "9.5.7",
+                "9.5.8",
+                "9.5.9"
+            ],
+            "secure_versions": [
+                "9.6.16",
+                "9.6.15",
+                "9.6.14",
+                "9.6.13",
+                "9.6.12",
+                "9.6.11",
+                "9.6.10",
+                "9.6.9",
+                "9.6.8",
+                "9.6.7",
+                "9.6.6",
+                "9.6.5",
+                "9.6.4",
+                "9.6.3",
+                "9.6.2",
+                "9.6.1",
+                "9.6.0",
+                "9.5.50",
+                "9.5.49",
+                "9.5.48",
+                "9.5.47",
+                "9.5.46",
+                "9.5.45",
+                "9.5.44",
+                "9.5.43",
+                "9.5.42",
+                "9.5.41",
+                "9.5.40",
+                "9.5.39",
+                "9.5.38",
+                "9.5.37",
+                "9.5.36",
+                "9.5.35",
+                "9.5.34",
+                "9.5.33",
+                "9.5.32"
+            ],
+            "latest_version_without_known_vulnerabilities": "9.6.16",
+            "latest_version": "9.6.16",
+            "more_info_url": "https://data.safetycli.com/p/pypi/mkdocs-material/97c/"
+        }
+    },
+    "announcements": [],
+    "vulnerabilities": [
+        {
+            "vulnerability_id": "72715",
+            "package_name": "mkdocs-material",
+            "ignored": {},
+            "ignored_reason": null,
+            "ignored_expires": null,
+            "vulnerable_spec": [
+                "<9.5.32"
+            ],
+            "all_vulnerable_specs": [
+                "<9.5.32"
+            ],
+            "analyzed_version": "8.5.11",
+            "analyzed_requirement": {
+                "raw": "mkdocs-material==8.5.11",
+                "extras": [],
+                "marker": null,
+                "name": "mkdocs-material",
+                "specifier": "==8.5.11",
+                "url": null,
+                "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+            },
+            "advisory": "MKDocs Material addresses an RXSS vulnerability found in deep links within search results.",
+            "is_transitive": false,
+            "published_date": null,
+            "fixed_versions": [],
+            "closest_versions_without_known_vulnerabilities": [],
+            "resources": [],
+            "CVE": null,
+            "severity": null,
+            "affected_versions": [],
+            "more_info_url": "https://data.safetycli.com/v/72715/97c"
+        },
+        {
+            "vulnerability_id": "59587",
+            "package_name": "mkdocs-material",
+            "ignored": {},
+            "ignored_reason": null,
+            "ignored_expires": null,
+            "vulnerable_spec": [
+                "<9.1.13"
+            ],
+            "all_vulnerable_specs": [
+                "<9.1.13"
+            ],
+            "analyzed_version": "8.5.11",
+            "analyzed_requirement": {
+                "raw": "mkdocs-material==8.5.11",
+                "extras": [],
+                "marker": null,
+                "name": "mkdocs-material",
+                "specifier": "==8.5.11",
+                "url": null,
+                "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+            },
+            "advisory": "Mkdocs-material 9.1.13 includes a fix for a Race Condition Vulnerability. Social plugin triggers the race condition vulnerability when downloading fonts.\r\nhttps://github.com/squidfunk/mkdocs-material/issues/5515\r\nhttps://github.com/squidfunk/mkdocs-material/issues/5521",
+            "is_transitive": false,
+            "published_date": null,
+            "fixed_versions": [],
+            "closest_versions_without_known_vulnerabilities": [],
+            "resources": [],
+            "CVE": null,
+            "severity": null,
+            "affected_versions": [],
+            "more_info_url": "https://data.safetycli.com/v/59587/97c"
+        }
+    ],
+    "ignored_vulnerabilities": [],
+    "remediations": {
+        "mkdocs-material": {
+            "requirements": {
+                "==8.5.11": {
+                    "vulnerabilities_found": 2,
+                    "version": "8.5.11",
+                    "requirement": {
+                        "raw": "mkdocs-material==8.5.11",
+                        "extras": [],
+                        "marker": null,
+                        "name": "mkdocs-material",
+                        "specifier": "==8.5.11",
+                        "url": null,
+                        "found": "/home/min/MECHBOT/venv/lib/python3.12/site-packages"
+                    },
+                    "more_info_url": "https://data.safetycli.com/p/pypi/mkdocs-material/97c/"
+                }
+            },
+            "current_version": null,
+            "vulnerabilities_found": null,
+            "recommended_version": null,
+            "other_recommended_versions": [],
+            "more_info_url": null
+        }
+    },
+    "remediations_results": {
+        "vulnerabilities_fixed": [],
+        "remediations_applied": {},
+        "remediations_skipped": {}
+    }
+}
+
+
++===========================================================================================================================================================================================+
+
+
+DEPRECATED: this command (`check`) has been DEPRECATED, and will be unsupported beyond 01 June 2024.
+
+
+We highly encourage switching to the new `scan` command which is easier to use, more powerful, and can be set up to mimic the deprecated command if required.
+
+
++===========================================================================================================================================================================================+
+
+
