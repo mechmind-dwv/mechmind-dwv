@@ -1,14 +1,18 @@
 name: "MechMind Security Protocol v3"
 disable-default-queries: false
+
 packs:
   - github/security-extended
   - github/security-and-quality
+
 paths:
   - "projects/mechbot-2x/src"
   - "docs/ai-research"
+
 paths-ignore:
   - "**/tests/**"
   - "**/tmp/**"
+  
   queries:
   - uses: github/security-extended
   - uses: github/security-and-quality
