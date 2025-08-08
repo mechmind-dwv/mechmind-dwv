@@ -29,7 +29,7 @@ fn main() {
 }
 ```
 
-## 📊 **Mis Estadísticas de Código** 
+## 📊 **Mis Estadísticas de Código**
 ### 🔥 **Rendimiento General**
 [![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
 
@@ -63,10 +63,10 @@ while True:
 
 ## 🤖 MechBot-2X ASCII Art
 ```text
-    __  __      _     _ ____        __  _______ ____  
-   |  \/  | ___| |__ | | __ ) _   _ \ \/ /_   _|___ \ 
+    __  __      _     _ ____        __  _______ ____
+   |  \/  | ___| |__ | | __ ) _   _ \ \/ /_   _|___ \
    | |\/| |/ _ \ '_ \| |  _ \| | | | \  /  | |   __) |
-   | |  | |  __/ |_) | | |_) | |_| | /  \  | |  / __/ 
+   | |  | |  __/ |_) | | |_) | |_| | /  \  | |  / __/
    |_|  |_|\___|_.__/|_|____/ \__, |/_/\_\ |_| |_____|
                               |___/
  ```

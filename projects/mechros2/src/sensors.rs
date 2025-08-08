@@ -68,7 +68,7 @@ pub struct SensorHub {
 impl SensorHub {
     pub async fn new(node_manager: Arc<MechNodeManager>) -> Result<Self, Box<dyn std::error::Error>> {
         info!("🔬 Inicializando Sensor Hub...");
-        
+
         let sensor_hub = Self {
             node_manager,
             imu_sensor: ImuSensor::new().await?,
@@ -78,28 +78,28 @@ impl SensorHub {
             proximity_sensors: ProximitySensors::new().await?,
             battery_monitor: BatteryMonitor::new().await?,
         };
-        
+
         info!("✅ Sensor Hub inicializado");
         Ok(sensor_hub)
     }
-    
+
     pub async fn initialize(&self) -> Result<(), Box<dyn std::error::Error>> {
         info!("🔧 Inicializando sensores...");
-        
+
         self.imu_sensor.calibrate().await?;
         self.gps_sensor.start_acquisition().await?;
         self.lidar_sensor.configure().await?;
         self.environmental_sensors.initialize().await?;
         self.proximity_sensors.configure().await?;
         self.battery_monitor.start_monitoring().await?;
-        
+
         info!("✅ Todos los sensores inicializados correctamente");
         Ok(())
     }
-    
+
     pub async fn update_sensors(&self) -> Result<SensorData, Box<dyn std::error::Error>> {
         let timestamp = chrono::Utc::now();
-        
+
         // Recopilar datos de todos los sensores
         let imu_data = self.imu_sensor.read_data().await.ok();
         let gps_data = self.gps_sensor.read_data().await.ok();
@@ -107,24 +107,24 @@ impl SensorHub {
         let env_data = self.environmental_sensors.read_all().await.ok();
         let proximity_data = self.proximity_sensors.read_all().await.ok();
         let battery_level = self.battery_monitor.get_level().await.ok();
-        
+
         // Calcular posición y velocidad basada en GPS e IMU
         let position = if let Some(gps) = &gps_data {
             Some(Point3::new(gps.latitude, gps.longitude, gps.altitude))
         } else {
             None
         };
-        
+
         let velocity = if let Some(imu) = &imu_data {
             Some(imu.linear_acceleration) // Integración simplificada
         } else {
             None
         };
-        
+
         let acceleration = imu_data.as_ref().map(|imu| imu.linear_acceleration);
         let angular_velocity = imu_data.as_ref().map(|imu| imu.angular_velocity);
         let orientation = imu_data.as_ref().map(|imu| imu.orientation);
-        
+
         let sensor_data = SensorData {
             timestamp,
             position,
@@ -141,17 +141,17 @@ impl SensorHub {
             gps_data,
             lidar_data,
         };
-        
+
         // Publicar datos de sensores
         let telemetry_json = serde_json::to_string(&sensor_data)?;
         self.node_manager.publish_telemetry(&telemetry_json).await?;
-        
-        debug!("📊 Datos de sensores actualizados: {} sensores activos", 
+
+        debug!("📊 Datos de sensores actualizados: {} sensores activos",
                self.count_active_sensors(&sensor_data));
-        
+
         Ok(sensor_data)
     }
-    
+
     fn count_active_sensors(&self, data: &SensorData) -> usize {
         let mut count = 0;
         if data.imu_data.is_some() { count += 1; }
@@ -163,7 +163,7 @@ impl SensorHub {
         if !data.proximity_sensors.is_empty() { count += 1; }
         count
     }
-    
+
     pub async fn get_sensor_status(&self) -> SensorStatus {
         SensorStatus {
             imu_online: self.imu_sensor.is_online().await,
@@ -195,7 +195,7 @@ impl ImuSensor {
     async fn new() -> Result<Self, Box<dyn std::error::Error>> {
         Ok(Self { calibrated: false })
     }
-    
+
     async fn calibrate(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         debug!("🎯 Calibrando IMU...");
         tokio::time::sleep(tokio::time::Duration::from_millis(100)).await;
@@ -203,12 +203,12 @@ impl ImuSensor {
         info!("✅ IMU calibrado");
         Ok(())
     }
-    
+
     async fn read_data(&self) -> Result<ImuData, Box<dyn std::error::Error>> {
         if !self.calibrated {
             return Err("IMU no calibrado".into());
         }
-        
+
         // Simular datos del IMU
         Ok(ImuData {
             linear_acceleration: Vector3::new(0.1, 0.0, 9.81),
@@ -282,7 +282,7 @@ pub struct SensorHub {
 impl SensorHub {
     pub async fn new(node_manager: Arc<MechNodeManager>) -> Result<Self, Box<dyn std::error::Error>> {
         info!("🔬 Inicializando Sensor Hub...");
-        
+
         let sensor_hub = Self {
             node_manager,
             imu_sensor: ImuSensor::new().await?,
@@ -292,28 +292,28 @@ impl SensorHub {
             proximity_sensors: ProximitySensors::new().await?,
             battery_monitor: BatteryMonitor::new().await?,
         };
-        
+
         info!("✅ Sensor Hub inicializado");
         Ok(sensor_hub)
     }
-    
+
     pub async fn initialize(&self) -> Result<(), Box<dyn std::error::Error>> {
         info!("🔧 Inicializando sensores...");
-        
+
         self.imu_sensor.calibrate().await?;
         self.gps_sensor.start_acquisition().await?;
         self.lidar_sensor.configure().await?;
         self.environmental_sensors.initialize().await?;
         self.proximity_sensors.configure().await?;
         self.battery_monitor.start_monitoring().await?;
-        
+
         info!("✅ Todos los sensores inicializados correctamente");
         Ok(())
     }
-    
+
     pub async fn update_sensors(&self) -> Result<SensorData, Box<dyn std::error::Error>> {
         let timestamp = chrono::Utc::now();
-        
+
         // Recopilar datos de todos los sensores
         let imu_data = self.imu_sensor.read_data().await.ok();
         let gps_data = self.gps_sensor.read_data().await.ok();
@@ -321,24 +321,24 @@ impl SensorHub {
         let env_data = self.environmental_sensors.read_all().await.ok();
         let proximity_data = self.proximity_sensors.read_all().await.ok();
         let battery_level = self.battery_monitor.get_level().await.ok();
-        
+
         // Calcular posición y velocidad basada en GPS e IMU
         let position = if let Some(gps) = &gps_data {
             Some(Point3::new(gps.latitude, gps.longitude, gps.altitude))
         } else {
             None
         };
-        
+
         let velocity = if let Some(imu) = &imu_data {
             Some(imu.linear_acceleration) // Integración simplificada
         } else {
             None
         };
-        
+
         let acceleration = imu_data.as_ref().map(|imu| imu.linear_acceleration);
         let angular_velocity = imu_data.as_ref().map(|imu| imu.angular_velocity);
         let orientation = imu_data.as_ref().map(|imu| imu.orientation);
-        
+
         let sensor_data = SensorData {
             timestamp,
             position,
@@ -355,17 +355,17 @@ impl SensorHub {
             gps_data,
             lidar_data,
         };
-        
+
         // Publicar datos de sensores
         let telemetry_json = serde_json::to_string(&sensor_data)?;
         self.node_manager.publish_telemetry(&telemetry_json).await?;
-        
-        debug!("📊 Datos de sensores actualizados: {} sensores activos", 
+
+        debug!("📊 Datos de sensores actualizados: {} sensores activos",
                self.count_active_sensors(&sensor_data));
-        
+
         Ok(sensor_data)
     }
-    
+
     fn count_active_sensors(&self, data: &SensorData) -> usize {
         let mut count = 0;
         if data.imu_data.is_some() { count += 1; }
@@ -377,7 +377,7 @@ impl SensorHub {
         if !data.proximity_sensors.is_empty() { count += 1; }
         count
     }
-    
+
     pub async fn get_sensor_status(&self) -> SensorStatus {
         SensorStatus {
             imu_online: self.imu_sensor.is_online().await,
@@ -409,7 +409,7 @@ impl ImuSensor {
     async fn new() -> Result<Self, Box<dyn std::error::Error>> {
         Ok(Self { calibrated: false })
     }
-    
+
     async fn calibrate(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         debug!("🎯 Calibrando IMU...");
         tokio::time::sleep(tokio::time::Duration::from_millis(100)).await;
@@ -417,12 +417,12 @@ impl ImuSensor {
         info!("✅ IMU calibrado");
         Ok(())
     }
-    
+
     async fn read_data(&self) -> Result<ImuData, Box<dyn std::error::Error>> {
         if !self.calibrated {
             return Err("IMU no calibrado".into());
         }
-        
+
         // Simular datos del IMU
         Ok(ImuData {
             linear_acceleration: Vector3::new(0.1, 0.0, 9.81),

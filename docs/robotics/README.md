@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Generate RustDoc
         run: |
           cd docs/es/docs/robotics/firmware
@@ -121,7 +121,7 @@ graph TB
 - [ ] Tutoriales en Jupyter Notebooks
 - [ ] Integración con PlatformIO Cloud
 
-¡Dime y lo implementamos! 🚀 
+¡Dime y lo implementamos! 🚀
 
 ```rust
 // ¡Tu documentación siempre actualizada!

@@ -3,7 +3,7 @@ name: "🚀 Deploy MechMind Docs"
 on:
   push:
     branches: [main]
-    paths: 
+    paths:
       - 'docs/**'
   workflow_dispatch:
 

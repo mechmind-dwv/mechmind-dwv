@@ -1,7 +1,7 @@
 [workspace]
 members = [
     "mechbot-2x",
-    "atomic-rs", 
+    "atomic-rs",
     "oxide-security",
       "mechros2"
 ]

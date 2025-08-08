@@ -60,15 +60,15 @@ La documentación se actualiza automáticamente con cada push:
 ```python
 # Bonus: Script para verificar links
 import os
-print("✅ Documentación verificada en:", 
+print("✅ Documentación verificada en:",
       os.path.abspath("docs/robotics/api/README.md"))
 ```
 
 ---
 
-**¿Qué más necesitas integrar?**  
-- [ ] ¿Soporte para ROS2 en la docs?  
-- [ ] ¿Ejemplos en Python para la API?  
+**¿Qué más necesitas integrar?**
+- [ ] ¿Soporte para ROS2 en la docs?
+- [ ] ¿Ejemplos en Python para la API?
 - [ ] ¿Diagramas interactivos con Mermaid.js?
 
 ¡Dímelo y lo implementamos juntos! 🤝💻

@@ -1,5 +1,5 @@
 git clone https://github.com/mechmind-dwv/mechmind-dwv.git
-cd ~/MechMind-dwv 
+cd ~/MechMind-dwv
 # Genera docs locales:
 cd docs/robotics/api
 cargo doc --no-deps --open

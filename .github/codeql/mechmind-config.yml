@@ -12,7 +12,7 @@ paths:
 paths-ignore:
   - "**/tests/**"
   - "**/tmp/**"
-  
+
   queries:
   - uses: github/security-extended
   - uses: github/security-and-quality

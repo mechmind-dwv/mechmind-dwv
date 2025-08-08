@@ -18,7 +18,7 @@ jobs:
 
       - name: 🔐 Security Scan
         uses: actions-rs/audit-check@v1
-  
+
       # Paso 1: Checkout mágico
       - name: 🛸 Clonar Repo
         uses: actions/checkout@v4
@@ -100,12 +100,12 @@ jobs:
 
 ---
 
-**Pro Tip**: Usa este secreto para commits verificados 👇  
+**Pro Tip**: Usa este secreto para commits verificados 👇
 ```bash
 gh secret set GPG_KEY < private.key --repo mechmind-dwv/mechmind-dwv
 ```
 
-¿Quieres que añadamos **notificaciones en Discord** o **auto-post en Twitter** con los updates? ¡Dímelo! 🤖💬  
+¿Quieres que añadamos **notificaciones en Discord** o **auto-post en Twitter** con los updates? ¡Dímelo! 🤖💬
 
 ```rust
 // ¡Tu perfil ahora es autónomo!

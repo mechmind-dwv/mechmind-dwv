@@ -25,25 +25,25 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
           USERNAME="mechmind-dwv"
           THEME="${{ inputs.theme || 'radical' }}"
-          
+
           # URLs for the stats
           STATS_URL="https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&theme=${THEME}&hide_border=true&include_all_commits=true&count_private=true"
           LANGS_URL="https://github-readme-stats.vercel.app/api/top-langs/?username=${USERNAME}&theme=${THEME}&hide_border=true&layout=compact"
-          
+
           # Update existing URLs in README.md
           if [ -f "README.md" ]; then
             # Create backup
             cp README.md README.md.bak
-            
+
             # Update stats URLs with new theme
             sed -i "s|https://github-readme-stats\.vercel\.app/api?username=${USERNAME}[^)]*|${STATS_URL}|g" README.md
             sed -i "s|https://github-readme-stats\.vercel\.app/api/top-langs/?username=${USERNAME}[^)]*|${LANGS_URL}|g" README.md
-            
+
             echo "✅ README updated with theme: ${THEME}"
-            
+
             # Show what changed
             if ! diff -q README.md.bak README.md > /dev/null; then
               echo "📝 Changes made:"

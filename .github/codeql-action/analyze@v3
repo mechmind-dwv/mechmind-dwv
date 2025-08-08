@@ -14,11 +14,11 @@ jobs:
       contents: read
       pull-requests: write
       security-events: write
-    
+
     strategy:
       matrix:
         language: [ 'javascript', 'python', 'cpp' ]
-    
+
     steps:
       - name: "🛠️ Ejecutar CodeQL Analysis"
         uses: github/codeql-action/analyze@v3

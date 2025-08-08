@@ -14,17 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
-      
+
       - name: Verify structure
         run: |
           mkdir -p projects/mechcore/src
           [ -f projects/mechcore/src/main.rs ] || {
             echo 'fn main() {}' > projects/mechcore/src/main.rs
           }
-          
+
       - name: Build Release
         working-directory: projects/mechcore
         run: |

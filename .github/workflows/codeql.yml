@@ -71,7 +71,7 @@ jobs:
         run: |
           cd projects/mechbot-2x
           cargo build --release --features ffi,secure
-          
+
           # Enhanced MechMind Reporting
           echo "### 🔐 MechMind Binary Integrity Report" >> $GITHUB_STEP_SUMMARY
           echo "#### 📅 Scan Date: $(date +'%Y-%m-%d %H:%M:%S %Z')" >> $GITHUB_STEP_SUMMARY
@@ -80,7 +80,7 @@ jobs:
           echo '```sh' >> $GITHUB_STEP_SUMMARY
           sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
-          
+
           # Additional binary metadata
           echo "\n**Binary Metadata:**" >> $GITHUB_STEP_SUMMARY
           echo '```sh' >> $GITHUB_STEP_SUMMARY

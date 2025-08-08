@@ -82,7 +82,7 @@ jobs:
             --all-features \
             --target-dir ${{ env.CARGO_TARGET_DIR }} \
             --offline
-          
+
           # Post-procesamiento de docs
           find target-docs/doc -name "*.html" -exec \
             sed -i 's/<body>/<body class="mechmind-theme">/g' {} \;
