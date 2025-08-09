@@ -45,7 +45,3 @@ tokio-test = "0.4"
 [[bin]]
 name = "mechros2_node"
 path = "src/main.rs"
-
-[lib]
-name = "mechros2"
-path = "src/lib.rs"
