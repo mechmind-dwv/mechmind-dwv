@@ -1,7 +1,6 @@
 name: MechMind Quality Gate
 
-on: [push, pull_request]
-
+on: push
 jobs:
   quality-checks:
     runs-on: ubuntu-latest
