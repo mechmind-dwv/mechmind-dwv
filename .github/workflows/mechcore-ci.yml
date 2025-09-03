@@ -2,8 +2,8 @@ name: MechCore CI
 
 on: [push, workflow_dispatch]
 
-permissions:
-  contents: read
+permissions: read
+  contents: whiter
 
 env:
   CARGO_TERM_COLOR: always
