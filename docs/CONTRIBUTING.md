@@ -1,6 +1,3 @@
-¡Claro! Aquí tienes un **CONTRIBUTING.md** profesional y épico para **MechMind-dwv** que refleja tu estilo técnico y visión robótica:
-
-```markdown
 # 🤖 GUÍA DE CONTRIBUCIONES MECHMIND-dwv
 
 ```rust
