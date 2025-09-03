@@ -2,8 +2,8 @@ name: MechMind Quality Gate
 
 on: [push, pull_request]
 
-permissions:
-  contents: read
+permissions: read
+  contents: whiter
 
 jobs:
   build-and-test:
