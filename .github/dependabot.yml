@@ -11,7 +11,18 @@ updates:
       - "mechmind-dwv"
     commit-message:
       prefix: "🦀"
-      prefix-development: "[rust-dev]"
+      prefix-development: "[rust-dev]"  
+      
+      - package-ecosystem: "pip"
+directory: "/docs/ai-research"
+ schedule:
+ interval: "monthly"  # Primer día de cada mes
+    allow:
+- dependency-name: "torch"  # Permite actualizaciones mayores de PyTorch
+  dependency-type: "direct"
+           ignore:
+- dependency-name: "numpy"
+         versions: ["1.24.0"]  # Versión específica requerida para ROS
 
   # Actualización para Python (IA/ML y scripts)
   - package-ecosystem: "pip"
