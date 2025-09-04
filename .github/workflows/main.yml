@@ -6,6 +6,9 @@ on:
     branches: [ "main" ]
   workflow_dispatch:       # Trigger manual
 
+permissions:
+  contents: write
+
 jobs:
   supercharge-profile:
     name: ⚡ Actualización Dinámica
