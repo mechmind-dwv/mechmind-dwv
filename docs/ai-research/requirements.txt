@@ -4,3 +4,4 @@ watchdog==6.0.0
 Werkzeug==2.3.7
 wheel==0.45.1
 zipp==3.21.0
+werkzeug==3.0.6
