@@ -1,0 +1,5 @@
+name: 🦀 Tech Radar
+        run: |
+          echo "## 🛠️ Stack Tecnológico Actualizado" >> README.md
+          echo "- 🦀 **Rust** v$(curl -s https://api.github.com/repos/rust-lang/rust/releases/latest | jq -r '.tag_name')" >> README.md
+          echo "- 🤖 **ROS2** Humble Hawksbill" >> README.md

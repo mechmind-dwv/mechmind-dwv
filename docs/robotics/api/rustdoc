@@ -1,2 +1,3 @@
-cd docs/robotics/firmware
-  cargo doc --open  # Abre documentación Rust
+# Genera docs locales:
+cd docs/robotics/api
+cargo doc --no-deps --open

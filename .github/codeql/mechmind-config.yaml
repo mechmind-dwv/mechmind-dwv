@@ -1,0 +1,14 @@
+name: "MechMind Security Protocol v3"
+disable-default-queries: false
+packs:
+  - security-extended
+  - security-and-quality
+paths:
+  - "projects/mechbot-2x/src"
+  - "docs/ai-research"
+paths-ignore:
+  - "**/tests/**"
+  - "**/tmp/**"
+queries:
+  - uses: security-extended
+  - uses: security-and-quality

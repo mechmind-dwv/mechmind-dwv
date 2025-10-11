@@ -1,2 +1,5 @@
+name: security
+on: push
+jobs
 - uses: actions-rs/audit-check@v1
  - run: cargo audit --deny warnings

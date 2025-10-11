@@ -1,0 +1,28 @@
+name: "🚀 Deploy MechMind Docs"
+
+on:
+  push:
+    branches: [main]
+    paths: 
+      - 'docs/**'
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: "📥 Checkout"
+        uses: actions/checkout@v4
+
+      - name: "🛠️ Build Docs"
+        run: |
+          mkdir -p public
+          cp -r docs/* public/
+          echo "<h1>MechMind Documentation</h1>" > public/index.html
+
+      - name: "📤 Deploy to GitHub Pages"
+        uses: actions/deploy-pages@v4
