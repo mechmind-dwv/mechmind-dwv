@@ -41,7 +41,7 @@ jobs:
         with:
           name: coverage-report
           path: cobertura.html
-          
+
     - name: Run
         working-directory: projects/mechcore
         run: cargo run
@@ -49,7 +49,7 @@ jobs:
 fn verify_diagrams() -> Result<(), &'static str> {
     println!("✅ Diagramas ubicados en: docs/robotics/api/schematics/");
     - uses: actions/checkout@v4
-    
+
     - name: Setup Rust
     uses: actions-rs/toolchain@v1
     with:

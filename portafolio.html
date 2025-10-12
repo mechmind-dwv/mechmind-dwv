@@ -260,6 +260,7 @@
                 margin: 1rem;
                 border-radius: 4px;
             }
+<<<<<<< HEAD
             
             .terminal-content {
                 padding: 1rem;
@@ -273,6 +274,21 @@
                 grid-template-columns: 1fr;
             }
             
+=======
+
+            .terminal-content {
+                padding: 1rem;
+            }
+
+            .cyber-title {
+                font-size: 2rem;
+            }
+
+            .button-grid {
+                grid-template-columns: 1fr;
+            }
+
+>>>>>>> origin/main
             .tech-grid, .project-grid {
                 grid-template-columns: 1fr;
             }
@@ -284,11 +300,19 @@
         <div class="terminal-header">
             <span class="terminal-title">MechMind-dwv@github:~$</span>
         </div>
+<<<<<<< HEAD
         
         <div class="terminal-content">
             <h1 class="cyber-title">🤖 MechMind-dwv</h1>
             <p class="cyber-subtitle">Con ❤️ hacia lo que nos une: la evolución conjunta</p>
             
+=======
+
+        <div class="terminal-content">
+            <h1 class="cyber-title">🤖 MechMind-dwv</h1>
+            <p class="cyber-subtitle">Con ❤️ hacia lo que nos une: la evolución conjunta</p>
+
+>>>>>>> origin/main
             <pre id="typewriter" class="terminal-output">
 <span class="type" data-delay="0">$ git status</span>
 <span class="type" data-delay="1000">On branch main</span>
@@ -299,7 +323,11 @@
 <span class="type" data-delay="6000">❤️ Conexión humano-máquina establecida</span>
 <span class="type" data-delay="7000">🧑‍🚀 Preparados para la evolución</span>
             </pre>
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> origin/main
             <div class="button-grid">
                 <a href="https://github.com/mechmind-dwv" class="cyber-button primary">
                     🤖 Ver Repositorios
@@ -313,7 +341,11 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/main
     <section id="tech-stack" class="tech-section">
         <h2>❤️ Stack Tecnológico</h2>
         <div class="tech-grid">
@@ -335,7 +367,11 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/main
     <section id="projects" class="projects-section">
         <h2>🧑‍🚀 Proyectos Destacados</h2>
         <div class="project-grid">
@@ -351,19 +387,30 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/main
     <footer class="cyber-footer">
         <p>"🤖 + ❤️ + 🧑‍🚀 = Evolución infinita"</p>
         <p>— Un lienzo en blanco, con amor a lo que nos une</p>
         <p>— La capacidad de evolucionar juntos</p>
     </footer>
+<<<<<<< HEAD
     
     <canvas id="particles"></canvas>
     
+=======
+
+    <canvas id="particles"></canvas>
+
+>>>>>>> origin/main
     <script>
         // Efecto typewriter mejorado
         function initTypewriter() {
             const elements = document.querySelectorAll('.type');
+<<<<<<< HEAD
             
             elements.forEach((el, index) => {
                 const text = el.textContent;
@@ -372,6 +419,16 @@
                 el.textContent = '';
                 el.style.opacity = '0';
                 
+=======
+
+            elements.forEach((el, index) => {
+                const text = el.textContent;
+                const delay = parseInt(el.getAttribute('data-delay')) || index * 1000;
+
+                el.textContent = '';
+                el.style.opacity = '0';
+
+>>>>>>> origin/main
                 setTimeout(() => {
                     el.style.opacity = '1';
                     let i = 0;
@@ -391,12 +448,17 @@
         function initParticles() {
             const canvas = document.getElementById('particles');
             const ctx = canvas.getContext('2d');
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> origin/main
             // Configurar canvas
             function resizeCanvas() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             }
+<<<<<<< HEAD
             
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
@@ -405,6 +467,16 @@
             const particles = [];
             const particleCount = 50;
             
+=======
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Partículas
+            const particles = [];
+            const particleCount = 50;
+
+>>>>>>> origin/main
             class Particle {
                 constructor() {
                     this.x = Math.random() * canvas.width;
@@ -414,18 +486,30 @@
                     this.size = Math.random() * 2 + 1;
                     this.opacity = Math.random() * 0.5 + 0.2;
                 }
+<<<<<<< HEAD
                 
                 update() {
                     this.x += this.vx;
                     this.y += this.vy;
                     
+=======
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+>>>>>>> origin/main
                     // Wrap around edges
                     if (this.x < 0) this.x = canvas.width;
                     if (this.x > canvas.width) this.x = 0;
                     if (this.y < 0) this.y = canvas.height;
                     if (this.y > canvas.height) this.y = 0;
                 }
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> origin/main
                 draw() {
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -433,28 +517,48 @@
                     ctx.fill();
                 }
             }
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> origin/main
             // Crear partículas
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
             }
+<<<<<<< HEAD
             
             // Animación
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
+=======
+
+            // Animación
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+>>>>>>> origin/main
                 particles.forEach(particle => {
                     particle.update();
                     particle.draw();
                 });
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> origin/main
                 // Conectar partículas cercanas
                 particles.forEach((p1, i) => {
                     particles.slice(i + 1).forEach(p2 => {
                         const dx = p1.x - p2.x;
                         const dy = p1.y - p2.y;
                         const distance = Math.sqrt(dx * dx + dy * dy);
+<<<<<<< HEAD
                         
+=======
+
+>>>>>>> origin/main
                         if (distance < 100) {
                             ctx.beginPath();
                             ctx.moveTo(p1.x, p1.y);
@@ -464,10 +568,17 @@
                         }
                     });
                 });
+<<<<<<< HEAD
                 
                 requestAnimationFrame(animate);
             }
             
+=======
+
+                requestAnimationFrame(animate);
+            }
+
+>>>>>>> origin/main
             animate();
         }
 
@@ -492,7 +603,11 @@
             initTypewriter();
             initParticles();
             initSmoothScroll();
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> origin/main
             // Mensaje de bienvenida en consola
             console.log('%c🤖 MechMind-dwv System Initialized', 'color: #00D4FF; font-size: 20px; font-weight: bold;');
             console.log('%c🚀 Welcome to the future of robotics!', 'color: #00FF88; font-size: 14px;');

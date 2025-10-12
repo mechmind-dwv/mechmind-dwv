@@ -5,6 +5,10 @@
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
     "axios": "^1.11.0",
+<<<<<<< HEAD
+=======
+    "badge-maker": "^5.0.2",
+>>>>>>> origin/main
     "node-redis": "^0.1.7"
   }
 }

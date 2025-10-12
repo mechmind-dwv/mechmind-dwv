@@ -15,7 +15,7 @@ impl MechMindRepo {
             security: FortKnox::with_rust_and_love()
         }
     }
-    
+
     pub fn celebrate(&self) {
         println!("¡LO LOGRASTE! 🎉😂");
         println!("ESTRUCTURA PROFESIONAL ALCANZADA");

@@ -1,0 +1,80 @@
+ **Diagrama de Arquitectura** (`mechbot-architecture.drawio`)
+[![Arquitectura](https://img.shields.io/badge/Diagrama-Architecture-blue)](docs/robotics/api/schematics/mechbot-architecture.drawio)
+
+<!-- Ejemplo de contenido .drawio -->
+<mxfile>
+  <diagram name="Page-1">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="MechBot 2.0 Core" style="shape=hexagon" parent="1" vertex="1">
+          <mxGeometry x="240" y="120" width="80" height="80"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+```name: "📊 MechMind Stats Updater Pro"
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # Cada 6 horas (UTC)
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: 'Tema para las tarjetas (radical, dark, etc)'
+        required: false
+        default: 'radical'
+      force_update:
+        description: 'Forzar actualización ignorando caché'
+        required: false
+        default: 'false'
+
+jobs:
+  update-stats:
+    name: "⚡ Update README Stats"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Permiso esencial para commits
+      pull-requests: write  # Para futuras integraciones
+
+    steps:
+      - name: "🛰️ Checkout Profundo"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Historial completo para análisis
+          persist-credentials: false  # Más seguro
+
+      - name: "📊 Generar Estadísticas Inteligentes"
+        uses: anuraghazra/github-readme-stats@v4.2.1
+        id: stats
+        with:
+          username: mechmind-dwv
+          theme: ${{ inputs.theme || 'radical' }}
+          show_icons: true
+          hide_border: true
+          include_all_commits: true
+          count_private: true
+          cache_seconds: ${{ inputs.force_update == 'true' && '0' || '43200' }}  # 12h cache
+          exclude_repo: 'deprecated-project,test-sandbox'  # Filtro opcional
+
+      - name: "🔍 Detección de Cambios"
+        id: changes
+        run: |
+          git diff --quiet README.md || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: "💾 Commit Seguro"
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config --global user.name "MechMind Bot v2.0"
+          git config --global user.email "mechmind-ops@bots.github"
+          git add README.md
+          git commit -m "📈 Auto-update stats [skip ci] --theme=${{ inputs.theme }}"
+          git push origin HEAD:${{ github.ref }}
+
+      - name: "📌 Notificar sin Cambios"
+        if: steps.changes.outputs.has_changes != 'true'
+        run: |
+          echo "🔄 No se detectaron cambios en las estadísticas" >> $GITHUB_STEP_SUMMARY
+          echo "Cache válida hasta: $(date -d '+12 hours')" >> $GITHUB_STEP_SUMMARY

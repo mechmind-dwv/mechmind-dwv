@@ -26,3 +26,19 @@ Cargo.lock
 env.*
 bandit_results.json
 safety_report.json
+<<<<<<< HEAD
+=======
+node_modules/
+
+# Virtual environments
+.venv/
+.ai-venv/
+env/
+*.pyc
+
+# Virtual environments
+.venv/
+.ai-venv/
+env/
+*.pyc
+>>>>>>> origin/main

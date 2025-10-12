@@ -56,22 +56,22 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: "🚀 Initialize CodeQL"
-        uses: github/codeql-action/init@v3
-        with:
-          languages: ${{ matrix.language }}
-          queries: |
-            security-extended
-            security-and-quality
-            +${{ github.workspace }}/.github/codeql/custom.qls
-          config-file: ./.github/codeql/codeql-config.yml
+     - name: "🚀 Initialize CodeQL"
+  uses: github/codeql-action/init@v3
+  with:
+    languages: ${{ matrix.language }}
+    queries:
+      - security-extended
+      - security-and-quality
+      - +${{ github.workspace }}/.github/codeql/custom.qls
+    config-file: ./.github/codeql/codeql-config.yml
 
       - name: "🔍 Build MechBot"
         if: matrix.language == 'c-cpp'
         run: |
           cd projects/mechbot-2x
           cargo build --release --features ffi,secure
-          
+
           # Enhanced MechMind Reporting
           echo "### 🔐 MechMind Binary Integrity Report" >> $GITHUB_STEP_SUMMARY
           echo "#### 📅 Scan Date: $(date +'%Y-%m-%d %H:%M:%S %Z')" >> $GITHUB_STEP_SUMMARY
@@ -80,7 +80,7 @@ jobs:
           echo '```sh' >> $GITHUB_STEP_SUMMARY
           sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
-          
+
           # Additional binary metadata
           echo "\n**Binary Metadata:**" >> $GITHUB_STEP_SUMMARY
           echo '```sh' >> $GITHUB_STEP_SUMMARY

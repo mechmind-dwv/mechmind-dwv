@@ -13,17 +13,16 @@ updates:
       prefix: "🦀"
       prefix-development: "[rust-dev]"
 
-  # Actualización para Python (IA/ML y scripts)
   - package-ecosystem: "pip"
-    directory: "/docs/ai-research"
+   directory: "/docs/ai-research"
     schedule:
-      interval: "weekly"
-      day: "tuesday"
-    allow:
-      - dependency-name: "torch"
-        dependency-type: "direct"
-      - dependency-name: "numpy"
-        dependency-type: "direct"
+    interval: "monthly"  # Primer día de cada mes
+       allow:
+- dependency-name: "torch"  # Permite actualizaciones mayores de PyTorch
+  dependency-type: "direct"
+           ignore:
+- dependency-name: "numpy"
+         versions: ["1.24.0"]  # Versión específica requerida para ROS
 
   # Actualización para GitHub Actions
   - package-ecosystem: "github-actions"

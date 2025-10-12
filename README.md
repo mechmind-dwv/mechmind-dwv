@@ -6,6 +6,9 @@
 [![Security Audit](https://img.shields.io/badge/cargo--audit-clean-success?logo=rust)](https://github.com/mechmind-dwv)
 [![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/)
 [![PDF](https://img.shields.io/badge/PDF-Protocol-green)](docs/robotics/api/schematics/communication-protocol.pdf)
+[![Estado Documentación](https://img.shields.io/badge/docs-mechbot--docs-blue)](docs/robotics/api)
+[![Coverage](https://img.shields.io/badge/rustdoc-98%25-brightgreen)](docs/robotics/api/rustdoc)
+[![Ejemplos](https://img.shields.io/badge/examples-12%20files-orange)](docs/robotics/api/rest/examples)
 
 # ¡Hola Mundo! 👋 Soy **el Min** 🤖⚡
 
@@ -18,8 +21,6 @@
 - 🤖 **Robótica** (MechBot-2X en progreso...)
 - 🧠 **IA/ML** (PyTorch + TensorFlow)
 - ☕ **Café** > `;` (Sobreviví a un segfault)
- 
-[![Arquitectura](docs/robotics/api/schematics/preview-architecture.png)](docs/robotics/api/schematics/mechbot-architecture.drawio)
 
 ## 🚀 **Proyecto Estrella**: [MechBot-2X](https://github.com/mechmind-dwv/mechbot-2x)
 ```rust
@@ -28,7 +29,7 @@ fn main() {
 }
 ```
 
-## 📊 **Mis Estadísticas de Código** 
+## 📊 **Mis Estadísticas de Código**
 ### 🔥 **Rendimiento General**
 [![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
 
@@ -62,9 +63,10 @@ while True:
 
 ## 🤖 MechBot-2X ASCII Art
 ```text
-    __  __      _     _ ____        __  _______ ____  
-   |  \/  | ___| |__ | | __ ) _   _ \ \/ /_   _|___ \ 
+    __  __      _     _ ____        __  _______ ____
+   |  \/  | ___| |__ | | __ ) _   _ \ \/ /_   _|___ \
    | |\/| |/ _ \ '_ \| |  _ \| | | | \  /  | |   __) |
-   | |  | |  __/ |_) | | |_) | |_| | /  \  | |  / __/ 
+   | |  | |  __/ |_) | | |_) | |_| | /  \  | |  / __/
    |_|  |_|\___|_.__/|_|____/ \__, |/_/\_\ |_| |_____|
-                              |___/                    
+                              |___/
+ ```

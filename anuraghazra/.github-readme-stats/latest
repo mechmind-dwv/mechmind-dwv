@@ -1,6 +1,10 @@
 ### 🚀 **Implementación Avanzada en tu `README.md`**
 ```markdown
+<<<<<<< HEAD
 ## 📊 **Mis Estadísticas de Código** 
+=======
+## 📊 **Mis Estadísticas de Código**
+>>>>>>> origin/main
 ### 🔥 **Rendimiento General**
 [![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
 
@@ -66,26 +70,26 @@ Prueba estos themes alternativos:
 ---
 
 ### 💡 **Tips Pro**:
-1. **Cacheo Local**:  
-   Usa `&cache_seconds=86400` para reducir llamadas a la API.  
-2. **Badges Combinados**:  
+1. **Cacheo Local**:
+   Usa `&cache_seconds=86400` para reducir llamadas a la API.
+2. **Badges Combinados**:
    ```markdown
    [![Rust](https://img.shields.io/badge/Rust-Expert-FF00FF?logo=rust)](https://github.com/mechmind-dwv)
-   ```  
-3. **Excluir Repos**:  
+   ```
+3. **Excluir Repos**:
    `&exclude_repo=repo1,repo2` para no mostrar ciertos proyectos.
 
 ---
 
 ### 🐞 **Debugging Común**
 Si no se actualiza:
-1. Verifica que el workflow tenga permisos de escritura.  
-2. Asegúrate que el cron job esté activo.  
+1. Verifica que el workflow tenga permisos de escritura.
+2. Asegúrate que el cron job esté activo.
 3. Usa `&show=reviews,discussions` para datos adicionales.
 
 ---
 
-¿Quieres que hagamos una **versión interactiva** con filtros por lenguajes? ¡O incluso integrar tus stats de **WakaTime**! 😏  
+¿Quieres que hagamos una **versión interactiva** con filtros por lenguajes? ¡O incluso integrar tus stats de **WakaTime**! 😏
 
 ```rust
 // ¡Tu perfil ahora es imparable!
