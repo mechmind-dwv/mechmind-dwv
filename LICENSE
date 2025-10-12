@@ -1,7 +1,7 @@
 Copyright 2025 MechMind Team
 
 Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this software except in compliance with the License and 
+you may not use this software except in compliance with the License and
 the Security Requirements outlined in SECTION 8.
 
 You may obtain a copy of the License at
@@ -21,13 +21,13 @@ SECTION 8: SECURITY REQUIREMENTS
 1. Any derivative work must maintain equivalent security standards to
    those documented in the project's SECURITY.md file.
 
-2. Security patches for vulnerabilities rated "Critical" or "High" 
+2. Security patches for vulnerabilities rated "Critical" or "High"
    must be applied within 30 days of release.
 
 3. All deployments must include a mechanism for secure firmware updates
    with cryptographic verification.
 
-4. Any modifications to security-critical components (authentication, 
+4. Any modifications to security-critical components (authentication,
    cryptography, secure boot) must be audited by an independent third party.
 
 Violation of these terms terminates your rights under this license.

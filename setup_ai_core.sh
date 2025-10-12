@@ -29,7 +29,7 @@ mkdir -p MechMind-IA/{.github/workflows,core,models,data,api,docs}
 
 # Archivo README.md con estilo MechMind
 cat << 'EOF' > MechMind-IA/README.md
-# 🤖 MechMind AI Core System 
+# 🤖 MechMind AI Core System
 
 ```rust
 // Representación del núcleo IA
@@ -73,17 +73,17 @@ import onnxruntime
 
 class MechMindConfig:
     """Configuración épica del núcleo IA"""
-    
+
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
     PRECISION = "fp16"  # Optimización para Tensor Cores
-    
+
     # Accelerators
     ACCELERATORS = {
         "tensorrt": True,
         "openvino": False,
         "coreml": False
     }
-    
+
     @classmethod
     def show_config(cls):
         print(f"\n⚙️ Configuración MechMind AI:")
@@ -101,32 +101,32 @@ from torch.profiler import profile, record_function
 
 class MechMindTrainer:
     """Entrenador de IA nivel producción"""
-    
+
     def __init__(self, model, train_loader, val_loader):
         self.model = model
         self.train_loader = train_loader
         self.val_loader = val_loader
         self.optimizer = optim.AdamW(model.parameters(), lr=3e-4)
         self.scaler = torch.cuda.amp.GradScaler()
-        
+
     def train_epoch(self, epoch):
         self.model.train()
         total_loss = 0
-        
+
         with profile(activities=[torch.profiler.ProfilerActivity.CPU,
                                torch.profiler.ProfilerActivity.CUDA]) as prof:
             for batch in self.train_loader:
                 with record_function("train_step"):
                     with torch.autocast(device_type="cuda", dtype=torch.float16):
                         loss = self.model.training_step(batch)
-                    
+
                     self.scaler.scale(loss).backward()
                     self.scaler.step(self.optimizer)
                     self.scaler.update()
                     self.optimizer.zero_grad()
-                    
+
                     total_loss += loss.item()
-        
+
         print(prof.key_averages().table(sort_by="cuda_time_total"))
         return total_loss / len(self.train_loader)
 EOF
@@ -158,19 +158,19 @@ jobs:
       image: pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
     env:
       WANDB_API_KEY: ${{ secrets.WANDB_KEY }}
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup NVIDIA
         uses: pytorch/test-infra/.github/actions/setup-nvidia@main
-      
+
       - name: Train Model
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           python core/train.py --model ${{ inputs.model_type }} --epochs ${{ inputs.epochs }}
-          
+
       - name: Upload Model
         uses: actions/upload-artifact@v3
         with:

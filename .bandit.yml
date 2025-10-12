@@ -1,0 +1,4 @@
+# Custom bandit configuration
+skips: B101,B102
+targets:
+  - src/

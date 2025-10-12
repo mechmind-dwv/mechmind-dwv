@@ -2,7 +2,7 @@ name: Deploy MechBot-2X
 on:
   push:
     branches: [main]
-    paths: 
+    paths:
       - 'projects/mechbot-2x/**'
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Build Rust Code
         run: |
           cd projects/mechbot-2x

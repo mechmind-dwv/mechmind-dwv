@@ -1,0 +1,66 @@
+name: "📊 GitHub Stats Auto-Update"
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: 'Theme for cards'
+        required: false
+        default: 'radical'
+
+jobs:
+  update-readme:
+    name: "Update GitHub Stats"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Update Stats in README"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          USERNAME="mechmind-dwv"
+          THEME="${{ inputs.theme || 'radical' }}"
+
+          # URLs for the stats
+          STATS_URL="https://github-readme-stats.vercel.app/api?username=${USERNAME}&show_icons=true&theme=${THEME}&hide_border=true&include_all_commits=true&count_private=true"
+          LANGS_URL="https://github-readme-stats.vercel.app/api/top-langs/?username=${USERNAME}&theme=${THEME}&hide_border=true&layout=compact"
+
+          # Update existing URLs in README.md
+          if [ -f "README.md" ]; then
+            # Create backup
+            cp README.md README.md.bak
+
+            # Update stats URLs with new theme
+            sed -i "s|https://github-readme-stats\.vercel\.app/api?username=${USERNAME}[^)]*|${STATS_URL}|g" README.md
+            sed -i "s|https://github-readme-stats\.vercel\.app/api/top-langs/?username=${USERNAME}[^)]*|${LANGS_URL}|g" README.md
+
+            echo "✅ README updated with theme: ${THEME}"
+
+            # Show what changed
+            if ! diff -q README.md.bak README.md > /dev/null; then
+              echo "📝 Changes made:"
+              diff README.md.bak README.md || true
+            fi
+          else
+            echo "❌ README.md not found!"
+            exit 1
+          fi
+
+      - name: "Commit Changes"
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            git add README.md
+            git commit -m "📈 Auto-update GitHub stats (theme: ${{ inputs.theme || 'radical' }}) [skip ci]"
+            git push
+            echo "✅ Changes committed and pushed"
+          else
+            echo "ℹ️ No changes to commit"
+          fi

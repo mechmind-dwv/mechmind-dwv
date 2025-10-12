@@ -2,7 +2,7 @@
 # DESPLIEGUE INTERESTELAR (v2.0)
 
 echo "🚀 Iniciando sistema MechMind..."
-cd ~/MechMind-dwv 
+cd ~/MechMind-dwv
 
 # Verificar estructura crítica
 [ -f "projects/mechcore/Cargo.toml" ] || { echo "❌ Error: Falta Cargo.toml"; exit 1; }

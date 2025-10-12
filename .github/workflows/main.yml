@@ -11,11 +11,20 @@ jobs:
     name: ⚡ Actualización Dinámica
     runs-on: ubuntu-latest
     steps:
+      ### 🌟 **Extras Opcionales**:
+      - name: 🐍 Python Dependencies
+          if: contains(github.event.head_commit.message, 'python')
+        run: pip install -r requirements.txt
+
+      - name: 🔐 Security Scan
+        uses: actions-rs/audit-check@v1
+
       # Paso 1: Checkout mágico
       - name: 🛸 Clonar Repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Para stats de commits
+          fetch-depth: 0  # Para stats de commits
+
       # Paso 2: Actualizar README.md con stats
       - name: 📊 GitHub Readme Stats
         uses: anuraghazra/github-readme-stats@latest
@@ -25,17 +34,81 @@ jobs:
           theme: radical
           cache_seconds: 86400 # 24h cache
           exclude_repo: mechmind-dwv  # Excluye este repo
+
       # Paso 3: Actualizar tecnologías (¡Rust primero!)
       - name: 🦀 Tech Radar
         run: |
           echo "## 🛠️ Stack Tecnológico Actualizado" >> README.md
           echo "- 🦀 **Rust** v$(curl -s https://api.github.com/repos/rust-lang/rust/releases/latest | jq -r '.tag_name')" >> README.md
           echo "- 🤖 **ROS2** Humble Hawksbill" >> README.md
+
       # Paso 4: Commit sexy
       - name: 💾 Guardar Cambios
         run: |
-          git config --global user.name "mechmind-dwv"
-          git config --global user.email "ia.mechmind@gmail.com"
+          git config --global user.name "MechMind Bot"
+          git config --global user.email "bot@mechmind.tech"
           git add README.md
           git commit -m "✨ Auto-update: $(date +'%d/%m/%Y %H:%M')"
           git push
+
+  # Bonus: Auto-deploy para MechBot-2X
+  deploy-mechbot:
+    name: 🤖 Deploy MechBot-2X
+    needs: supercharge-profile
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && contains(github.event.head_commit.message, 'mechbot')
+    steps:
+      - uses: actions/checkout@v4
+      - run: cd projects/mechbot-2x && cargo build --release
+      - uses: ros-tooling/setup-ros@v0.3
+        with:
+          required-ros-distributions: humble
+```
+
+---
+
+### 🔥 **Features Destacados**:
+1. **Actualización Diaria Automática** (a las 12 PM UTC)
+2. **Tech Radar Dinámico** (Versión de Rust automática)
+3. **Filtro de Repos** (Excluye tu perfil de las stats)
+4. **Deploy Condicional** (Solo si el commit menciona "mechbot")
+
+---
+
+### 🛠 **Cómo Implementarlo**:
+1. Ve a `.github/workflows/` en tu repo
+2. Crea `main.yml` y pega este código
+3. Personaliza:
+   ```yaml
+   env:
+     ROS_DISTRO: "humble"  # Cambia a tu versión de ROS
+     BOT_EMAIL: "tu_email@dominio.com"
+   ```
+
+---
+
+### 🌟 **Extras Opcionales**:
+```yaml
+# Para añadir en steps:
+- name: 🐍 Python Dependencies
+  if: contains(github.event.head_commit.message, 'python')
+  run: pip install -r requirements.txt
+
+- name: 🔐 Security Scan
+  uses: actions-rs/audit-check@v1
+```
+
+---
+
+**Pro Tip**: Usa este secreto para commits verificados 👇
+```bash
+gh secret set GPG_KEY < private.key --repo mechmind-dwv/mechmind-dwv
+```
+
+¿Quieres que añadamos **notificaciones en Discord** o **auto-post en Twitter** con los updates? ¡Dímelo! 🤖💬
+
+```rust
+// ¡Tu perfil ahora es autónomo!
+fn main() {
+    println!("🚀 GitHub Actions == ¡Éxito!");
+}

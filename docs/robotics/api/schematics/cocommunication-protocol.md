@@ -68,7 +68,7 @@ core --> sensors : I2C
 - [ ] Automatizar validaciones técnicas
 - [ ] Integrar con documentación ROS2?
 
-¡Estoy lista para ayudar! 🤖💡 
+¡Estoy lista para ayudar! 🤖💡
 
 ```rust
 // Función de verificación
