@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+def test_sample(): assert True
+=======
 from src import add, subtract
 
 
@@ -7,3 +10,4 @@ def test_addition():
 
 def test_subtraction():
     assert subtract(5, 2) == 3
+>>>>>>> origin/main

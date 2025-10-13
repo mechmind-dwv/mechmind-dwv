@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+name: Build Robotics Docs
+on: push
+=======
+name: "📜 MechMind Documentation Engine"
+
+# ======================
+# 🔐 PERMISOS DE SEGURIDAD
+# ======================
+=======
 
 name: "📜 MechMind Documentation Engine"
 
@@ -7,13 +18,18 @@ name: "📜 MechMind Documentation Engine"
 
 name: Build Robotics Docs
 on: push
+>>>>>>> origin/main
 permissions:
   contents: read      # Acceso mínimo al código
   pages: write        # Despliegue en GitHub Pages
   id-token: write     # Autenticación OIDC segura
   deployments: write  # Para seguimiento de despliegues
+<<<<<<< HEAD
+>>>>>>> 18737787 (Agrega nuevos archivos y modificaciones listados)
+=======
 
 name: "📜 MechMind Documentation Engine"
+>>>>>>> origin/main
 
 # ======================
 # 🕒 DISPARADORES
@@ -45,9 +61,14 @@ jobs:
   documentation:
     name: "📚 Generar Documentación"
     runs-on: ubuntu-latest
+<<<<<<< HEAD
+<<<<<<< HEAD
+    steps:
+=======
 
 
 
+>>>>>>> origin/main
       - uses: actions/checkout@v4
 
       - name: Generate RustDoc
@@ -55,6 +76,14 @@ jobs:
           cd docs/robotics/firmware
           cargo doc --no-deps
           mv target/doc ./api/rustdoc
+<<<<<<< HEAD
+=======
+    container:
+      image: rustlang/rust:${{ env.RUST_VERSION }}
+      options: --privileged  # Requerido para algunos crates
+>>>>>>> 18737787 (Agrega nuevos archivos y modificaciones listados)
+
+=======
        steps:
        container:
       image: rustlang/rust:${{ env.RUST_VERSION }}
@@ -63,6 +92,7 @@ jobs:
 
       # Requerido para algunos crates
 
+>>>>>>> origin/main
     # ======================
     # 🌐 ENTORNO DE EJECUCIÓN
     # ======================
@@ -77,6 +107,16 @@ jobs:
       - name: "🛸 Checkout del Código"
         uses: actions/checkout@v4
         with:
+<<<<<<< HEAD
+<<<<<<< HEAD
+          name: mechbot-docs
+          path: docs/robotics/api/
+=======
+          fetch-depth: 0
+          submodules: recursive
+          persist-credentials: false
+
+=======
 
          fetch-depth: 0
           submodules: recursive
@@ -84,6 +124,7 @@ jobs:
 
 
 
+>>>>>>> origin/main
       # ======================
       # 2. CONFIGURACIÓN RUST
       # ======================
@@ -105,8 +146,13 @@ jobs:
             --all-features \
             --target-dir ${{ env.CARGO_TARGET_DIR }} \
             --offline
+<<<<<<< HEAD
+>>>>>>> 18737787 (Agrega nuevos archivos y modificaciones listados)
+          
+=======
 
        - name: mechbot-docs
+>>>>>>> origin/main
           # Post-procesamiento de docs
           find target-docs/doc -name "*.html" -exec \
             sed -i 's/<body>/<body class="mechmind-theme">/g' {} \;

@@ -1,0 +1,5 @@
+%% Ejemplo del protocolo
+sequenceDiagram
+    MechBot->>ROS2: /cmd_vel (Twist)
+    ROS2->>ESP32: Serial@115200bps
+    ESP32-->>Sensors: I2C Request
