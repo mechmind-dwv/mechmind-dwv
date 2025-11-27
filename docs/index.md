@@ -15,6 +15,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+<<<<<<< HEAD
+=======
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
@@ -22,3 +24,4 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 Documentación de MechBot-2X y sistemas relacionados
 
 # Welcome to MkDocs
+>>>>>>> origin/main
