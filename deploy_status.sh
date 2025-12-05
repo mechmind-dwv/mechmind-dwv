@@ -12,10 +12,10 @@ elif [ "$STATUS" = "null" ]; then
 else
   echo "🚧 Estado del despliegue: $STATUS"
   echo "⏳ Monitoreando ejecución activa..."
-
+  
   # Obtener ID de la última ejecución del workflow 'gh-pages.yml'
   RUN_ID=$(gh run list --workflow=gh-pages.yml --json databaseId -q '.[0].databaseId')
-
+  
   if [ -n "$RUN_ID" ]; then
     gh run watch $RUN_ID
   else

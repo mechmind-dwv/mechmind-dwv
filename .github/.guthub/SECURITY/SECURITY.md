@@ -102,7 +102,11 @@ cargo vet certify --all
 rosdep check --from-paths src --ignore-src
 ```
 
+<<<<<<< HEAD
 **Política de Divulgación:**
+=======
+**Política de Divulgación:**  
+>>>>>>> 5d016db7 (sed -i '/^#/d' /data/data/com.termux/files/home/mechmind-dwv/.git/COMMIT_EDITMSG)
 Seguimos el estándar [RFPolicy](https://en.wikipedia.org/wiki/RFPolicy) con embargo máximo de 90 días.
 
 ---
@@ -112,7 +116,11 @@ Seguimos el estándar [RFPolicy](https://en.wikipedia.org/wiki/RFPolicy) con emb
 fn main() {
     println!("🛡️ Política activa en: .github/SECURITY.md");
 }
+<<<<<<< HEAD
 ```
+=======
+``` 
+>>>>>>> 5d016db7 (sed -i '/^#/d' /data/data/com.termux/files/home/mechmind-dwv/.git/COMMIT_EDITMSG)
 
 **Características clave:**
 - Enfoque en seguridad para robótica con Rust
