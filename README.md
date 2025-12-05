@@ -1,220 +1,72 @@
-# **🤖 MECHMIND-DWV** | *Innovación en Código y Robótica* 🚀
+[![Rust Version](https://img.shields.io/badge/rust-nightly-purple?logo=rust)](https://github.com/mechmind-dwv)
+[![Crates.io](https://img.shields.io/crates/v/mechbot-2x?logo=rust)](https://crates.io/crates/mechbot-2x)
+[![Docs.rs](https://img.shields.io/docsrs/mechbot-2x?logo=rust)](https://docs.rs/mechbot-2x)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/mechmind-dwv/mechmind-dwv/rust-ci.yml?logo=github)](https://github.com/mechmind-dwv/mechmind-dwv/actions)
+[![Coverage](https://img.shields.io/codecov/c/github/mechmind-dwv/mechmind-dwv?logo=codecov)](https://codecov.io/gh/mechmind-dwv)
+[![Security Audit](https://img.shields.io/badge/cargo--audit-clean-success?logo=rust)](https://github.com/mechmind-dwv)
+[![ROS2](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/)
+[![PDF](https://img.shields.io/badge/PDF-Protocol-green)](docs/robotics/api/schematics/communication-protocol.pdf)
+[![Estado Documentación](https://img.shields.io/badge/docs-mechbot--docs-blue)](docs/robotics/api)
+[![Coverage](https://img.shields.io/badge/rustdoc-98%25-brightgreen)](docs/robotics/api/rustdoc)
+[![Ejemplos](https://img.shields.io/badge/examples-12%20files-orange)](docs/robotics/api/rest/examples)
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=MechMind-dwv;Innovaci%C3%B3n+en+C%C3%B3digo;Robótica+del+Futuro;Automatización+con+IA" alt="Typing SVG" />
-</div>
+# ¡Hola Mundo! 👋 Soy **el Min** 🤖⚡
 
-**Bienvenido al hub oficial de MechMind-dwv**, donde la ingeniería de software, la automatización y la creatividad colisionan para construir el futuro digital.
+<p align="center">
+  <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="300" alt="Robot saludando">
+</p>
 
-<div align="center">
-  <a href="https://mechmind-dwv.github.io"><img src="https://img.shields.io/badge/🌐_Sitio_Web-Live-00D4FF?style=for-the-badge" alt="Website"></a>
-  <a href="https://github.com/MechMind-dwv"><img src="https://img.shields.io/badge/📚_Repositorios-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-  <img src="https://komarev.com/ghpvc/?username=MechMind-dwv&color=00D4FF&style=for-the-badge" alt="Profile Views">
-</div>
+## 🔧 **Tecnologías & Pasiones**
+- 🦀 **Rust** (¡Sin GC y sin miedo!)
+- 🤖 **Robótica** (MechBot-2X en progreso...)
+- 🧠 **IA/ML** (PyTorch + TensorFlow)
+- ☕ **Café** > `;` (Sobreviví a un segfault)
 
----
-
-## **🌌 Sobre Nosotros**
-
-Somos un equipo de **desarrolladores visionarios** especializados en:
-
-- **🤖 Robótica Inteligente** → Sistemas autónomos con IA avanzada
-- **⚡ Desarrollo Web de Alto Rendimiento** → Aplicaciones escalables y optimizadas  
-- **🔒 Ciberseguridad Avanzada** → Análisis estático y auditorías automatizadas
-- **🧠 Machine Learning & IA** → Algoritmos que aprenden y evolucionan
-
+## 🚀 **Proyecto Estrella**: [MechBot-2X](https://github.com/mechmind-dwv/mechbot-2x)
 ```rust
-// Nuestro mantra en código:
-fn innovate() -> Future<Success> {
-    println!("🚀 Construyendo el mañana, hoy!");
-    create_future().await
+fn main() {
+    println!("¡Transformando código en movimientos robóticos!");
 }
 ```
 
----
+## 📊 **Mis Estadísticas de Código** 
+### 🔥 **Rendimiento General**
+[![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
 
-## **🛠️ Proyectos Estrella**
+### 🦀 **Lenguajes Top** (¡Rust siempre primero!)
+[![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=mechmind-dwv&layout=compact&theme=dark&hide_border=true&langs_count=6&hide=html,css&card_width=450)](https://github.com/mechmind-dwv)
 
-<table>
-<tr>
-<td width="50%">
+### 🏆 **Trofeos de GitHub**
+[![Logros](https://github-profile-trophy.vercel.app/?username=mechmind-dwv&theme=onedark&margin-w=15&no-frame=true&rank=SSS,SS,S,AAA,AA,A,B)](https://github.com/mechmind-dwv)
 
-### **🤖 [MechBot-2x](https://github.com/MechMind-dwv/mechbot-2x)**
-**Sistema de Automatización Industrial con IA**
-- 🦀 **Rust** + 🐍 **Python** 
-- Control robótico en tiempo real
-- Visión artificial integrada
-- API REST para control remoto
-
-</td>
-<td width="50%">
-
-### **✨ [Web ParticleJS](https://github.com/MechMind-dwv/web-particles)**  
-**Experiencia Visual Interactiva**
-- 🌟 **JavaScript ES6+** + **CSS3**
-- Efectos de partículas en tiempo real
-- Diseño responsivo y moderno
-- Animaciones suaves 60fps
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### **🔍 [CodeQL Security Scanner](https://github.com/MechMind-dwv/codeql-scans)**
-**Auditoría Automática de Vulnerabilidades**
-- 🛡️ **GitHub Actions** + **CodeQL**
-- Análisis estático avanzado
-- Reportes automatizados
-- Integración CI/CD
-
-</td>
-<td width="50%">
-
-### **🧠 [AI Neural Network](https://github.com/MechMind-dwv/neural-net)**
-**Red Neuronal desde Cero**
-- 🔬 **Python** + **NumPy**
-- Backpropagation optimizada
-- Visualización en tiempo real
-- Casos de uso industriales
-
-</td>
-</tr>
-</table>
-
----
-
-## **🧠 Arsenal Tecnológico**
-
-<div align="center">
-
-### **Lenguajes de Programación**
+## 🛠 **Stack Tecnológico**
 ![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![ROS](https://img.shields.io/badge/ROS-22314E?style=for-the-badge&logo=ros&logoColor=white)
 
-### **Frameworks & Librerías**
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=TensorFlow&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white)
-
-### **Herramientas & DevOps**
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326ce5?style=for-the-badge&logo=kubernetes&logoColor=white)
-
-</div>
-
----
-
-## **📊 Estadísticas del Desarrollador**
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=MechMind-dwv&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=00D4FF&icon_color=00D4FF"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MechMind-dwv&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D4FF"/>
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MechMind-dwv&theme=tokyonight&hide_border=true&background=0D1117&stroke=00D4FF&ring=00D4FF&fire=FF6B35&currStreakLabel=00D4FF" alt="GitHub Streak" />
-</div>
-
----
-
-## **🚀 Contribución y Colaboración**
-
-### **¿Quieres formar parte del futuro? ¡Únete a nosotros!**
-
-```bash
-# 1. Clona nuestro repositorio principal
-git clone https://github.com/MechMind-dwv/mechmind-dwv.github.io.git
-
-# 2. Instala las dependencias
-npm install
-
-# 3. Ejecuta el entorno de desarrollo
-npm run dev
-
-# 4. ¡Empieza a innovar! 🚀
+## 🤖 **Dato Curioso**
+```python
+while True:
+    min.codear()
+    min.tomar_café()
+    if "bug" in min.código:
+        min.debuggear(con_frustración=True
 ```
+## 🌐 **Conécta conmigo**
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/tu_usuario)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tu_usuario)
 
-### **Guías de Contribución**
-- 📋 **[Código de Conducta](https://github.com/MechMind-dwv/.github/blob/main/CODE_OF_CONDUCT.md)**
-- 🤝 **[Guía de Contribución](https://github.com/MechMind-dwv/.github/blob/main/CONTRIBUTING.md)**
-- 🐛 **[Reportar Issues](https://github.com/MechMind-dwv/mechmind-dwv.github.io/issues)**
-- 💡 **[Proponer Features](https://github.com/MechMind-dwv/mechmind-dwv.github.io/discussions)**
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=mechmind-dwv&label=Visitas%20a%20mi%20perfil&color=blueviolet" alt="Contador de visitas">
+</p>
 
----
 
-## **🎯 Roadmap 2025**
-
-- [ ] **Q1**: Lanzamiento de MechBot-3x con IA Generativa
-- [ ] **Q2**: Plataforma de Machine Learning como Servicio
-- [ ] **Q3**: Sistema de Robótica Distribuida
-- [ ] **Q4**: Framework Open Source para Automatización
-
----
-
-## **🌟 Logros y Reconocimientos**
-
-<div align="center">
-
-🏆 **GitHub Star Contributor** | 🥇 **Open Source Excellence** | 🚀 **Innovation Award 2024**
-
-</div>
-
----
-
-## **🤝 Colaboradores Principales**
-
-<div align="center">
-  <a href="https://github.com/MechMind-dwv/mechmind-dwv.github.io/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=MechMind-dwv/mechmind-dwv.github.io&max=12" />
-  </a>
-</div>
-
----
-
-## **📜 Licencia**
-
-Este proyecto está licenciado bajo la **Licencia MIT** - consulta el archivo [LICENSE](LICENSE) para más detalles.
-
-```
-MIT License - Libertad para Innovar 🗽
-```
-
----
-
-## **🌍 Conéctate con Nosotros**
-
-<div align="center">
-  <a href="https://twitter.com/MechMind_dwv"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"></a>
-  <a href="https://linkedin.com/company/mechmind-dwv"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:contact@mechmind-dwv.dev"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://discord.gg/mechmind"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
-</div>
-
----
-
-## **💫 Mensaje Final**
-
-<div align="center">
-
-### **"El futuro pertenece a quienes construyen hoy"** 
-
-```diff
-+ MechMind-dwv: Donde la imaginación se encuentra con el código
-+ Construyendo el mañana, una línea de código a la vez 🚀
-```
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=00D4FF&height=100&section=footer" />
-
-</div>
-
----
-
-<div align="center">
-  <sub>⭐ Si te gusta nuestro trabajo, ¡no olvides darle una estrella a nuestros repositorios! ⭐</sub>
-</div>
+## 🤖 MechBot-2X ASCII Art
+```text
+    __  __      _     _ ____        __  _______ ____  
+   |  \/  | ___| |__ | | __ ) _   _ \ \/ /_   _|___ \ 
+   | |\/| |/ _ \ '_ \| |  _ \| | | | \  /  | |   __) |
+   | |  | |  __/ |_) | | |_) | |_| | /  \  | |  / __/ 
+   |_|  |_|\___|_.__/|_|____/ \__, |/_/\_\ |_| |_____|
+                              |___/
+ ```
