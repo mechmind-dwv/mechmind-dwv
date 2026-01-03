@@ -1,0 +1,38 @@
+name: "🚀 MechMind Mega Pipeline"
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 12 * * *'  # Daily build
+
+jobs:
+  security:
+    name: "🛡️ CodeQL Security Scan"
+    uses: ./.github/workflows/codeql.yml
+
+  documentation:
+    name: "📚 Build Docs"
+    needs: security
+    uses: ./.github/workflows/docs.yml
+    with:
+      lang: 'es'  # Documentación principal en español
+
+  stats:
+    name: "📊 Update Stats"
+    needs: security
+    uses: ./.github/workflows/stats.yml
+    secrets: inherit
+
+  notify:
+    name: "📨 Notify Team"
+    needs: [security, documentation, stats]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send report
+        run: |
+          echo "✅ Todas las tareas completadas:" \
+          "Security: ${{ needs.security.result }}" \
+          "Docs: ${{ needs.documentation.result }}" \
+          "Stats: ${{ needs.stats.result }}" \
+          | tee -a $GITHUB_STEP_SUMMARY
