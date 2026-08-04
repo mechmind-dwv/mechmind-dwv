@@ -2,8 +2,8 @@ name: "MechMind Security Protocol v4"
 disable-default-queries: false
 
 packs:
-  - github/security-extended
-  - github/security-and-quality
+  - security-extended
+  - security-and-quality
 
 paths:
   - "projects/mechbot-2x/src"
@@ -14,5 +14,5 @@ paths-ignore:
   - "**/tmp/**"
 
 queries:
-  - uses: github/security-extended
-  - uses: github/security-and-quality
+  - uses: security-extended
+  - uses: security-and-quality
