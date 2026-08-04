@@ -5,64 +5,87 @@ on: [push, pull_request]
 jobs:
   test:
     name: "Test Suite (MechBot-2X)"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # Humble funciona mejor en Ubuntu 22.04
     steps:
       - uses: actions/checkout@v6
-      
-      # Instalar ROS2 (Humble)
-      - uses: ros-tooling/setup-ros@v0.7
-        with:
-          required-ros-distributions: humble
-      
-      # Configurar Rust
+
+      # Instalación manual de ROS2 Humble
+      - name: Install ROS2 Humble
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository universe
+          sudo apt-get update
+          sudo apt-get install -y curl gnupg2
+          sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main"
+          sudo apt-get update
+          sudo apt-get install -y ros-humble-desktop python3-colcon-common-extensions
+          echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@nightly
         with:
           components: rustfmt, clippy
-      
+
       - name: Run tests
-        run: cargo test --all-features --verbose
-      
+        run: |
+          source /opt/ros/humble/setup.bash
+          cargo test --all-features --verbose
+
       - name: Run benchmarks (compile only)
-        run: cargo bench --all-features --no-run
+        run: |
+          source /opt/ros/humble/setup.bash
+          cargo bench --all-features --no-run
 
   security:
     name: "🔒 Cargo Audit"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v6
       - name: Install cargo-audit
         run: cargo install cargo-audit
       - name: Run security audit
         run: cargo audit
-      # Nota: cargo audit no necesita ROS, por eso no lo instalamos aquí
 
   coverage:
     name: "📊 Code Coverage & Run"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v6
-      
-      # Instalar ROS2 (Humble)
-      - uses: ros-tooling/setup-ros@v0.7
-        with:
-          required-ros-distributions: humble
-      
+
+      - name: Install ROS2 Humble
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common
+          sudo add-apt-repository universe
+          sudo apt-get update
+          sudo apt-get install -y curl gnupg2
+          sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main"
+          sudo apt-get update
+          sudo apt-get install -y ros-humble-desktop python3-colcon-common-extensions
+          echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
-      
+
       - name: Install cargo-tarpaulin
         run: cargo install cargo-tarpaulin
-      
+
       - name: Generate coverage report
-        run: cargo tarpaulin --all-features --out Html --output-dir .
-      
+        run: |
+          source /opt/ros/humble/setup.bash
+          cargo tarpaulin --all-features --out Html --output-dir .
+
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: tarpaulin-report.html
-      
+
       - name: Build and run mechcore binary
         working-directory: projects/mechcore
-        run: cargo run --release
+        run: |
+          source /opt/ros/humble/setup.bash
+          cargo run --release
