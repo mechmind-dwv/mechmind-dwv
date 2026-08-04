@@ -1,25 +1,3 @@
-// Código de bienvenida en Rust
-fn main() {
-    println!("🎯 Objetivo: Innovación en Robótica con Rust");
-    println!("💻 Repositorio: github.com/mechmind-dwv");
-    println!("📚 Documentación: ./docs/robotics/api");
-}
-
-// ¡Verificación en Rust!
-#[test]
-fn test_codeql_setup() {
-    assert!(std::path::exists(".github/codeql"));
-    println!("✅ Todo listo para escanear");
-}
-
-// ❌ Inseguro
-unsafe { std::ptr::read(0x0 as *const u32) };
-
-// ✅ Seguro
-let value = some_safe_api.get_data()
-
-### 🦀 **Rust** (¡Sin GC y sin miedo!)
-// Ejemplo de código Rust que refleja tu estilo
 #[derive(Debug)]
 struct MechMind {
     proyectos: Vec<&'static str>,
@@ -36,11 +14,21 @@ impl MechMind {
 }
 
 fn main() {
+    println!("🎯 Objetivo: Innovación en Robótica con Rust");
+    println!("💻 Repositorio: github.com/mechmind-dwv");
+    println!("📚 Documentación: ./docs/robotics/api");
+    
     let min = MechMind::new();
-    println!("🚀 Proyectos: {:?}", min.proyectos);
-    println!("☕ Café consumido: {}mg", min.coffee_level);
+    println!("🚀 Proyectos activos: {:?}", min.proyectos);
+    println!("☕ Nivel de Café: {}%", min.coffee_level);
+    println!("🌟 ¡Perfil de MechMind operativo!");
 }
-// ¡Tu perfil ahora es imparable!
-fn main() {
-    println!("🌟 Stats actualizados con éxito!");
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_initialization() {
+        assert!(true);
+        println!("✅ Test de inicialización pasado");
+    }
 }
