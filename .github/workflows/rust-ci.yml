@@ -37,7 +37,7 @@ jobs:
       - uses: actions-rs/tarpaulin@v0.1
         with:
           args: --all-features --out Html
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: cobertura.html
