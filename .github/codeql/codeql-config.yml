@@ -1,21 +1,15 @@
 name: "MechMind Security Protocol"
+
 disable-default-queries: false
+
 paths:
   include:
-    - "projects/mechbot-2x/src/**"
-    - "docs/ai-research/**"
+    - projects/mechbot-2x/src
+    - docs/ai-research
   exclude:
     - "**/tests/**"
     - "**/experimental/**"
-query-filters:
-  - id: rust-unsafe-guard
-    pattern: |
-      import rust
-      from UnsafeBlock ub
-      select ub, "¡Código unsafe detectado!"
-  - id: python-injection-check
-    pattern: |
-      import python
-      from CallNode cn
-      where cn.getTarget().toString().matches("%input%")
-      select cn, "¡Posible inyección de código!"
+
+# Nota: Los query-filters de CodeQL no soportan definiciones de queries en línea (QL) de esta forma.
+# Se deben usar archivos .ql o suites .qls. Por ahora, eliminamos los filtros inválidos 
+# para que el pipeline no falle y usaremos las queries por defecto.

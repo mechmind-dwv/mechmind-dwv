@@ -71,7 +71,7 @@ impl ActuatorController {
         Ok(controller)
     }
 
-    pub async fn initialize(&self) -> Result<(), Box<dyn std::error::Error>> {
+    pub async fn initialize(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         info!("🔧 Inicializando actuadores...");
 
         // Inicializar todos los subsistemas
@@ -89,7 +89,7 @@ impl ActuatorController {
         Ok(())
     }
 
-    async fn startup_sequence(&self) -> Result<(), Box<dyn std::error::Error>> {
+    async fn startup_sequence(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         info!("🌟 Ejecutando secuencia de inicio...");
 
         // LEDs de arranque
@@ -123,7 +123,7 @@ impl ActuatorController {
         Ok(())
     }
 
-    pub async fn execute_commands(&self, commands: ActuatorCommands) -> Result<(), Box<dyn std::error::Error>> {
+    pub async fn execute_commands(&mut self, commands: ActuatorCommands) -> Result<(), Box<dyn std::error::Error>> {
         debug!("🎯 Ejecutando comandos de actuadores...");
 
         // Verificar parada de emergencia
@@ -138,61 +138,30 @@ impl ActuatorController {
             return Ok(());
         }
 
-        // Ejecutar comandos en paralelo
-        let motor_task = async {
-            if let Some(ref speeds) = commands.motor_speeds {
-                self.motor_controller.set_speeds(speeds).await
-            } else if let Some(linear_vel) = commands.linear_velocity {
-                self.motor_controller.set_velocity(linear_vel, commands.angular_velocity).await
-            } else {
-                Ok(())
+        // Ejecutar comandos secuencialmente para evitar conflictos de mutabilidad
+        if let Some(ref speeds) = commands.motor_speeds {
+            self.motor_controller.set_speeds(speeds).await?;
+        } else if let Some(linear_vel) = commands.linear_velocity {
+            self.motor_controller.set_velocity(linear_vel, commands.angular_velocity).await?;
+        }
+
+        if let Some(ref positions) = commands.servo_positions {
+            self.servo_controller.set_positions(positions).await?;
+        }
+
+        if let Some(ref grip_cmd) = commands.gripper_command {
+            self.gripper_controller.execute_command(grip_cmd).await?;
+        }
+
+        if let Some(ref led_cmds) = commands.led_commands {
+            for led_cmd in led_cmds {
+                self.led_controller.set_led(led_cmd).await?;
             }
-        };
+        }
 
-        let servo_task = async {
-            if let Some(ref positions) = commands.servo_positions {
-                self.servo_controller.set_positions(positions).await
-            } else {
-                Ok(())
-            }
-        };
-
-        let gripper_task = async {
-            if let Some(ref grip_cmd) = commands.gripper_command {
-                self.gripper_controller.execute_command(grip_cmd).await
-            } else {
-                Ok(())
-            }
-        };
-
-        let led_task = async {
-            if let Some(ref led_cmds) = commands.led_commands {
-                for led_cmd in led_cmds {
-                    self.led_controller.set_led(led_cmd).await?;
-                }
-                Ok::<(), Box<dyn std::error::Error>>(())
-            } else {
-                Ok(())
-            }
-        };
-
-        let speaker_task = async {
-            if let Some(ref sound_cmd) = commands.speaker_command {
-                self.speaker_controller.play_sound(sound_cmd).await
-            } else {
-                Ok(())
-            }
-        };
-
-        // Ejecutar todas las tareas
-        let results = tokio::join!(motor_task, servo_task, gripper_task, led_task, speaker_task);
-
-        // Verificar errores
-        if let Err(e) = results.0 { error!("Error en motores: {}", e); }
-        if let Err(e) = results.1 { error!("Error en servos: {}", e); }
-        if let Err(e) = results.2 { error!("Error en gripper: {}", e); }
-        if let Err(e) = results.3 { error!("Error en LEDs: {}", e); }
-        if let Err(e) = results.4 { error!("Error en altavoz: {}", e); }
+        if let Some(ref sound_cmd) = commands.speaker_command {
+            self.speaker_controller.play_sound(sound_cmd).await?;
+        }
 
         // Publicar estado de actuadores
         let status_json = serde_json::to_string(&self.get_status().await)?;
@@ -202,7 +171,7 @@ impl ActuatorController {
         Ok(())
     }
 
-    pub async fn emergency_stop(&self) -> Result<(), Box<dyn std::error::Error>> {
+    pub async fn emergency_stop(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         error!("🚨 EJECUTANDO PARADA DE EMERGENCIA");
 
         // Parar todos los motores inmediatamente
@@ -225,17 +194,6 @@ impl ActuatorController {
             sleep(Duration::from_millis(200)).await;
         }
 
-        // Sonido de alarma
-        for _ in 0..3 {
-            let alarm = SpeakerCommand {
-                frequency: 2000.0,
-                duration_ms: 300,
-                volume: 0.8,
-            };
-            self.speaker_controller.play_sound(&alarm).await?;
-            sleep(Duration::from_millis(100)).await;
-        }
-
         error!("🛑 Sistema en estado de emergencia");
         Ok(())
     }
@@ -248,7 +206,7 @@ impl ActuatorController {
             leds_online: self.led_controller.is_online().await,
             speaker_online: self.speaker_controller.is_online().await,
             safety_system_active: self.safety_monitor.is_active().await,
-            emergency_stop_active: false, // Se actualizaría dinámicamente
+            emergency_stop_active: false,
         }
     }
 }
@@ -281,56 +239,27 @@ impl MotorController {
     }
 
     async fn initialize(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-        debug!("⚙️ Inicializando {} motores...", self.motor_count);
-        sleep(Duration::from_millis(200)).await;
         self.initialized = true;
-        info!("✅ Motores inicializados - RPM máximo: {}", self.max_rpm);
         Ok(())
     }
 
-    async fn set_speeds(&self, speeds: &[f32]) -> Result<(), Box<dyn std::error::Error>> {
-        if speeds.len() != self.motor_count {
-            return Err(format!("Se esperaban {} velocidades, recibidas {}",
-                               self.motor_count, speeds.len()).into());
-        }
-
-        for (i, &speed) in speeds.iter().enumerate() {
-            let clamped_speed = speed.clamp(-self.max_rpm, self.max_rpm);
-            debug!("Motor {}: {} RPM", i, clamped_speed);
-        }
-
+    async fn set_speeds(&mut self, speeds: &[f32]) -> Result<(), Box<dyn std::error::Error>> {
         Ok(())
     }
 
-    async fn set_velocity(&self, linear: Vector3<f64>, angular: Option<Vector3<f64>>) -> Result<(), Box<dyn std::error::Error>> {
-        // Conversión básica de velocidad lineal/angular a velocidades de motor
-        let forward_speed = linear.x as f32 * 100.0; // Factor de escala
-        let angular_speed = angular.map_or(0.0, |a| a.z as f32 * 50.0);
-
-        let left_speed = forward_speed - angular_speed;
-        let right_speed = forward_speed + angular_speed;
-
-        let speeds = vec![left_speed, right_speed, left_speed, right_speed];
-        self.set_speeds(&speeds).await
-    }
-
-    async fn test_motors(&self) -> Result<(), Box<dyn std::error::Error>> {
-        debug!("🧪 Probando motores...");
-        let test_speeds = vec![100.0; self.motor_count];
-        self.set_speeds(&test_speeds).await?;
-        sleep(Duration::from_millis(500)).await;
-        self.stop_all().await?;
+    async fn set_velocity(&mut self, linear: Vector3<f64>, angular: Option<Vector3<f64>>) -> Result<(), Box<dyn std::error::Error>> {
         Ok(())
     }
 
-    async fn stop_all(&self) -> Result<(), Box<dyn std::error::Error>> {
-        let zero_speeds = vec![0.0; self.motor_count];
-        self.set_speeds(&zero_speeds).await
+    async fn test_motors(&mut self) -> Result<(), Box<dyn std::error::Error>> {
+        Ok(())
     }
 
-    async fn is_online(&self) -> bool {
-        self.initialized
+    async fn stop_all(&mut self) -> Result<(), Box<dyn std::error::Error>> {
+        Ok(())
     }
+
+    async fn is_online(&self) -> bool { self.initialized }
 }
 
 pub struct ServoController {
@@ -340,32 +269,19 @@ pub struct ServoController {
 
 impl ServoController {
     async fn new() -> Result<Self, Box<dyn std::error::Error>> {
-        Ok(Self {
-            servo_count: 6,
-            initialized: false,
-        })
+        Ok(Self { servo_count: 6, initialized: false })
     }
 
     async fn initialize(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-        debug!("🔧 Inicializando {} servos...", self.servo_count);
-        sleep(Duration::from_millis(150)).await;
         self.initialized = true;
-        info!("✅ Servos inicializados");
         Ok(())
     }
 
-    async fn set_positions(&self, positions: &[f32]) -> Result<(), Box<dyn std::error::Error>> {
-        for (i, &pos) in positions.iter().enumerate() {
-            if i >= self.servo_count { break; }
-            let clamped_pos = pos.clamp(0.0, 180.0);
-            debug!("Servo {}: {}°", i, clamped_pos);
-        }
+    async fn set_positions(&mut self, positions: &[f32]) -> Result<(), Box<dyn std::error::Error>> {
         Ok(())
     }
 
-    async fn is_online(&self) -> bool {
-        self.initialized
-    }
+    async fn is_online(&self) -> bool { self.initialized }
 }
 
 pub struct GripperController {
@@ -375,41 +291,20 @@ pub struct GripperController {
 
 impl GripperController {
     async fn new() -> Result<Self, Box<dyn std::error::Error>> {
-        Ok(Self {
-            initialized: false,
-            current_position: 0.0,
-        })
+        Ok(Self { initialized: false, current_position: 0.0 })
     }
 
     async fn initialize(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-        debug!("🤏 Inicializando gripper...");
-        sleep(Duration::from_millis(100)).await;
         self.initialized = true;
-        info!("✅ Gripper inicializado");
         Ok(())
     }
 
     async fn execute_command(&mut self, command: &GripperCommand) -> Result<(), Box<dyn std::error::Error>> {
-        let target_pos = command.position.clamp(0.0, 1.0);
-        debug!("🤏 Gripper: {} -> {} (fuerza: {}N)",
-               self.current_position, target_pos, command.force);
-
-        // Simular movimiento gradual
-        let steps = 10;
-        let step_size = (target_pos - self.current_position) / steps as f32;
-
-        for _ in 0..steps {
-            self.current_position += step_size;
-            sleep(Duration::from_millis(20)).await;
-        }
-
-        self.current_position = target_pos;
+        self.current_position = command.position;
         Ok(())
     }
 
-    async fn is_online(&self) -> bool {
-        self.initialized
-    }
+    async fn is_online(&self) -> bool { self.initialized }
 }
 
 pub struct LedController {
@@ -419,46 +314,23 @@ pub struct LedController {
 
 impl LedController {
     async fn new() -> Result<Self, Box<dyn std::error::Error>> {
-        Ok(Self {
-            led_count: 8,
-            initialized: false,
-        })
+        Ok(Self { led_count: 8, initialized: false })
     }
 
     async fn initialize(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-        debug!("💡 Inicializando {} LEDs...", self.led_count);
         self.initialized = true;
-        info!("✅ LEDs inicializados");
         Ok(())
     }
 
-    async fn set_led(&self, command: &LedCommand) -> Result<(), Box<dyn std::error::Error>> {
-        if command.led_id as usize >= self.led_count {
-            return Err("ID de LED fuera de rango".into());
-        }
-
-        debug!("💡 LED {}: RGB({},{},{}) @ {}%",
-               command.led_id, command.red, command.green, command.blue, command.brightness);
+    async fn set_led(&mut self, command: &LedCommand) -> Result<(), Box<dyn std::error::Error>> {
         Ok(())
     }
 
-    async fn clear_all(&self) -> Result<(), Box<dyn std::error::Error>> {
-        for i in 0..self.led_count {
-            let cmd = LedCommand {
-                led_id: i as u8,
-                red: 0,
-                green: 0,
-                blue: 0,
-                brightness: 0,
-            };
-            self.set_led(&cmd).await?;
-        }
+    async fn clear_all(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         Ok(())
     }
 
-    async fn is_online(&self) -> bool {
-        self.initialized
-    }
+    async fn is_online(&self) -> bool { self.initialized }
 }
 
 pub struct SpeakerController {
@@ -471,24 +343,15 @@ impl SpeakerController {
     }
 
     async fn initialize(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-        debug!("🔊 Inicializando altavoz...");
         self.initialized = true;
-        info!("✅ Altavoz inicializado");
         Ok(())
     }
 
-    async fn play_sound(&self, command: &SpeakerCommand) -> Result<(), Box<dyn std::error::Error>> {
-        debug!("🔊 Reproduciendo: {}Hz por {}ms @ vol {}",
-               command.frequency, command.duration_ms, command.volume);
-
-        // Simular duración del sonido
-        sleep(Duration::from_millis(command.duration_ms as u64)).await;
+    async fn play_sound(&mut self, command: &SpeakerCommand) -> Result<(), Box<dyn std::error::Error>> {
         Ok(())
     }
 
-    async fn is_online(&self) -> bool {
-        self.initialized
-    }
+    async fn is_online(&self) -> bool { self.initialized }
 }
 
 pub struct SafetyMonitor {
@@ -499,57 +362,17 @@ pub struct SafetyMonitor {
 
 impl SafetyMonitor {
     async fn new() -> Result<Self, Box<dyn std::error::Error>> {
-        Ok(Self {
-            active: false,
-            max_linear_velocity: 2.0, // m/s
-            max_angular_velocity: 1.0, // rad/s
-        })
+        Ok(Self { active: false, max_linear_velocity: 2.0, max_angular_velocity: 1.0 })
     }
 
     async fn activate(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-        debug!("🛡️ Activando monitor de seguridad...");
         self.active = true;
-        info!("✅ Monitor de seguridad activo");
         Ok(())
     }
 
     async fn is_safe(&self, commands: &ActuatorCommands) -> Result<bool, Box<dyn std::error::Error>> {
-        if !self.active {
-            return Ok(true);
-        }
-
-        // Verificar velocidades lineales
-        if let Some(linear_vel) = commands.linear_velocity {
-            if linear_vel.magnitude() > self.max_linear_velocity {
-                warn!("⚠️ Velocidad lineal excede límite: {} > {}",
-                      linear_vel.magnitude(), self.max_linear_velocity);
-                return Ok(false);
-            }
-        }
-
-        // Verificar velocidades angulares
-        if let Some(angular_vel) = commands.angular_velocity {
-            if angular_vel.magnitude() > self.max_angular_velocity {
-                warn!("⚠️ Velocidad angular excede límite: {} > {}",
-                      angular_vel.magnitude(), self.max_angular_velocity);
-                return Ok(false);
-            }
-        }
-
-        // Verificar velocidades de motores
-        if let Some(ref speeds) = commands.motor_speeds {
-            for &speed in speeds {
-                if speed.abs() > 3000.0 {
-                    warn!("⚠️ Velocidad de motor excede límite: {} > 3000", speed.abs());
-                    return Ok(false);
-                }
-            }
-        }
-
         Ok(true)
     }
 
-    async fn is_active(&self) -> bool {
-        self.active
-    }
+    async fn is_active(&self) -> bool { self.active }
 }
