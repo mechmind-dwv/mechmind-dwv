@@ -6,6 +6,7 @@
 - [x] **Revisión de GitHub Actions**: Corregidos los errores de toolchain (Nightly para SIMD) y optimizados los flujos de trabajo de CI/CD.
 - [x] **Limpieza de Ramas**: Ramas remotas identificadas y reportadas.
 - [x] **Seguridad de CI/CD**: Añadidos permisos explícitos `GITHUB_TOKEN` para resolver alertas de CodeQL.
+- [x] **Vulnerabilidad de Dependencias**: Corregido CVE-2026-25541 (bytes) actualizando a v1.12 y eliminando bloqueos redundantes.
 
 ## 📚 Documentación y Visibilidad
 - [x] **Sincronizar Diagramas**: Verificada la existencia de archivos `.drawio` y `.mmd` en la estructura de documentación.
