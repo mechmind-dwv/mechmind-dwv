@@ -43,7 +43,7 @@ jobs:
       - name: "🦀 Generar RustDoc"
         run: |
           source /opt/ros/humble/setup.bash
-          cargo +nightly doc --no-deps --all-features --workspace
+          cargo +nightly doc --no-deps --workspace
           mkdir -p public
           cp -r target/doc/* public/
           if [ ! -f public/index.html ]; then

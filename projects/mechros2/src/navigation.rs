@@ -244,7 +244,7 @@ impl NavigationPlanner {
         let path = self.path_planner.plan_path(&target, &self.obstacle_map).await?;
 
         // Agregar waypoints a la cola
-        for waypoint in path.waypoints {
+        for waypoint in path.waypoints.iter().cloned() {
             self.waypoint_queue.push_back(waypoint);
         }
 

@@ -17,8 +17,8 @@ pub mod vision;
 
 use node_manager::MechNodeManager;
 use sensors::SensorHub;
-use actuators::ActuatorController;
-use navigation::NavigationPlanner;
+use actuators::{ActuatorCommands, ActuatorController};
+use navigation::{CommandType, NavigationCommands, NavigationPlanner};
 use vision::VisionProcessor;
 
 // 🤖 Core system state
@@ -39,6 +39,21 @@ pub enum SystemStatus {
     Active,
     Error(String),
     Shutdown,
+}
+
+fn navigation_to_actuator(commands: NavigationCommands) -> ActuatorCommands {
+    let emergency_stop = matches!(commands.command_type, CommandType::Emergency);
+    ActuatorCommands {
+        timestamp: commands.timestamp,
+        linear_velocity: Some(commands.linear_velocity),
+        angular_velocity: Some(commands.angular_velocity),
+        motor_speeds: None,
+        servo_positions: None,
+        gripper_command: None,
+        led_commands: None,
+        speaker_command: None,
+        emergency_stop,
+    }
 }
 
 // 🚀 Main MechROS2 Hub
@@ -156,7 +171,8 @@ impl MechROS2Hub {
             match res {
                 Ok(nav_commands) => {
                     if let Some(commands) = nav_commands {
-                        if let Err(e) = self.actuator_controller.lock().await.execute_commands(commands).await {
+                        let actuator_commands = navigation_to_actuator(commands);
+                        if let Err(e) = self.actuator_controller.lock().await.execute_commands(actuator_commands).await {
                             error!("❌ Error ejecutando comandos: {}", e);
                         }
                     }

@@ -3,13 +3,12 @@ name: "MechMind Security Protocol"
 disable-default-queries: false
 
 paths:
-  include:
-    - projects/mechbot-2x/src
-    - docs/ai-research
-  exclude:
-    - "**/tests/**"
-    - "**/experimental/**"
+  - "projects/mechbot-2x/src"
+  - "docs/ai-research"
 
-# Nota: Los query-filters de CodeQL no soportan definiciones de queries en línea (QL) de esta forma.
-# Se deben usar archivos .ql o suites .qls. Por ahora, eliminamos los filtros inválidos 
-# para que el pipeline no falle y usaremos las queries por defecto.
+paths-ignore:
+  - "**/tests/**"
+  - "**/experimental/**"
+
+# Los filtros personalizados deben declararse como archivos .ql o suites .qls.
+# Esta configuración usa las consultas predeterminadas de CodeQL.

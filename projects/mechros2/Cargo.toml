@@ -26,7 +26,7 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 # Math & Geometry
-nalgebra = "0.32"
+nalgebra = { version = "0.32", features = ["serde-serialize"] }
 approx = "0.5"
 
 # Time handling

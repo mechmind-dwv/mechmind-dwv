@@ -92,8 +92,9 @@ mod tests {
     fn test_pid_controller() {
         let mut pid = MechController::new(0.5, 0.1, 0.01);
         let adjustment = pid.compute(2.0, 0.1);
-        // El valor esperado puede variar ligeramente, usamos tolerancia
-        assert_relative_eq!(adjustment, 1.002, epsilon = 0.001);
+        // La primera muestra incluye la derivada desde el error inicial (prev_error = 0).
+        // kp*error + ki*integral + kd*derivative = 1.0 + 0.02 + 0.2 = 1.22.
+        assert_relative_eq!(adjustment, 1.22, epsilon = 0.001);
     }
 
     #[test]

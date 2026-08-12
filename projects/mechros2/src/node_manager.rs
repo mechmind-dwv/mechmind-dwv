@@ -4,7 +4,7 @@ use std::collections::HashMap;
 #[cfg(feature = "ros2")]
 use r2r::QosProfile;
 use serde_json;
-use tracing::{info, debug, error};
+use tracing::{info, debug, warn, error};
 use crate::SystemState;
 
 pub struct MechNodeManager {
