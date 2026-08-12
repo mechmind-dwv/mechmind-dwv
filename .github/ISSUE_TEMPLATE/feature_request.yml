@@ -1,0 +1,19 @@
+name: "💡 Solicitud de Característica"
+description: "Sugiere una nueva funcionalidad para MechMind-dwv."
+title: "[FEATURE]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivación y Contexto
+      description: "¿Qué problema resuelve esta característica?"
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solución propuesta
+      description: "Describe cómo te gustaría que funcionara."
+    validations:
+      required: true

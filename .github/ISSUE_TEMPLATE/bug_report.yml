@@ -1,0 +1,26 @@
+name: "🐛 Reporte de Error (Bug)"
+description: "Informa de un comportamiento inesperado en el ecosistema MechMind-dwv."
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Descripción del problema
+      description: "Describe claramente qué sucedió."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Pasos para reproducir
+      description: "¿Cómo se puede replicar el fallo?"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno
+      description: "Sistema operativo (Linux, Termux Android), versión de Rust / Node / pnpm."
+    validations:
+      required: true
