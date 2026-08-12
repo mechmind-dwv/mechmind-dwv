@@ -6,6 +6,9 @@ env:
   ROS_DISTRO: humble
   RUSTUP_TOOLCHAIN: nightly
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: "Test Suite (MechBot-2X)"
