@@ -2,14 +2,24 @@
 #![no_main]
 
 use esp32c6_hal as hal;
+use hal::prelude::*;
 
 #[entry]
 fn main() -> ! {
     let peripherals = hal::pac::Peripherals::take();
-    let mut led = hal::gpio::Pin::new(peripherals.pins.gpio5).into_output();
+    let system = peripherals.SYSTEM.split();
+    let clocks = hal::clock::ClockControl::boot_defaults(system.clock_control).freeze();
+
+    let io = hal::gpio::IO::new(peripherals.GPIO, peripherals.IO_MUX);
+    let mut led = io.pins.gpio5.into_output();
 
     loop {
-        led.toggle();
-        hal::delay::FreeRtos::delay_ms(1000); // Parpadeo ROS2-compatible
+        led.toggle().unwrap();
+        hal::delay::Delay::new(&clocks).delay_ms(1000u32);
     }
+}
+
+#[panic_handler]
+fn panic(_info: &core::panic::PanicInfo) -> ! {
+    loop {}
 }

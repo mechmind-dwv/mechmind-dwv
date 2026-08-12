@@ -12,9 +12,10 @@
 - [x] **Revisar Enlaces**: Enlaces básicos verificados. Corregidas rutas internas.
 
 ## 🚀 Desarrollo de Funcionalidades
+- [x] **Restauración de Legado**: Recuperadas simulaciones Gazebo, firmware ESP32 y lógica `MechSystem` de 2025.
 - [ ] **Refactorización de MechROS2**: Pendiente.
 - [ ] **Pruebas de Integración**: Pendiente.
-- [ ] **Modo Turbo**: Documentado en el nuevo README de `mechcore`.
+- [x] **Modo Turbo**: Implementado en `MechCore` usando el modelo de sistema restaurado.
 
 ---
 *Actualizado por Manus AI el 4 de agosto de 2026.*
