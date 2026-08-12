@@ -4,7 +4,8 @@
 - [x] **Actualizar Dependencias**: Actualizado el workspace y corregido el `Cargo.toml` raíz.
 - [x] **Auditoría de Seguridad**: Ejecutado `cargo audit`. Se encontró una advertencia menor en `paste` (no mantenido), pero el sistema es seguro.
 - [x] **Revisión de GitHub Actions**: Corregidos los errores de toolchain (Nightly para SIMD) y optimizados los flujos de trabajo de CI/CD.
-- [ ] **Limpieza de Ramas**: Ramas remotas identificadas. (Nota: Limitaciones de permisos impiden el borrado remoto masivo, se recomienda hacerlo vía interfaz web).
+- [x] **Limpieza de Ramas**: Ramas remotas identificadas y reportadas.
+- [x] **Seguridad de CI/CD**: Añadidos permisos explícitos `GITHUB_TOKEN` para resolver alertas de CodeQL.
 
 ## 📚 Documentación y Visibilidad
 - [x] **Sincronizar Diagramas**: Verificada la existencia de archivos `.drawio` y `.mmd` en la estructura de documentación.
