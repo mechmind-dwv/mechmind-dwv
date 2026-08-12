@@ -2,26 +2,20 @@ name: "🦀 Rust Super Pipeline"
 
 on: [push, pull_request]
 
+env:
+  ROS_DISTRO: humble
+
 jobs:
   test:
     name: "Test Suite (MechBot-2X)"
-    runs-on: ubuntu-22.04  # Humble funciona mejor en Ubuntu 22.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
-      # Instalación manual de ROS2 Humble
-      - name: Install ROS2 Humble
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y software-properties-common
-          sudo add-apt-repository universe
-          sudo apt-get update
-          sudo apt-get install -y curl gnupg2
-          sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-          sudo add-apt-repository "deb [arch=amd64] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main"
-          sudo apt-get update
-          sudo apt-get install -y ros-humble-desktop python3-colcon-common-extensions
-          echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+      - name: Setup ROS2 Humble
+        uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distributions: humble
 
       - name: Setup Rust (Nightly)
         uses: dtolnay/rust-toolchain@nightly
@@ -40,7 +34,7 @@ jobs:
 
   security:
     name: "🔒 Cargo Audit"
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Setup Rust
@@ -56,18 +50,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install ROS2 Humble
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y software-properties-common
-          sudo add-apt-repository universe
-          sudo apt-get update
-          sudo apt-get install -y curl gnupg2
-          sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-          sudo add-apt-repository "deb [arch=amd64] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main"
-          sudo apt-get update
-          sudo apt-get install -y ros-humble-desktop python3-colcon-common-extensions
-          echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+      - name: Setup ROS2 Humble
+        uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distributions: humble
 
       - name: Setup Rust (Nightly for SIMD)
         uses: dtolnay/rust-toolchain@nightly
