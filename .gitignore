@@ -1,41 +1,47 @@
 # Entorno
-/target
+/target/
 **/*.rs.bk
 .env
-.venv
+.env.*
+.venv/
+.ai-venv/
+env/
+node_modules/
 
 # Binarios
 *.bin
 *.so
 *.dll
+*.exe
 
 # ROS2
 install/
 log/
 build/
-# Rust
-/target/
-Cargo.lock
-*.bin
 
-# Logs
+# Logs & Reports
 *.log
-
-# Entornos
-.env
-env.*
 bandit_results.json
 safety_report.json
-node_modules/
+security-audit.json
+security_audit.log
+coverage.xml
+npm-audit.json
+reports/
 
-# Virtual environments
-.venv/
-.ai-venv/
-env/
-*.pyc
+# Artifacts
+anuraghazra/
+MechMind-IA/
+codecov.SHA256SUM
+codecov.SHA256SUM.sig
+setup_ai_core.sh.txt
 
-# Virtual environments
-.venv/
-.ai-venv/
-env/
+# Python
+__pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/

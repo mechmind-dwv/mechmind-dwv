@@ -1,6 +1,0 @@
-# No subir
-.DS_Store
-.env
-node_modules/
-*.log
-__pycache__/

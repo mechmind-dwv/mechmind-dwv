@@ -17,19 +17,17 @@ jobs:
         with:
           fetch-depth: 0  # Para stats de commits
 
-      # Paso 2: Actualizar README.md con stats
-      # Nota: anuraghazra/github-readme-stats es una API externa, 
-      # aquí usamos un script simple para simular la actualización si fuera necesario
-      # o simplemente dejamos que el README use las URLs dinámicas.
-
-      # Paso 3: Actualizar tecnologías (¡Rust primero!)
+      # Paso 2: Actualizar tecnologías (¡Rust primero!)
       - name: 🦀 Tech Radar
         run: |
-          echo "## 🛠️ Stack Tecnológico Actualizado" >> README.md
-          echo "- 🦀 **Rust** v$(curl -s https://api.github.com/repos/rust-lang/rust/releases/latest | jq -r '.tag_name')" >> README.md
-          echo "- 🤖 **ROS2** Humble Hawksbill" >> README.md
+          RUST_VERSION=$(curl -s https://api.github.com/repos/rust-lang/rust/releases/latest | jq -r '.tag_name')
+          NEW_STACK="## 🛠️ Stack Tecnológico Actualizado\n- 🦀 **Rust** ${RUST_VERSION}\n- 🤖 **ROS2** Humble Hawksbill"
+          
+          # Reemplazar el contenido entre marcadores
+          sed -i "/<!-- START_TECH_STACK -->/,/<!-- END_TECH_STACK -->/{ /<!-- START_TECH_STACK -->/b; /<!-- END_TECH_STACK -->/b; d }" README.md
+          sed -i "/<!-- START_TECH_STACK -->/a ${NEW_STACK}" README.md
 
-      # Paso 4: Commit
+      # Paso 3: Commit
       - name: 💾 Guardar Cambios
         run: |
           git config --global user.name "MechMind Bot"
