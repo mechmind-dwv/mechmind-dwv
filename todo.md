@@ -15,7 +15,10 @@
 
 ## 🚀 Desarrollo de Funcionalidades
 - [x] **Restauración de Legado**: Recuperadas simulaciones Gazebo, firmware ESP32 y lógica `MechSystem` de 2025.
-- [ ] **Refactorización de MechROS2**: Pendiente.
+- [x] **Refactorización de MechROS2**: Completada, con soporte opcional de ROS2 y nodo principal estructurado.
+- [x] **Dashboard Cyberpunk Frontend**: Creado en `projects/frontend` con telemetría interactiva, gráficos y estética HUD.
+- [ ] **Puente WebSocket ROS2**: Conexión en tiempo real entre el dashboard frontend y el nodo `mechros2` (con fallback a modo simulado).
+- [ ] **Editor de rutas de navegación**: Mapa interactivo con waypoints y publicación segura en `/mechros2/navigation_goals`.
 - [ ] **Pruebas de Integración**: Pendiente.
 - [x] **Modo Turbo**: Implementado en `MechCore` usando el modelo de sistema restaurado.
 
