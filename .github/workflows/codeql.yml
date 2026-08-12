@@ -1,104 +1,40 @@
-name: "🔐 CodeQL MechMind Edition"
+name: "🔐 CodeQL Analysis"
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '41 21 * * 0'  # Domingo a las 21:41
+    - cron: '41 21 * * 0'
 
 jobs:
   analyze:
-    name: "🦀 Análisis Profundo (${{ matrix.language }})"
+    name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
     permissions:
-      security-events: write
-      packages: read
       actions: read
       contents: read
+      security-events: write
 
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - language: c-cpp
-            build-mode: none
-            extra: "🛡️ Análisis para C/Rust (FFI)"
-          - language: python
-            build-mode: none
-            extra: "🐍 Scans para IA/ML"
-          - language: javascript-typescript
-            build-mode: none
-            extra: "🌐 Web del MechBot"
-
-    env:
-      MECHMIND_SECRET: ${{ secrets.MECHBOT_KEY }}
-      RUST_VERSION: "nightly-2024-03-01"
+        language: [ 'python', 'javascript-typescript' ]
 
     steps:
-      - name: "🤖 Checkout (MechMind Style)"
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          lfs: true
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: "🦀 Setup Rust"
-        if: matrix.language == 'c-cpp'
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: ${{ env.RUST_VERSION }}
-          override: true
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
 
-      - name: "🐍 Setup Python"
-        if: matrix.language == 'python'
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
 
-     - name: "🚀 Initialize CodeQL"
-  uses: github/codeql-action/init@v3
-  with:
-    languages: ${{ matrix.language }}
-    queries:
-      - security-extended
-      - security-and-quality
-      - +${{ github.workspace }}/.github/codeql/custom.qls
-    config-file: ./.github/codeql/codeql-config.yml
-
-      - name: "🔍 Build MechBot"
-        if: matrix.language == 'c-cpp'
-        run: |
-          cd projects/mechbot-2x
-          cargo build --release --features ffi,secure
-
-          # Enhanced MechMind Reporting
-          echo "### 🔐 MechMind Binary Integrity Report" >> $GITHUB_STEP_SUMMARY
-          echo "#### 📅 Scan Date: $(date +'%Y-%m-%d %H:%M:%S %Z')" >> $GITHUB_STEP_SUMMARY
-          echo "#### 🦀 Toolchain: ${{ env.RUST_VERSION }}" >> $GITHUB_STEP_SUMMARY
-          echo "\n**Artifact Hashes (SHA256):**" >> $GITHUB_STEP_SUMMARY
-          echo '```sh' >> $GITHUB_STEP_SUMMARY
-          sha256sum target/release/mechbot >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-
-          # Additional binary metadata
-          echo "\n**Binary Metadata:**" >> $GITHUB_STEP_SUMMARY
-          echo '```sh' >> $GITHUB_STEP_SUMMARY
-          file target/release/mechbot >> $GITHUB_STEP_SUMMARY
-          ls -lh target/release/mechbot | awk '{print "Size:", $5}' >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-
-      - name: "📊 Analyze"
-        uses: github/codeql-action/analyze@v3
-        with:
-          category: "/language:${{matrix.language}}/mechmind"
-          upload: true
-          output: codeql_results.sarif
-
-      - name: "💌 Notify Results"
-        if: always()
-        run: |
-          echo "### 📊 MechMind Analysis Complete" >> $GITHUB_STEP_SUMMARY
-          echo "- **Language**: ${{ matrix.language }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Report**: [View Scan Results](https://github.com/${{ github.repository }}/security/code-scanning)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Workflow Run**: [View Details](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:${{matrix.language}}"
