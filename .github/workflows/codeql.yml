@@ -8,10 +8,13 @@ on:
   schedule:
     - cron: '41 21 * * 0'
 
+env:
+  ROS_DISTRO: humble
+
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       actions: read
       contents: read
@@ -25,6 +28,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Setup ROS2 Humble
+      if: matrix.language == 'python'
+      uses: ros-tooling/setup-ros@v0.7
+      with:
+        required-ros-distributions: humble
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3

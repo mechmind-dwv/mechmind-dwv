@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 env:
   ROS_DISTRO: humble
+  RUSTUP_TOOLCHAIN: nightly
 
 jobs:
   test:
@@ -25,12 +26,12 @@ jobs:
       - name: Run tests
         run: |
           source /opt/ros/humble/setup.bash
-          cargo test --all-features --verbose
+          cargo +nightly test --all-features --verbose
 
       - name: Run benchmarks (compile only)
         run: |
           source /opt/ros/humble/setup.bash
-          cargo bench --all-features --no-run
+          cargo +nightly bench --all-features --no-run
 
   security:
     name: "🔒 Cargo Audit"
@@ -64,7 +65,8 @@ jobs:
       - name: Generate coverage report
         run: |
           source /opt/ros/humble/setup.bash
-          cargo tarpaulin --all-features --out Html --output-dir .
+          # Forzar nightly en tarpaulin
+          cargo +nightly tarpaulin --all-features --out Html --output-dir .
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
@@ -76,4 +78,4 @@ jobs:
         working-directory: projects/mechcore
         run: |
           source /opt/ros/humble/setup.bash
-          cargo run --release
+          cargo +nightly run --release
