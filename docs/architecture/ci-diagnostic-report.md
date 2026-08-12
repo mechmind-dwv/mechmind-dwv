@@ -18,7 +18,7 @@ Se ha **eliminado el flujo de trabajo avanzado conflictivo** (`.github/workflows
 El trabajo `📚 Generar Documentación` ejecutaba `cargo +nightly doc --all-features`. Al activar todas las características, forzaba la compilación de la dependencia opcional `r2r` (ROS2) dentro de `mechros2`. Sin embargo, el entorno del *runner* no tenía el contexto completo de C++ necesario para enlazar los bindings de ROS2, lo que causaba múltiples errores de traits faltantes (`Clone`, `Debug`) y tipos no encontrados (`R2rError`) en la librería `r2r`.
 
 ### Solución aplicada
-Se modificó `.github/workflows/docs.yml` para ejecutar `cargo +nightly doc --no-deps --workspace` **sin** el flag `--all-features`. Esto permite generar la documentación de todo el código Rust nativo del proyecto sin intentar compilar los bindings de ROS2, resultando en un despliegue exitoso a GitHub Pages.
+Se modificó `.github/workflows/docs.yml` para ejecutar `cargo +nightly doc --no-deps --workspace` **sin** el flag `--all-features` ni una preparación ROS2 innecesaria. Esto permite generar la documentación de todo el código Rust nativo del proyecto sin intentar compilar los bindings de ROS2, reduciendo además el tiempo y los puntos de fallo del runner antes del despliegue a GitHub Pages.
 
 ## 3. 🦀 Rust Super Pipeline (Test Suite y Code Coverage)
 
