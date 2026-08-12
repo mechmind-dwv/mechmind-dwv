@@ -34,14 +34,9 @@ jobs:
 
       - name: "🦀 Generar RustDoc"
         run: |
-          # Generar documentación para todo el workspace
           cargo doc --no-deps --all-features --workspace
-          
-          # Crear directorio para el despliegue
           mkdir -p public
           cp -r target/doc/* public/
-          
-          # Crear un index.html simple si no existe
           if [ ! -f public/index.html ]; then
             echo '<meta http-equiv="refresh" content="0; url=mechros2/index.html">' > public/index.html
           fi

@@ -1,33 +1,28 @@
 name: 🚀 MechMind Profile Power-Up
 on:
   schedule:
-    - cron: "0 12 * * *"  # Daily at noon UTC (¡hora del café!)
+    - cron: "0 12 * * *"
   push:
     branches: [ "main" ]
-  workflow_dispatch:       # Trigger manual
+  workflow_dispatch:
 
 jobs:
   supercharge-profile:
     name: ⚡ Actualización Dinámica
     runs-on: ubuntu-latest
     steps:
-      # Paso 1: Checkout mágico
       - name: 🛸 Clonar Repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Para stats de commits
+          fetch-depth: 0
 
-      # Paso 2: Actualizar tecnologías (¡Rust primero!)
       - name: 🦀 Tech Radar
         run: |
           RUST_VERSION=$(curl -s https://api.github.com/repos/rust-lang/rust/releases/latest | jq -r '.tag_name')
           NEW_STACK="## 🛠️ Stack Tecnológico Actualizado\n- 🦀 **Rust** ${RUST_VERSION}\n- 🤖 **ROS2** Humble Hawksbill"
-          
-          # Reemplazar el contenido entre marcadores
           sed -i "/<!-- START_TECH_STACK -->/,/<!-- END_TECH_STACK -->/{ /<!-- START_TECH_STACK -->/b; /<!-- END_TECH_STACK -->/b; d }" README.md
           sed -i "/<!-- START_TECH_STACK -->/a ${NEW_STACK}" README.md
 
-      # Paso 3: Commit
       - name: 💾 Guardar Cambios
         run: |
           git config --global user.name "MechMind Bot"
@@ -42,20 +37,14 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && contains(github.event.head_commit.message, 'mechbot')
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@nightly
-      - name: Install ROS2 Humble
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y software-properties-common
-          sudo add-apt-repository universe
-          sudo apt-get update
-          sudo apt-get install -y curl gnupg2
-          sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-          sudo add-apt-repository "deb [arch=amd64] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main"
-          sudo apt-get update
-          sudo apt-get install -y ros-humble-desktop
+      - name: Setup ROS2
+        uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distributions: humble
       - name: Build MechBot
         run: |
           cd projects/mechbot-2x
