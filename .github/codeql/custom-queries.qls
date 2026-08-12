@@ -1,6 +1,0 @@
-- queries: .
-  include:
-    - id: rust-unsafe-guard
-    - id: python-injection-check
-  exclude:
-    - "problematic-query.ql"

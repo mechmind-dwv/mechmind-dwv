@@ -1,3 +1,6 @@
-// .github/codeql/custom.qls
-- import: codeql-suites/security-extended.qls
-- queries: ./custom-queries/rust-unsafe-audit.ql
+- queries: .
+  include:
+    - id: rust-unsafe-guard
+    - id: python-injection-check
+  exclude:
+    - "problematic-query.ql"

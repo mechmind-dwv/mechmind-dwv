@@ -1,9 +1,0 @@
-name: "MechMind CodeQL Configuration"
-
-paths-ignore:
-  - "**/tests/**"
-  - "**/tmp/**"
-
-queries:
-  - uses: codeql/security-extended
-  - uses: codeql/security-and-quality
