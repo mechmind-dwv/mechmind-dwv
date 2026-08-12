@@ -2,13 +2,12 @@ name: "MechMind Security Protocol"
 
 disable-default-queries: false
 
-paths:
-  - "projects/mechbot-2x/src"
-  - "docs/ai-research"
-
+# Se analiza el árbol del repositorio, excluyendo entornos y artefactos vendorizados.
 paths-ignore:
-  - "**/tests/**"
-  - "**/experimental/**"
-
-# Los filtros personalizados deben declararse como archivos .ql o suites .qls.
-# Esta configuración usa las consultas predeterminadas de CodeQL.
+  - ".ai-venv/**"
+  - "node_modules/**"
+  - "target/**"
+  - "**/target/**"
+  - "**/site-packages/**"
+  - "dist/**"
+  - "build/**"

@@ -23,17 +23,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'python', 'javascript-typescript' ]
+        # Este repositorio contiene Python; el frontend vive en el proyecto web separado.
+        language: [ 'python' ]
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
-    - name: Setup ROS2 Humble
-      if: matrix.language == 'python'
-      uses: ros-tooling/setup-ros@v0.7
-      with:
-        required-ros-distributions: humble
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
@@ -41,8 +36,7 @@ jobs:
         languages: ${{ matrix.language }}
         config-file: .github/codeql/codeql-config.yml
 
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v3
+    # Python no requiere una fase de compilación para que CodeQL extraiga el código.
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
