@@ -16,25 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup ROS2 Humble
-        uses: ros-tooling/setup-ros@v0.7
-        with:
-          required-ros-distributions: humble
-
       - name: Setup Rust (Nightly)
         uses: dtolnay/rust-toolchain@nightly
         with:
           components: rustfmt, clippy
 
       - name: Run tests
-        run: |
-          source /opt/ros/humble/setup.bash
-          cargo +nightly test --verbose
+        run: cargo +nightly test --verbose
 
       - name: Run benchmarks (compile only)
-        run: |
-          source /opt/ros/humble/setup.bash
-          cargo +nightly bench --no-run
+        run: cargo +nightly bench --no-run
 
   security:
     name: "🔒 Cargo Audit"

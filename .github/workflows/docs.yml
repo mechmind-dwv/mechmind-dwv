@@ -8,9 +8,6 @@ on:
       - 'projects/**'
   workflow_dispatch:
 
-env:
-  ROS_DISTRO: humble
-
 permissions:
   contents: read
   pages: write
@@ -30,11 +27,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup ROS2 Humble
-        uses: ros-tooling/setup-ros@v0.7
-        with:
-          required-ros-distributions: humble
-
       - name: "⚙️ Configurar Rust Nightly"
         uses: dtolnay/rust-toolchain@nightly
         with:
@@ -42,7 +34,6 @@ jobs:
 
       - name: "🦀 Generar RustDoc"
         run: |
-          source /opt/ros/humble/setup.bash
           cargo +nightly doc --no-deps --workspace
           mkdir -p public
           cp -r target/doc/* public/
