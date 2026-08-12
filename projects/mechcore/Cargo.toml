@@ -3,11 +3,6 @@ name = "mechcore"
 version = "1.0.0"
 edition = "2021"
 
-[dependencies]
-tokio = { version = "1.45", features = ["full"] }
-serde = { version = "1.0", features = ["derive"] }
-bytes = "1.12" # Forzamos versión segura para resolver CVE-2026-25541
-
 [features]
 turbo = []
 

@@ -1,0 +1,89 @@
+name: "🛡️ MechMind CodeQL Fortress"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '30 21 * * 0'
+
+jobs:
+  analyze:
+    name: "🔍 Deep Analysis"
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+      packages: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['rust', 'python']
+        include:
+          - language: rust
+            profile: 'strict'
+            target-dir: 'projects/mechbot-2x/target'
+          - language: python
+            profile: 'default'
+            requirements: 'docs/ai-research/requirements.txt'
+
+    steps:
+      - name: "🛰️ Checkout Code"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: "🚀 Initialize CodeQL"
+        uses: github/codeql-action/init@v3
+        id: init
+        with:
+          languages: ${{ matrix.language }}
+          queries: +.github/codeql/custom-queries.qls
+          config-file: .github/codeql/codeql-config.yml
+          tools: latest
+          debug: true
+
+      - name: "🧹 Build MechBot (Rust)"
+        if: matrix.language == 'rust'
+        run: |
+          cd projects/mechbot-2x
+          cargo build --release --target-dir=${{ matrix.target-dir }}
+          echo "CARGO_AUDIT_OUTPUT=$(cargo audit --json)" >> $GITHUB_ENV
+
+      - name: "🐍 Install Dependencies (Python)"
+        if: matrix.language == 'python'
+        run: |
+          pip install -r ${{ matrix.requirements }}
+          pip-audit --format json --output pip-audit.json
+
+      - name: "⚡ Perform Analysis"
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}/mechmind"
+          upload: true
+          output: codeql-results-${{ matrix.language }}.sarif
+          token: ${{ secrets.MECHMIND_TOKEN }}
+
+      - name: "📊 Upload Results"
+        uses: actions/upload-artifact@v3
+        with:
+          name: codeql-results-${{ matrix.language }}
+          path: codeql-results-${{ matrix.language }}.sarif
+          retention-days: 7
+
+      - name: "🚨 Critical Alert"
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            core.setFailed('🛑 ANOMALÍAS CRÍTICAS DETECTADAS');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '⚠️ **Security Alert**\n\nSe detectaron vulnerabilidades en `${{ matrix.language }}`. Revisar [Code Scanning](${{ github.server_url }}/${{ github.repository }}/security/code-scanning)'
+            })

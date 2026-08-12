@@ -30,7 +30,6 @@ El repositorio se organiza como un workspace modular de Rust y ROS2, diseñado p
 | **MechBot-2X** | Proyecto estrella de robótica móvil y control de hardware de nueva generación. | [Ver Proyecto](./projects/rust/mechbot-2x) |
 | **MechCore** | Núcleo del sistema operativo robótico, gestión de estados y modo turbo. | [Ver Proyecto](./projects/mechcore) |
 | **MechROS2** | Capa de integración asíncrona con ROS2 Humble para sensores y actuadores. | [Ver Proyecto](./projects/mechros2) |
-| **AI Core** | Sistema de procesamiento cognitivo y modelos predictivos optimizados para Edge. | [Ver Proyecto](./projects/ai-core) |
 
 ---
 

@@ -2,10 +2,6 @@ name: MechMind Quality Gate
 
 on: [push, pull_request]
 
-permissions:
-  contents: read
-  actions: read
-
 jobs:
   quality-checks:
     runs-on: ubuntu-latest

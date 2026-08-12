@@ -4,7 +4,6 @@
 use std::sync::Arc;
 use std::time::Duration;
 use tokio::time::sleep;
-use tokio::sync::Mutex;
 use tracing::{info, warn, error, debug};
 use nalgebra::{Vector3, Point3};
 use serde::{Deserialize, Serialize};
@@ -17,8 +16,8 @@ pub mod vision;
 
 use node_manager::MechNodeManager;
 use sensors::SensorHub;
-use actuators::{ActuatorCommands, ActuatorController};
-use navigation::{CommandType, NavigationCommands, NavigationPlanner};
+use actuators::ActuatorController;
+use navigation::NavigationPlanner;
 use vision::VisionProcessor;
 
 // 🤖 Core system state
@@ -41,28 +40,13 @@ pub enum SystemStatus {
     Shutdown,
 }
 
-fn navigation_to_actuator(commands: NavigationCommands) -> ActuatorCommands {
-    let emergency_stop = matches!(commands.command_type, CommandType::Emergency);
-    ActuatorCommands {
-        timestamp: commands.timestamp,
-        linear_velocity: Some(commands.linear_velocity),
-        angular_velocity: Some(commands.angular_velocity),
-        motor_speeds: None,
-        servo_positions: None,
-        gripper_command: None,
-        led_commands: None,
-        speaker_command: None,
-        emergency_stop,
-    }
-}
-
 // 🚀 Main MechROS2 Hub
 pub struct MechROS2Hub {
     node_manager: Arc<MechNodeManager>,
-    sensor_hub: Arc<Mutex<SensorHub>>,
-    actuator_controller: Arc<Mutex<ActuatorController>>,
-    navigation_planner: Arc<Mutex<NavigationPlanner>>,
-    vision_processor: Arc<Mutex<VisionProcessor>>,
+    sensor_hub: Arc<SensorHub>,
+    actuator_controller: Arc<ActuatorController>,
+    navigation_planner: Arc<NavigationPlanner>,
+    vision_processor: Arc<VisionProcessor>,
     system_state: Arc<tokio::sync::RwLock<SystemState>>,
 }
 
@@ -71,11 +55,10 @@ impl MechROS2Hub {
         info!("🚀 Inicializando MechROS2 Hub...");
 
         let node_manager = Arc::new(MechNodeManager::new().await?);
-        
-        let sensor_hub = Arc::new(Mutex::new(SensorHub::new(node_manager.clone()).await?));
-        let actuator_controller = Arc::new(Mutex::new(ActuatorController::new(node_manager.clone()).await?));
-        let navigation_planner = Arc::new(Mutex::new(NavigationPlanner::new(node_manager.clone()).await?));
-        let vision_processor = Arc::new(Mutex::new(VisionProcessor::new(node_manager.clone())));
+        let sensor_hub = Arc::new(SensorHub::new(node_manager.clone()).await?);
+        let actuator_controller = Arc::new(ActuatorController::new(node_manager.clone()).await?);
+        let navigation_planner = Arc::new(NavigationPlanner::new(node_manager.clone()).await?);
+        let vision_processor = Arc::new(VisionProcessor::new(node_manager.clone()).await?);
 
         let initial_state = SystemState {
             timestamp: chrono::Utc::now(),
@@ -101,11 +84,13 @@ impl MechROS2Hub {
     pub async fn initialize(&self) -> Result<(), Box<dyn std::error::Error>> {
         info!("🔧 Inicializando subsistemas...");
 
-        self.sensor_hub.lock().await.initialize().await?;
-        self.actuator_controller.lock().await.initialize().await?;
-        self.navigation_planner.lock().await.initialize().await?;
-        self.vision_processor.lock().await.initialize().await?;
+        // Inicializar todos los subsistemas
+        self.sensor_hub.initialize().await?;
+        self.actuator_controller.initialize().await?;
+        self.navigation_planner.initialize().await?;
+        self.vision_processor.initialize().await?;
 
+        // Actualizar estado del sistema
         {
             let mut state = self.system_state.write().await;
             state.system_status = SystemStatus::Ready;
@@ -119,16 +104,19 @@ impl MechROS2Hub {
     pub async fn run(&self) -> Result<(), Box<dyn std::error::Error>> {
         info!("🦾 Iniciando bucle principal de MechROS2...");
 
+        // Cambiar estado a activo
         {
             let mut state = self.system_state.write().await;
             state.system_status = SystemStatus::Active;
         }
 
+        // Tareas concurrentes
         let sensor_task = self.run_sensor_loop();
         let navigation_task = self.run_navigation_loop();
         let vision_task = self.run_vision_loop();
         let state_publisher_task = self.run_state_publisher();
 
+        // Ejecutar todas las tareas concurrentemente
         tokio::try_join!(
             sensor_task,
             navigation_task,
@@ -141,38 +129,48 @@ impl MechROS2Hub {
 
     async fn run_sensor_loop(&self) -> Result<(), Box<dyn std::error::Error>> {
         loop {
-            let res = self.sensor_hub.lock().await.update_sensors().await;
-            match res {
+            match self.sensor_hub.update_sensors().await {
                 Ok(sensor_data) => {
-                    let mut state = self.system_state.write().await;
-                    if let Some(pos) = sensor_data.position {
-                        state.position = pos;
+                    debug!("📊 Datos de sensores actualizados: {:?}", sensor_data);
+
+                    // Actualizar estado del sistema con datos de sensores
+                    {
+                        let mut state = self.system_state.write().await;
+                        if let Some(pos) = sensor_data.position {
+                            state.position = pos;
+                        }
+                        if let Some(vel) = sensor_data.velocity {
+                            state.velocity = vel;
+                        }
+                        if let Some(battery) = sensor_data.battery_level {
+                            state.battery_level = battery;
+                        }
+                        state.timestamp = chrono::Utc::now();
                     }
-                    if let Some(vel) = sensor_data.velocity {
-                        state.velocity = vel;
-                    }
-                    if let Some(battery) = sensor_data.battery_level {
-                        state.battery_level = battery;
-                    }
-                    state.timestamp = chrono::Utc::now();
                 }
                 Err(e) => {
                     warn!("⚠️  Error en sensores: {}", e);
                 }
             }
-            sleep(Duration::from_millis(50)).await;
+
+            sleep(Duration::from_millis(50)).await; // 20Hz
         }
     }
 
     async fn run_navigation_loop(&self) -> Result<(), Box<dyn std::error::Error>> {
         loop {
-            let current_state = self.system_state.read().await.clone();
-            let res = self.navigation_planner.lock().await.update_navigation(&current_state).await;
-            match res {
+            let current_state = {
+                let state = self.system_state.read().await;
+                state.clone()
+            };
+
+            match self.navigation_planner.update_navigation(&current_state).await {
                 Ok(nav_commands) => {
                     if let Some(commands) = nav_commands {
-                        let actuator_commands = navigation_to_actuator(commands);
-                        if let Err(e) = self.actuator_controller.lock().await.execute_commands(actuator_commands).await {
+                        debug!("🗺️  Comandos de navegación: {:?}", commands);
+
+                        // Enviar comandos a los actuadores
+                        if let Err(e) = self.actuator_controller.execute_commands(commands).await {
                             error!("❌ Error ejecutando comandos: {}", e);
                         }
                     }
@@ -181,51 +179,72 @@ impl MechROS2Hub {
                     warn!("⚠️  Error en navegación: {}", e);
                 }
             }
-            sleep(Duration::from_millis(100)).await;
+
+            sleep(Duration::from_millis(100)).await; // 10Hz
         }
     }
 
     async fn run_vision_loop(&self) -> Result<(), Box<dyn std::error::Error>> {
         loop {
-            let res = self.vision_processor.lock().await.process_frame().await;
-            match res {
+            match self.vision_processor.process_frame().await {
                 Ok(vision_data) => {
                     if let Some(data) = vision_data {
-                        self.navigation_planner.lock().await.update_vision_data(data).await?;
+                        debug!("👁️  Datos de visión procesados: {:?}", data);
+
+                        // Enviar datos de visión al planificador de navegación
+                        self.navigation_planner.update_vision_data(data).await?;
                     }
                 }
                 Err(e) => {
                     warn!("⚠️  Error en visión: {}", e);
                 }
             }
-            sleep(Duration::from_millis(33)).await;
+
+            sleep(Duration::from_millis(33)).await; // ~30Hz
         }
     }
 
     async fn run_state_publisher(&self) -> Result<(), Box<dyn std::error::Error>> {
         loop {
-            let current_state = self.system_state.read().await.clone();
+            let current_state = {
+                let state = self.system_state.read().await;
+                state.clone()
+            };
+
+            // Publicar estado del sistema
             if let Err(e) = self.node_manager.publish_system_state(&current_state).await {
                 warn!("⚠️  Error publicando estado: {}", e);
             }
-            sleep(Duration::from_millis(200)).await;
+
+            sleep(Duration::from_millis(200)).await; // 5Hz
         }
     }
 }
 
+// 🚀 Entry point
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Configurar logging
     tracing_subscriber::fmt()
         .with_env_filter("mechros2=debug,info")
         .init();
 
+    println!("⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢");
     println!("🦾 *MECHROS2 SYSTEM INICIADO*");
-    
+    println!("🌌 Tiempo UNIX: {}", chrono::Utc::now().timestamp());
+    println!("🦀 ROS2 Integration: ACTIVE");
+    println!("🚀 Modo: TURBO");
+    println!("⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢");
+
+    // Inicializar hub
     let hub = MechROS2Hub::new().await?;
+
+    // Inicializar subsistemas
     hub.initialize().await?;
-    
+
     info!("🚀 MechROS2 completamente operativo");
 
+    // Ejecutar bucle principal
     if let Err(e) = hub.run().await {
         error!("💥 Error crítico en MechROS2: {}", e);
         return Err(e);
@@ -234,34 +253,24 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+// 🧪 Tests
 #[cfg(test)]
 mod tests {
     use super::*;
+    use tokio_test;
 
     #[tokio::test]
     async fn test_system_initialization() {
-        let node_manager = Arc::new(MechNodeManager::new().await.unwrap());
-        let sensor_hub = Arc::new(Mutex::new(SensorHub::new(node_manager.clone()).await.unwrap()));
-        let actuator_controller = Arc::new(Mutex::new(ActuatorController::new(node_manager.clone()).await.unwrap()));
-        let navigation_planner = Arc::new(Mutex::new(NavigationPlanner::new(node_manager.clone()).await.unwrap()));
-        let vision_processor = Arc::new(Mutex::new(VisionProcessor::new(node_manager.clone())));
-        let system_state = Arc::new(tokio::sync::RwLock::new(SystemState {
-            timestamp: chrono::Utc::now(),
-            position: Point3::origin(),
-            velocity: Vector3::zeros(),
-            orientation: Vector3::zeros(),
-            battery_level: 100.0,
-            system_status: SystemStatus::Initializing,
-        }));
-        
-        let hub = MechROS2Hub {
-            node_manager,
-            sensor_hub,
-            actuator_controller,
-            navigation_planner,
-            vision_processor,
-            system_state,
-        };
+        let hub = MechROS2Hub::new().await.expect("Failed to create hub");
         assert!(hub.initialize().await.is_ok());
     }
-}
+
+    #[tokio::test]
+    async fn test_system_state_update() {
+        let hub = MechROS2Hub::new().await.expect("Failed to create hub");
+        hub.initialize().await.expect("Failed to initialize");
+
+        let state = hub.system_state.read().await;
+        assert!(matches!(state.system_status, SystemStatus::Ready));
+    }
+      }

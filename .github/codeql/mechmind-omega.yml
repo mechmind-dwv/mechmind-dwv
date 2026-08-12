@@ -1,0 +1,21 @@
+name: "MECHMIND OMEGA PROTOCOL"
+level: "omega"
+threat-model: "quantum"
+
+paths:
+  include:
+    - "projects/mechbot-2x/src/**/*.rs"
+    - "docs/quantum-core/**/*.py"
+  exclude:
+    - "**/test/**"
+    - "**/legacy/**"
+
+queries:
+  - uses: security-extended
+  - uses: mechmind/quantum-queries
+  - uses: ./custom-queries/omega-threats.ql
+
+quantum-params:
+  entanglement: true
+  superposition: "controlled"
+  decoherence-threshold: 0.99

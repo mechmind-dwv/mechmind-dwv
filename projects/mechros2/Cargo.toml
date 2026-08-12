@@ -6,13 +6,9 @@ authors = ["MechMind Team <dev@mechmind.ai>"]
 description = "🦾 MechMind ROS2 Integration Layer"
 license = "MIT"
 
-[features]
-default = []
-ros2 = ["dep:r2r"]
-
 [dependencies]
-# ROS2 Core (Opcional)
-r2r = { version = "0.8", optional = true }
+# ROS2 Core
+r2r = "0.8"
 tokio = { version = "1.0", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
@@ -26,7 +22,7 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 # Math & Geometry
-nalgebra = { version = "0.32", features = ["serde-serialize"] }
+nalgebra = "0.32"
 approx = "0.5"
 
 # Time handling

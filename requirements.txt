@@ -1,14 +1,6 @@
-# Seguridad: Versiones actualizadas para mitigar vulnerabilidades críticas
-torch>=2.4.0
-torchvision>=0.19.0
-onnxruntime>=1.19.0
-opencv-python>=4.10.0
-bandit>=1.7.9
-safety>=3.2.0
-pytest>=8.3.0
-coverage>=7.6.0
-pytest-cov>=5.0.0
-setuptools>=70.0.0
-numpy>=1.26.0
-tqdm>=4.66.0
-wandb>=0.17.0
+bandit
+safety
+pytest
+pytest-cov
+coverage
+setuptools>=83.0.0
