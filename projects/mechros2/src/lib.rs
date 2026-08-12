@@ -5,6 +5,7 @@
 #![feature(portable_simd)] // Necesario para usar std::simd
 
 use std::simd::f32x4;
+use std::simd::num::SimdFloat;
 
 // Re-exportamos r2r para facilitar el uso desde fuera
 pub use r2r;
