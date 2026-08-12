@@ -50,3 +50,6 @@ graph LR
 [![Estadísticas de él Min](https://github-readme-stats.vercel.app/api?username=mechmind-dwv&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&custom_title=Stats+de+MechMind&title_color=FF00FF&icon_color=58A6FF&bg_color=0D1117)](https://github.com/mechmind-dwv)
 
 > *"Transformando código complejo en movimientos robóticos precisos y eficientes."*
+## 🛠️ Stack Tecnológico Actualizado
+- 🦀 **Rust** v1.97.1
+- 🤖 **ROS2** Humble Hawksbill
