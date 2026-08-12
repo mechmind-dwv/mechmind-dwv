@@ -674,6 +674,11 @@ dependencies = [
 [[package]]
 name = "mechcore"
 version = "1.0.0"
+dependencies = [
+ "bytes",
+ "serde",
+ "tokio",
+]
 
 [[package]]
 name = "mechros2"

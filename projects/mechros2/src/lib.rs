@@ -8,6 +8,7 @@ use std::simd::f32x4;
 use std::simd::num::SimdFloat;
 
 // Re-exportamos r2r para facilitar el uso desde fuera
+#[cfg(feature = "ros2")]
 pub use r2r;
 
 /// Controlador PID para MechBot-2X con soporte ROS2 opcional.
