@@ -39,4 +39,4 @@ Ambos trabajos fallaban por una combinación de factores:
 4. Se sustituyeron las instalaciones desde código fuente de `cargo-audit` y `cargo-tarpaulin` por `taiki-e/install-action@v2`, que distribuye herramientas de desarrollo mediante releases verificadas y evita que los runners permanezcan largos periodos compilando utilidades de CI ([documentación primaria](https://github.com/taiki-e/install-action)).
 
 ---
-**Estado de la auditoría**: La generación de documentación, el Quality Gate y el Cargo Audit ya han sido verificados localmente o en runs remotos exitosos. El run final de Rust continúa ejecutándose en GitHub Actions; su conclusión debe confirmarse antes de declarar todos los pipelines en verde.
+**Estado final verificado**: En el commit `c75e7f9f`, `Rust Super Pipeline`, `Documentation Engine`, `MechMind Quality Gate`, `Profile Power-Up` y `pages build and deployment` terminaron con conclusión `success`. El análisis CodeQL avanzado se retiró porque el repositorio tiene habilitado el Default Setup de CodeQL, que es la única configuración aceptada por GitHub para este repositorio.

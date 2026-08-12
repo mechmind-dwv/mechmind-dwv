@@ -22,9 +22,9 @@
 - [x] **Panel de diagnóstico avanzado**: Consumo energético por actuador y temperatura de motores en tiempo real.
 - [ ] **Pruebas de Integración**: Pendiente.
 - [x] **CI/CD: CodeQL**: Eliminado el workflow avanzado conflictivo; el repositorio queda bajo el Default Setup de CodeQL habilitado en GitHub.
-- [ ] **CI/CD: Rust y cobertura**: Corregir compilación, tests y ejecución de Tarpaulin sin activar features ROS2 incompatibles.
-- [ ] **CI/CD: Documentación**: Generar RustDoc sin compilar r2r opcional cuando no sea necesario.
-- [ ] **CI/CD: Verificación remota**: Confirmar en GitHub Actions que los cinco jobs vuelven a estado verde.
+- [x] **CI/CD: Rust y cobertura**: Corregida compilación, tests y ejecución de Tarpaulin sin activar features ROS2 incompatibles.
+- [x] **CI/CD: Documentación**: RustDoc generado sin compilar r2r opcional cuando no es necesario.
+- [x] **CI/CD: Verificación remota**: Confirmados en verde Rust Super Pipeline, Documentation Engine, Quality Gate, Profile Power-Up y Pages en el commit `c75e7f9f`.
 - [x] **Modo Turbo**: Implementado en `MechCore` usando el modelo de sistema restaurado.
 
 ---
