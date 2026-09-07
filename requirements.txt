@@ -3,4 +3,4 @@ safety
 pytest
 pytest-cov
 coverage
-setuptools>=83.0.0
+setuptools>=84.0.0
