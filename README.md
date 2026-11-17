@@ -53,6 +53,6 @@ graph LR
 
 <!-- START_TECH_STACK -->
 ## 🛠️ Stack Tecnológico Actualizado
-- 🦀 **Rust** null
+- 🦀 **Rust** 1.100.0
 - 🤖 **ROS2** Humble Hawksbill
 <!-- END_TECH_STACK -->
